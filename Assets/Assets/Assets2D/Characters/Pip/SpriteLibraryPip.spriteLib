@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: CaraPip
+    m_Hash: 589938894
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: OjoDer_1
+      m_Hash: 435725611
+      m_Sprite: {fileID: 4285816935016157132, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4285816935016157132, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    - m_Name: OjoDer_2
+      m_Hash: 15856785
+      m_Sprite: {fileID: 7111144302152767996, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7111144302152767996, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    - m_Name: OjosDer_3
+      m_Hash: 575423075
+      m_Sprite: {fileID: -3071457164269769897, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3071457164269769897, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    - m_Name: OjoIzq_1
+      m_Hash: 726964234
+      m_Sprite: {fileID: -8188570073614793209, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8188570073614793209, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    - m_Name: OjoIzq_2
+      m_Hash: 845007280
+      m_Sprite: {fileID: 7599039780509134627, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7599039780509134627, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    - m_Name: OjoIzq_3
+      m_Hash: 89848102
+      m_Sprite: {fileID: 8812501139655926568, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8812501139655926568, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    - m_Name: Pico
+      m_Hash: 1049781436
+      m_Sprite: {fileID: 608930854411751212, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 608930854411751212, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 7
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638676146919390597
+  m_Version: 1
