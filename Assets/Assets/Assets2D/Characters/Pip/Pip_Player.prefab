@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97996493894441597}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.004257409, w: 0.999991}
-  m_LocalPosition: {x: -1.6316862, y: 1.1548789, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.00029000678, w: 1}
+  m_LocalPosition: {x: -0.76943207, y: 0.77053356, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -236,7 +236,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: -3688909106726558684, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: -3688909106726558684, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -260,7 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &1240174869556285539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +354,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4446580205749893055, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: -4446580205749893055, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -376,7 +379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &5650185283353161591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 793379185199328739}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.047352143, w: 0.99887824}
-  m_LocalPosition: {x: -0.16997111, y: -0.15798958, z: 0}
+  m_LocalPosition: {x: -0.2, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -746,7 +750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284332259466086135}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 9.3132246e-10, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.035862543, w: 0.9993568}
   m_LocalPosition: {x: -0.05000004, y: -1.422, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -777,7 +781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633230702188779093}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0853674, w: 0.9963496}
   m_LocalPosition: {x: 0.7061481, y: -1.158984, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -989,7 +993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716642081059944536}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.0000001685874, w: 1}
+  m_LocalRotation: {x: 1.4883364e-10, y: 1.4026415e-10, z: 0.029629152, w: 0.999561}
   m_LocalPosition: {x: 0, y: -0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1645,7 +1649,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4285816935016157132, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: 4285816935016157132, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1669,7 +1674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &3848746897088762647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,7 +1832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6563283744165266453}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.050974965, w: 0.99869996}
+  m_LocalRotation: {x: 0, y: 0, z: -0.52421767, w: 0.8515844}
   m_LocalPosition: {x: -0.1, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1910,7 +1916,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: -4667523497173778210, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: -4667523497173778210, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1934,7 +1941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &5096085412391418130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,7 +2034,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7599039780509134627, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: -8188570073614793209, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2050,7 +2059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &7917912165698905308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,7 +2101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6663365287710394101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.09553161, w: 0.9954264}
+  m_LocalRotation: {x: 0, y: 0, z: 0.034386504, w: 0.99940866}
   m_LocalPosition: {x: 0.76, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2241,7 +2251,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -688642106757804910, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: -688642106757804910, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2265,7 +2276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &2731833512071743500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2390,7 +2402,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7740928773196949334, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: 7740928773196949334, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2414,7 +2427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &4986457538847865036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2530,7 +2544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &1193031668782239547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2686,8 +2701,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7599869993703165142}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.004257409, w: 0.999991}
-  m_LocalPosition: {x: 1.8851863, y: 1.1848252, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.00029000678, w: 1}
+  m_LocalPosition: {x: 0.9026089, y: 0.83956337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2835,7 +2850,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7705433548687483689, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: 7705433548687483689, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2859,7 +2875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &3739905617777781929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2900,7 +2917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960571305020653810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.014920357, w: 0.9998888}
+  m_LocalRotation: {x: -1.742286e-10, y: -1.8494942e-10, z: 0.014920357, w: 0.9998888}
   m_LocalPosition: {x: 0.02, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3174,7 +3191,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 5931210447697591288, guid: 6ec00da94e1237d42be5d1434f50eb38, type: 3}
+  m_Sprite: {fileID: 5931210447697591288, guid: 6ec00da94e1237d42be5d1434f50eb38,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3198,7 +3216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+    type: 3}
 --- !u!114 &8280231027553439200
 MonoBehaviour:
   m_ObjectHideFlags: 0
