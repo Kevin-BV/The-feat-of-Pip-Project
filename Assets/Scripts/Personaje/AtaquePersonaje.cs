@@ -10,7 +10,8 @@ public class AtaquePersonaje : MonoBehaviour
     public LayerMask capaEnemigos; // Capa de los enemigos para detectar colisiones
 
     private Animator anim;
-    private bool enAtaque = false; // Variable para bloquear ataques mientras uno está activo
+    private float tiempoEntreAtaques = 0.5f; // Tiempo de cooldown entre ataques
+    private float tiempoDelUltimoAtaque = 0f; // Momento en que se hizo el último ataque
 
     void Start()
     {
@@ -20,8 +21,8 @@ public class AtaquePersonaje : MonoBehaviour
 
     void Update()
     {
-        // Detectamos si se presiona la tecla Z y si no estamos en ataque
-        if (Input.GetKeyDown(KeyCode.Z) && !enAtaque) // Cambié de "Fire1" a "Z"
+        // Detectamos si se presiona la tecla Z y si ha pasado suficiente tiempo para realizar otro ataque
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
         {
             RealizarAtaque();
         }
@@ -31,7 +32,9 @@ public class AtaquePersonaje : MonoBehaviour
     {
         // Activamos la animación de ataque (se activa el trigger)
         anim.SetTrigger("Atacar");
-        enAtaque = true; // Bloqueamos el ataque hasta que la animación termine
+
+        // Registramos el tiempo en que se realiza este ataque
+        tiempoDelUltimoAtaque = Time.time;
 
         // Detectamos los enemigos dentro del rango de ataque
         Collider[] enemigos = Physics.OverlapSphere(puntoDeAtaque.position, rangoDeAtaque, capaEnemigos);
@@ -41,12 +44,6 @@ public class AtaquePersonaje : MonoBehaviour
             // Aplicamos daño al enemigo detectado si tiene un componente "Enemigo"
             enemigo.GetComponent<Enemigo>()?.TomarDaño(daño);
         }
-    }
-
-    // Método llamado desde el Animator al final de la animación de ataque
-    public void FinalizarAtaque()
-    {
-        enAtaque = false; // Permitimos que el personaje pueda atacar de nuevo
     }
 
     // Visualización del rango de ataque en la escena
