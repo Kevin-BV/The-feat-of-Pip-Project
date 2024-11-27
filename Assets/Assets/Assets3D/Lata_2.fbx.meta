@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e79393be8b6828c4297a107274f1980c
+guid: feedf0df4bf2b194eb57a651a11e81f4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Piedra
-    second: {fileID: 2100000, guid: 9e666f256eea5c54d884c401ff32b244, type: 2}
+      name: Lata_2
+    second: {fileID: 2100000, guid: 933efb6da782fbb4e910ece51b50776a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 4
+    globalScale: 20
     meshCompression: 0
     addColliders: 1
     useSRGBMaterialColor: 1
@@ -95,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 4
+    globalScale: 20
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
