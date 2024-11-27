@@ -1888,7 +1888,7 @@ GameObject:
   - component: {fileID: 756818289}
   - component: {fileID: 756818288}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1974,12 +1974,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756818287}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.70710677, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 281.5708, y: 66.354, z: 148}
-  m_LocalScale: {x: 58.138325, y: 42.27, z: 18.464823}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 2129.1543, y: 500.18298, z: -291.7536}
+  m_LocalScale: {x: 58.1383, y: 42.269993, z: 18.464819}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 901245097}
   m_LocalEulerAnglesHint: {x: 90, y: 270, z: 90}
 --- !u!1001 &765057236
 PrefabInstance:
@@ -2156,6 +2156,7 @@ Transform:
   - {fileID: 1913078498}
   - {fileID: 2097167970}
   - {fileID: 1156476004}
+  - {fileID: 756818291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &974843095
@@ -6095,4 +6096,3 @@ SceneRoots:
   - {fileID: 1294134400}
   - {fileID: 901245097}
   - {fileID: 561854444}
-  - {fileID: 756818291}
