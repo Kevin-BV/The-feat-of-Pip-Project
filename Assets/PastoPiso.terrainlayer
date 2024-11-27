@@ -6,17 +6,17 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TierraPiso
-  m_DiffuseTexture: {fileID: 2800000, guid: 4366f5d5c693d434a8183ed13cec7550, type: 3}
+  m_Name: PastoPiso
+  m_DiffuseTexture: {fileID: 2800000, guid: 6dd99fca4dd538043a344b299f401d4f, type: 3}
   m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 30.49, y: 29.5}
-  m_TileOffset: {x: 12.9, y: 3.84}
+  m_TileSize: {x: 26.74, y: 89.2}
+  m_TileOffset: {x: 27.47, y: 21.22}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
-  m_Metallic: 0.83
+  m_Metallic: 0
   m_Smoothness: 0
   m_NormalScale: 1
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
   m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
-  m_MaskMapRemapMax: {x: 1, y: 1, z: 1, w: 1}
+  m_MaskMapRemapMax: {x: 1, y: 0.4, z: 1, w: 1}

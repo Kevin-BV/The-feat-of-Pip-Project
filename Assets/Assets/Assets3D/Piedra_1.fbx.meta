@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 88dfaaede765d884cb462a92e0afc6aa
+guid: e79393be8b6828c4297a107274f1980c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Arbusto
-    second: {fileID: 2100000, guid: 09d825e962294484a80ffdbea9e0660f, type: 2}
+      name: Piedra
+    second: {fileID: 2100000, guid: 9e666f256eea5c54d884c401ff32b244, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
