@@ -20,4 +20,6 @@ public class Enemigo : MonoBehaviour
     {
         Destroy(gameObject); // Destruye al enemigo
     }
+
+  
 }
