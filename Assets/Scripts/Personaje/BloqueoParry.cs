@@ -6,7 +6,10 @@ public class BloqueoParry : MonoBehaviour
 {
     private Animator anim;
     private bool bloqueando = false;
-    private float tiempoDeBloqueo = 1f; // Duración de la animación de bloqueo (parry)
+    private bool puedeRecibirDaño = true; // Si el jugador puede recibir daño
+    private float tiempoDeBloqueo = 1f; // Duración del bloqueo (1 segundo)
+    private float tiempoEntreBloqueos = 1f; // Cooldown de bloqueo
+    private float tiempoDelUltimoBloqueo = 0f; // Para gestionar el cooldown
 
     void Start()
     {
@@ -16,8 +19,8 @@ public class BloqueoParry : MonoBehaviour
 
     void Update()
     {
-        // Activamos el bloqueo con el click derecho
-        if (Input.GetMouseButtonDown(1) && !bloqueando) // 1 es el botón derecho del ratón
+        // Activamos el bloqueo al presionar la tecla C, solo si ha pasado el cooldown
+        if (Input.GetKeyDown(KeyCode.C) && Time.time >= tiempoDelUltimoBloqueo + tiempoEntreBloqueos)
         {
             StartCoroutine(Bloquear());
         }
@@ -27,20 +30,22 @@ public class BloqueoParry : MonoBehaviour
     IEnumerator Bloquear()
     {
         bloqueando = true;
+        puedeRecibirDaño = false; // El jugador no puede recibir daño durante el bloqueo
 
-        // Activamos el Bool de bloqueo para reproducir la animación de Defenderse (parry)
-        anim.SetBool("Bloquear", true);
+        // Activamos la animación de defenderse (parry)
+        anim.SetTrigger("Defenderse");
 
-        // Esperamos a que la animación termine (usamos el tiempo de la animación de bloqueo)
+        // Registramos el tiempo en que se hizo el último bloqueo
+        tiempoDelUltimoBloqueo = Time.time;
+
+        // Esperamos a que pase el tiempo de bloqueo (1 segundo)
         yield return new WaitForSeconds(tiempoDeBloqueo);
 
         // Terminamos el bloqueo
         bloqueando = false;
+        puedeRecibirDaño = true; // El jugador puede recibir daño nuevamente
 
-        // Desactivamos el Bool de bloqueo
-        anim.SetBool("Bloquear", false);
-
-        // Verificamos si el personaje está en movimiento o en idle para decidir a qué animación volver
+        // Volvemos a la animación de idle o correr dependiendo del estado
         if (anim.GetBool("Correr") == false) // Si no está corriendo
         {
             anim.SetTrigger("Idle");
@@ -49,5 +54,11 @@ public class BloqueoParry : MonoBehaviour
         {
             anim.SetTrigger("Correr");
         }
+    }
+
+    // Método que se puede llamar desde otro script para verificar si el jugador puede recibir daño
+    public bool PuedeRecibirDaño()
+    {
+        return puedeRecibirDaño;
     }
 }
