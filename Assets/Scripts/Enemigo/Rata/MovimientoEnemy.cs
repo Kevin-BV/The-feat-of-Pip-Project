@@ -18,6 +18,9 @@ public class MovimientoEnemy : MonoBehaviour
 
     void Update()
     {
+        // No ejecutar lógica de movimiento si la velocidad es 0
+        if (velocidadMovimiento <= 0f) return;
+
         if (!anim.GetBool("isTakingDamage"))
         {
             // Aquí iría el código para realizar el ataque

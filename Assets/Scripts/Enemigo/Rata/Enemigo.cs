@@ -62,7 +62,10 @@ public class Enemigo : MonoBehaviour
         anim.SetBool("isTakingDamage", false);
 
         // Habilitar el movimiento después de la animación de daño
-        scriptMovimiento.enabled = true;
+        if (salud > 0) // Solo habilitar movimiento si el enemigo no ha muerto
+        {
+            scriptMovimiento.enabled = true;
+        }
     }
 
     void Morir()
@@ -76,10 +79,11 @@ public class Enemigo : MonoBehaviour
             rb.isKinematic = true; // Esto desactiva la física del Rigidbody, evitando que se mueva
         }
 
-        // Desactivar el script de movimiento (si existe)
+        // Detener el movimiento del enemigo
         if (scriptMovimiento != null)
         {
-            scriptMovimiento.enabled = false; // Desactiva el script de movimiento
+            scriptMovimiento.velocidadMovimiento = 0f; // Reducir la velocidad del enemigo a 0
+            scriptMovimiento.enabled = false; // Desactivar el script de movimiento
         }
 
         // Destruir al enemigo después de 5 segundos
