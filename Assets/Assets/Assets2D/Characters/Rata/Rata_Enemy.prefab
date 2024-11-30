@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567360441693400599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pata_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761681201125896006}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.18432975, w: 0.9828645}
+  m_LocalRotation: {x: 0.00000001412681, y: -0.0000000047410738, z: -0.18432938, w: 0.9828645}
   m_LocalPosition: {x: 0.85447335, y: 0.00000040349826, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5837432360721986551}
   - component: {fileID: 2841291396182282553}
   - component: {fileID: 5789833341897712840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brazo_Izq_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7180120930957844607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Mano_L_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7557883439596388246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oreja_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6303309993252323876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brazo_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8374439171253876591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rodilla_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145316546083731766}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7124641, w: 0.7017086}
+  m_LocalRotation: {x: 0, y: 0, z: 0.71246386, w: 0.70170885}
   m_LocalPosition: {x: 1.024742, y: -0.00000039985878, z: 0}
   m_LocalScale: {x: 0.99999976, y: 0.99999976, z: 1}
   m_ConstrainProportionsScale: 0
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8822823582570440036}
   - component: {fileID: 9206436945281523643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Mano_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 2735807862657440568}
   - component: {fileID: 1990030931835478426}
   - component: {fileID: 6426595830036789725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pata_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485433396502456334}
   - component: {fileID: 119358472906945261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Cola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9174548306170534010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1742598811875345528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 2832791769565124471}
   - component: {fileID: 7975773869050625933}
   - component: {fileID: 3937751793464996392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mano_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6783052423392550287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7253589631151676983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New LimbSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7437685572350366731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6243514143831555281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pata_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2375508837037310023}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.29846415, w: 0.9544209}
+  m_LocalRotation: {x: 0.000000011604119, y: -0.000000009348206, z: -0.29846433, w: 0.95442086}
   m_LocalPosition: {x: 1.2253294, y: 0.00000047043213, z: 0}
   m_LocalScale: {x: 0.99999976, y: 0.99999976, z: 1}
   m_ConstrainProportionsScale: 0
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 9019328140284388125}
   - component: {fileID: 1244952134055914097}
   - component: {fileID: 1581811400427961790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pata_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7171709384816504655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000618990472412759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muslo_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,6 +996,37 @@ Transform:
   - {fileID: 224459555646346868}
   m_Father: {fileID: 1572864732329879745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2766083929250307564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7541821706789014788}
+  m_Layer: 6
+  m_Name: RangoAcercamiento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7541821706789014788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766083929250307564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.42, y: -1.15, z: 0}
+  m_LocalScale: {x: 2.6829, y: 2.6829, z: 2.6829}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1302751094361025734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2801525804224570799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1038,7 @@ GameObject:
   - component: {fileID: 4419809197941558549}
   - component: {fileID: 5487429132066328462}
   - component: {fileID: 6710498606381097849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rodilla_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7787689995659753911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cabeza_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1129,7 +1160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2891330055511702073}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.4324072, w: 0.90167844}
+  m_LocalRotation: {x: -0, y: -0, z: -0.43240723, w: 0.90167844}
   m_LocalPosition: {x: 1.0367526, y: -0.00000034416723, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1138,6 +1169,37 @@ Transform:
   - {fileID: 7557883439596388246}
   m_Father: {fileID: 6920750183111422007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -77.835}
+--- !u!1 &2939474791353412255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5914320120103950881}
+  m_Layer: 6
+  m_Name: AttackEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5914320120103950881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939474791353412255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.42, y: -0.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1302751094361025734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3153779516757085624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1211,7 @@ GameObject:
   - component: {fileID: 4706847008034880610}
   - component: {fileID: 9116711753292782380}
   - component: {fileID: 6306656679973633064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Antebrazo_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6920750183111422007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1351,7 @@ GameObject:
   - component: {fileID: 8186238124105284302}
   - component: {fileID: 7358798524459152472}
   - component: {fileID: 6007755371915795777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,7 +1420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7757620613003657020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brazo_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1373,7 +1435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3367196720869427494}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.28247672, w: 0.95927423}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2824759, w: 0.9592745}
   m_LocalPosition: {x: 1.6433812, y: 0.717698, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1390,7 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558860226382196413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,7 +1486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 489295069068914732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brazo_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,7 +1524,7 @@ GameObject:
   - component: {fileID: 9111720242882608445}
   - component: {fileID: 5254254633888490754}
   - component: {fileID: 3522487624067275232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cabeza_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1599,7 +1661,7 @@ GameObject:
   - component: {fileID: 3832385667693142274}
   - component: {fileID: 2772801532219206542}
   - component: {fileID: 4001041583384904732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muslo_izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1706,7 +1768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8879289967229502077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New LimbSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,7 +1799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5801418219653844267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brazo_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4066444168726618456}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.35831335, w: 0.9336014}
+  m_LocalRotation: {x: 0, y: 0, z: 0.35831383, w: 0.9336012}
   m_LocalPosition: {x: 1.3781748, y: 1.5960219, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1771,7 +1833,7 @@ GameObject:
   - component: {fileID: 743268729921711374}
   - component: {fileID: 4359054507827594551}
   - component: {fileID: 5262707287546784663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mano_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +1939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572864732329879745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1911,7 +1973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6632933788578529635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4307298363856083115}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.8872289, w: 0.46132946}
+  m_LocalRotation: {x: 0, y: -0, z: -0.8916415, w: 0.45274216}
   m_LocalPosition: {x: -0.5285059, y: 0.09100581, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1945,7 +2007,7 @@ GameObject:
   - component: {fileID: 7548199290571790304}
   - component: {fileID: 4234245645948250606}
   - component: {fileID: 5650777751770061399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oreja_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2051,7 +2113,7 @@ GameObject:
   - component: {fileID: 5959990391611287264}
   - component: {fileID: 7410569587983818754}
   - component: {fileID: 6980105072135222793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1721549038094844924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2196,7 +2258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5972727145441614353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Mano_R_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2935981974417268892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741772002279732793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pierna_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2293,7 +2355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193556174570948793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2327,7 +2389,7 @@ GameObject:
   - component: {fileID: 1261345360395647512}
   - component: {fileID: 7934592478252173165}
   - component: {fileID: 5709254971014447648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brazo_Der_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2433,7 +2495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1246500414381701004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pantorrilla_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2465,7 +2527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151399424389500162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cadera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,7 +2560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1248687058107542389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2531,7 +2593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2464760686521595239}
   - component: {fileID: 7656674062187204647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2606,7 +2668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8910546555548083106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mano_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2621,7 +2683,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6203086315040580489}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.091192596, w: 0.99583334}
+  m_LocalRotation: {x: 0.0000000010491076, y: 0.000000003574515, z: -0.091192424,
+    w: 0.9958333}
   m_LocalPosition: {x: 1.6020868, y: 0.000000353097, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2639,7 +2702,7 @@ GameObject:
   - component: {fileID: 5921804290270222428}
   - component: {fileID: 6553363011786806823}
   - component: {fileID: 35475510619538082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oreja_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2743,7 +2806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7273757141444409774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muslo_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2775,7 +2838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7158393176292204290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pantorrilla_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2807,7 +2870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8986368915767799157}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mano_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,7 +2885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6523385530160527690}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.012015341, w: 0.9999279}
+  m_LocalRotation: {x: -0, y: -0, z: 0.012014712, w: 0.9999278}
   m_LocalPosition: {x: 1.6858014, y: -0.000000003046598, z: 0}
   m_LocalScale: {x: 0.99999976, y: 0.99999976, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2838,7 +2901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224459555646346868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rodilla_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2853,7 +2916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6880028369050335610}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7921964, w: 0.61026627}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7921965, w: 0.6102661}
   m_LocalPosition: {x: 1.0198183, y: -0.00000017753474, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2872,7 +2935,7 @@ GameObject:
   - component: {fileID: 1194277868786479987}
   - component: {fileID: 6038066944164576554}
   - component: {fileID: 1083969609680542052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muslo_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2978,7 +3041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5507074018782189847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Antebrazo_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2993,7 +3056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6924544158964151043}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.46737126, w: 0.88406116}
+  m_LocalRotation: {x: 0, y: 0, z: -0.46737182, w: 0.8840609}
   m_LocalPosition: {x: 1.2262744, y: 0.00000013765883, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3010,7 +3073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3863630025517460571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3042,7 +3105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1521451050630325397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cuerpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3075,7 +3138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170470424846484162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pierna_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3110,7 +3173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3926144528621692539}
   - component: {fileID: 7179538812486064736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Mano_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3174,7 +3237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4029561010607493928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oreja_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3207,7 +3270,7 @@ GameObject:
   - component: {fileID: 5255694880268630095}
   - component: {fileID: 113003924080455852}
   - component: {fileID: 6199087215798541365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3307,6 +3370,37 @@ MonoBehaviour:
     m_Extent: {x: 2.7049997, y: 1.7750001, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!1 &7959412864208497931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6965738134378389905}
+  m_Layer: 6
+  m_Name: "TomarDa\xF1o"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6965738134378389905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959412864208497931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0999994, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1302751094361025734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8109610657975855722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,7 +3410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462092151187635750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: New CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3347,7 +3441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4609292856521666175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3383,7 +3477,7 @@ GameObject:
   - component: {fileID: 8437148768576969876}
   - component: {fileID: 2699158030163231005}
   - component: {fileID: 4602958650912999125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Antebrazo_Izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3491,9 +3585,13 @@ GameObject:
   - component: {fileID: 1302751094361025734}
   - component: {fileID: 7852878576030925193}
   - component: {fileID: 6112728128325178968}
-  m_Layer: 0
+  - component: {fileID: 9046397098851678526}
+  - component: {fileID: 1881311679210733809}
+  - component: {fileID: 584137218819684800}
+  - component: {fileID: 7463350174655434939}
+  m_Layer: 6
   m_Name: Rata_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3508,7 +3606,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.93, y: 0.02, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: -0.5, y: 0.5, z: -0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8186238124105284302}
@@ -3518,6 +3616,9 @@ Transform:
   - {fileID: 8822823582570440036}
   - {fileID: 485433396502456334}
   - {fileID: 2464760686521595239}
+  - {fileID: 5914320120103950881}
+  - {fileID: 7541821706789014788}
+  - {fileID: 6965738134378389905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7852878576030925193
@@ -3584,6 +3685,80 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
+--- !u!114 &9046397098851678526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527873623093158354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916f8597a3a7bd74c9e4791c830de8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: {fileID: 0}
+  velocidadMovimiento: 2
+  distanciaPermitidaZ: 1
+  anim: {fileID: 7852878576030925193}
+  visual: {fileID: 1302751094361025734}
+  rangoDeteccion: {fileID: 7541821706789014788}
+  rangoDeDeteccion: 2
+--- !u!114 &1881311679210733809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527873623093158354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004f0009c64d97b46a795a2fb6c6e7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackEnemy: {fileID: 5914320120103950881}
+  attackRange: 0.54
+  attackCooldown: 3
+  animator: {fileID: 7852878576030925193}
+  playerTag: Player
+--- !u!114 &584137218819684800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527873623093158354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df285b90c2e7c9c448ee7946aa8765c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  salud: 4
+  "puntoDeDa\xF1o": {fileID: 6965738134378389905}
+  "tama\xF1oDelGizmo": 2
+--- !u!136 &7463350174655434939
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527873623093158354}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.6097007
+  m_Height: 7.2194014
+  m_Direction: 1
+  m_Center: {x: -3.1097007, y: 0, z: 0}
 --- !u!1 &8582812272387065683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3594,7 +3769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8242314196429797617}
   - component: {fileID: 1792513041970827597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Pata_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3658,7 +3833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5669769276012886699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Antebrazo_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3673,7 +3848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8604513097773623712}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.4545844, w: 0.89070374}
+  m_LocalRotation: {x: 0, y: 0, z: -0.454583, w: 0.89070433}
   m_LocalPosition: {x: 1.2914305, y: -0.00000016393825, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3692,7 +3867,7 @@ GameObject:
   - component: {fileID: 3387424819149709120}
   - component: {fileID: 5610475683741076331}
   - component: {fileID: 2126849804524892879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rodilla_Der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3798,7 +3973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 339548099874666077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cola_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3831,7 +4006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8135877622596006301}
   - component: {fileID: 1202056118079763721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_Pata_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
