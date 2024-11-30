@@ -17,10 +17,14 @@ public class AtaquePersonaje : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        // Inicialmente desactivar el collider para evitar activaciones no deseadas.
+        puntoDeAtaque.GetComponent<Collider>().enabled = false;
     }
 
     void Update()
     {
+        // Solo realizar el ataque si se presiona la tecla Z y ha pasado el tiempo de cooldown
         if (Input.GetKeyDown(KeyCode.Z) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
         {
             RealizarAtaque();
@@ -33,10 +37,10 @@ public class AtaquePersonaje : MonoBehaviour
         tiempoDelUltimoAtaque = Time.time;
         atacando = true;
 
-        // Activamos el trigger o área de daño del personaje
+        // Activamos el collider para el área de daño del personaje solo cuando el ataque se realiza
         puntoDeAtaque.GetComponent<Collider>().enabled = true;
 
-        // Detectamos enemigos en el rango
+        // Detectamos enemigos en el rango de ataque
         Collider[] enemigos = Physics.OverlapSphere(puntoDeAtaque.position, rangoDeAtaque, capaEnemigos);
 
         foreach (Collider enemigo in enemigos)
@@ -48,13 +52,15 @@ public class AtaquePersonaje : MonoBehaviour
                 Debug.Log("El enemigo está recibiendo daño");
             }
         }
+
+        // Desactivar el collider después de un tiempo para evitar colisiones continuas
+        StartCoroutine(DesactivarColliderTemporariamente());
     }
 
-    private void ResetearAtaque()
+    private IEnumerator DesactivarColliderTemporariamente()
     {
-        atacando = false;
-
-        // Desactivamos el trigger del área de ataque para la siguiente vez
+        // Esperar un tiempo y luego desactivar el collider
+        yield return new WaitForSeconds(0.1f); // Ajusta el tiempo según sea necesario
         puntoDeAtaque.GetComponent<Collider>().enabled = false;
     }
 
@@ -67,6 +73,4 @@ public class AtaquePersonaje : MonoBehaviour
             Gizmos.DrawWireSphere(puntoDeAtaque.position, rangoDeAtaque); // Dibujamos el rango de ataque
         }
     }
-
-    // Reseteamos la variable "atacando" después de un tiempo
 }

@@ -6,15 +6,21 @@ public class Avispa : MonoBehaviour
 {
     public float velocidadMovimiento = 3f; // Velocidad a la que se moverá la avispa
     public float rangoDeDeteccion = 5f; // Rango en el que detectará al jugador
+    public float rangoDeAcercamiento = 1.5f; // Distancia mínima a la que la avispa se detiene del jugador
     public Transform visual; // Referencia al objeto visual de la avispa (para animaciones)
-    public Animator anim; // Animator para las animaciones "idle" y "fly"
+    public Animator anim; // Animator para las animaciones "idle", "fly" y "attack"
 
     [Header("Configuración del Gizmo")]
-    public float tamanoGizmo = 1f; // Tamaño del Gizmo, editable desde el inspector
+    public float tamanoGizmo = 1f; // Rango de ataque, editable desde el inspector
 
     [Header("Temporizadores")]
     public float tiempoAntesDeSeguir = 3f; // Tiempo que tarda en mirar al jugador antes de seguirlo
     public float tiempoSiguiendo = 5f; // Tiempo que sigue al jugador antes de reiniciar el ciclo
+    public float cooldownAtaque = 1f; // Tiempo de espera entre ataques
+
+    [Header("Sistema de Vida")]
+    public int vidaMaxima = 3; // Vida máxima de la avispa
+    private int vidaActual; // Vida actual de la avispa
 
     private Transform jugador; // Referencia al objeto con el tag "Player"
     private Vector3 posicionInicial; // Posición inicial de la avispa (para referencia)
@@ -22,21 +28,20 @@ public class Avispa : MonoBehaviour
 
     private bool estaSiguiendo = false; // Controla si la avispa está actualmente siguiendo al jugador
     private bool estaEsperando = false; // Controla si está en el estado de "mirar" antes de seguir
+    private bool puedeAtacar = true; // Controla si la avispa puede atacar
     private Coroutine cicloMovimiento; // Para manejar el ciclo de movimiento
 
     void Start()
     {
-        // Buscar al jugador por su tag
+        vidaActual = vidaMaxima; // Inicializar la vida
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
             jugador = playerObj.transform;
         }
 
-        // Guardar la posición inicial de la avispa
         posicionInicial = transform.position;
 
-        // Iniciar el ciclo de mirar y seguir
         if (jugador != null)
         {
             cicloMovimiento = StartCoroutine(CicloMirarYSeguir());
@@ -45,43 +50,73 @@ public class Avispa : MonoBehaviour
 
     void Update()
     {
-        // Si no hay jugador, la avispa se queda en idle
+        if (vidaActual <= 0) return; // Si está muerta, no hace nada más
+
         if (jugador == null)
         {
             anim.SetBool("isFlying", false); // Animación de idle
             return;
         }
 
-        // Si está siguiendo, moverse hacia el jugador
         if (estaSiguiendo)
         {
             SeguirJugador();
+        }
+
+        if (Vector3.Distance(transform.position, jugador.position) <= tamanoGizmo && puedeAtacar)
+        {
+            AtacarJugador();
         }
     }
 
     private void SeguirJugador()
     {
-        // Calcular la dirección hacia el jugador
-        Vector3 direccion = (jugador.position - transform.position).normalized;
+        if (vidaActual <= 0) return; // Si está muerta, no se mueve
 
-        // Mover la avispa hacia el jugador
-        transform.position += direccion * velocidadMovimiento * Time.deltaTime;
+        Vector3 direccion = new Vector3(jugador.position.x - transform.position.x, 0f, jugador.position.z - transform.position.z).normalized;
 
-        // Actualizar la animación
-        anim.SetBool("isFlying", true); // Activar la animación "fly"
+        float distancia = Vector3.Distance(new Vector3(transform.position.x, 0f, transform.position.z),
+                                            new Vector3(jugador.position.x, 0f, jugador.position.z));
 
-        // Girar solo en X dependiendo de la dirección hacia el jugador
-        if ((direccion.x > 0 && !mirandoDerecha) || (direccion.x < 0 && mirandoDerecha))
+        if (distancia > rangoDeAcercamiento)
         {
-            Girar();
+            transform.position += direccion * velocidadMovimiento * Time.deltaTime;
+            anim.SetBool("isFlying", true); // Animación de vuelo
+
+            if ((direccion.x > 0 && !mirandoDerecha) || (direccion.x < 0 && mirandoDerecha))
+            {
+                Girar();
+            }
         }
+        else
+        {
+            anim.SetBool("isFlying", false);
+        }
+    }
+
+    private void AtacarJugador()
+    {
+        anim.SetTrigger("Attack");
+        VidaConCorazones vidaJugador = jugador.GetComponent<VidaConCorazones>();
+        if (vidaJugador != null)
+        {
+            vidaJugador.RecibirDano(1);
+        }
+
+        StartCoroutine(CooldownAtaque());
+    }
+
+    private IEnumerator CooldownAtaque()
+    {
+        puedeAtacar = false;
+        yield return new WaitForSeconds(cooldownAtaque);
+        puedeAtacar = true;
     }
 
     private void Girar()
     {
         mirandoDerecha = !mirandoDerecha;
 
-        // Cambiar la escala solo en X
         Vector3 nuevaEscala = visual.localScale;
         nuevaEscala.x *= -1;
         visual.localScale = nuevaEscala;
@@ -89,48 +124,67 @@ public class Avispa : MonoBehaviour
 
     private IEnumerator CicloMirarYSeguir()
     {
-        while (true)
+        while (vidaActual > 0)
         {
-            // Paso 1: Mirar hacia el jugador durante un tiempo
-            estaSiguiendo = false; // No moverse durante este tiempo
+            estaSiguiendo = false;
             estaEsperando = true;
 
-            // Girar hacia el jugador en X
             Vector3 direccion = (jugador.position - transform.position).normalized;
             if ((direccion.x > 0 && !mirandoDerecha) || (direccion.x < 0 && mirandoDerecha))
             {
                 Girar();
             }
 
-            anim.SetBool("isFlying", false); // Cambiar a animación de idle
+            anim.SetBool("isFlying", false);
             yield return new WaitForSeconds(tiempoAntesDeSeguir);
 
-            // Paso 2: Seguir al jugador durante un tiempo
-            estaSiguiendo = true; // Comenzar a moverse hacia el jugador
+            estaSiguiendo = true;
             estaEsperando = false;
 
-            anim.SetBool("isFlying", true); // Cambiar a animación de fly
+            anim.SetBool("isFlying", true);
             yield return new WaitForSeconds(tiempoSiguiendo);
         }
     }
 
-    // Dibujar un Gizmo que muestre la dirección hacia el jugador y el rango de detección
+    public void RecibirDano(int cantidad)
+    {
+        if (vidaActual <= 0) return; // No recibe daño si ya está muerta
+
+        vidaActual -= cantidad;
+        Debug.Log($"La avispa recibió {cantidad} de daño. Vida restante: {vidaActual}"); // Confirmar daño
+
+        if (vidaActual <= 0)
+        {
+            Morir();
+        }
+    }
+
+    private void Morir()
+    {
+        anim.SetTrigger("Die"); // Animación de muerte
+        velocidadMovimiento = 0; // Detener movimiento
+        Destroy(gameObject, 5f); // Destruir después de 5 segundos
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Verificar si colisionó con algo que puede hacer daño
+        if (other.CompareTag("PlayerAttack")) // Suponiendo que el ataque del jugador tiene este tag
+        {
+            Debug.Log("La avispa ha sido golpeada por el ataque del jugador.");
+            RecibirDano(1); // Aplicar daño (puedes cambiar la cantidad)
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-
-        // Mostrar el rango de detección
         Gizmos.DrawWireSphere(transform.position, rangoDeDeteccion);
 
-        // Dibujar un Gizmo que represente la posición de la avispa
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, tamanoGizmo);
 
-        // Dibujar una línea hacia el jugador si está asignado
-        if (jugador != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, jugador.position);
-        }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, rangoDeAcercamiento);
     }
 }
