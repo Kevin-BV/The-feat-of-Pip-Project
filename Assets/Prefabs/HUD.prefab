@@ -3799,6 +3799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ab9f7a37a1e9045b6dd0dd3a2fdee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullscreenToggle: {fileID: 1737856496923069801}
 --- !u!1 &8753132948401526559
 GameObject:
   m_ObjectHideFlags: 0
