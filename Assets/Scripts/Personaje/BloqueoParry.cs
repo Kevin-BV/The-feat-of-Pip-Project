@@ -19,7 +19,7 @@ public class BloqueoParry : MonoBehaviour
     void Update()
     {
         // Detectamos si se presiona la tecla "C" y no está bloqueando
-        if (Input.GetKeyDown(KeyCode.C) && !bloqueando)
+        if (Input.GetMouseButtonDown(1) && !bloqueando)
         {
             Bloquear();
         }

@@ -25,7 +25,7 @@ public class AtaquePersonaje : MonoBehaviour
     void Update()
     {
         // Solo realizar el ataque si se presiona la tecla Z y ha pasado el tiempo de cooldown
-        if (Input.GetKeyDown(KeyCode.Z) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
+        if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
         {
             RealizarAtaque();
         }
