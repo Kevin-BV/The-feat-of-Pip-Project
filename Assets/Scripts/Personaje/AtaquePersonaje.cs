@@ -12,65 +12,83 @@ public class AtaquePersonaje : MonoBehaviour
     private Animator anim;
     private float tiempoEntreAtaques = 0.5f; // Tiempo de cooldown entre ataques
     private float tiempoDelUltimoAtaque = 0f; // Momento en que se hizo el último ataque
-    private bool atacando = false; // Variable para controlar si está realizando el ataque
+
+    private Collider colliderDeAtaque; // Referencia al collider del punto de ataque
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        colliderDeAtaque = puntoDeAtaque.GetComponent<Collider>();
 
-        // Inicialmente desactivar el collider para evitar activaciones no deseadas.
-        puntoDeAtaque.GetComponent<Collider>().enabled = false;
+        // Asegúrate de que el collider esté desactivado al inicio
+        if (colliderDeAtaque != null)
+        {
+            colliderDeAtaque.enabled = false;
+        }
     }
 
     void Update()
     {
-        // Solo realizar el ataque si se presiona la tecla Z y ha pasado el tiempo de cooldown
+        // Click izquierdo: activa el collider para el ataque
         if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
         {
-            RealizarAtaque();
+            ActivarColliderDeAtaque();
+        }
+
+        // Click izquierdo: daño directo con Physics.OverlapSphere
+        if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
+        {
+            HacerDañoDirecto();
         }
     }
 
-    void RealizarAtaque()
+    private void ActivarColliderDeAtaque()
     {
         anim.SetTrigger("Atacar");
         tiempoDelUltimoAtaque = Time.time;
-        atacando = true;
 
-        // Activamos el collider para el área de daño del personaje solo cuando el ataque se realiza
-        puntoDeAtaque.GetComponent<Collider>().enabled = true;
-
-        // Detectamos enemigos en el rango de ataque
-        Collider[] enemigos = Physics.OverlapSphere(puntoDeAtaque.position, rangoDeAtaque, capaEnemigos);
-
-        foreach (Collider enemigo in enemigos)
+        // Activar el collider temporalmente
+        if (colliderDeAtaque != null)
         {
-            Enemigo enemigoScript = enemigo.GetComponent<Enemigo>();
-            if (enemigoScript != null && Vector3.Distance(puntoDeAtaque.position, enemigo.transform.position) <= rangoDeAtaque)
+            colliderDeAtaque.enabled = true;
+            StartCoroutine(DesactivarColliderDespuesDeTiempo(0.1f)); // Ajusta el tiempo según la animación
+        }
+    }
+
+    private void HacerDañoDirecto()
+    {
+        anim.SetTrigger("Atacar");
+        tiempoDelUltimoAtaque = Time.time;
+
+        // Detectar enemigos dentro del rango usando Physics.OverlapSphere
+        Collider[] enemigosEnRango = Physics.OverlapSphere(puntoDeAtaque.position, rangoDeAtaque, capaEnemigos);
+
+        foreach (Collider enemigo in enemigosEnRango)
+        {
+            // Llamar a la función RecibirDano de los enemigos si la tienen
+            if (enemigo.TryGetComponent(out Rata rata))
             {
-                enemigoScript.TomarDaño(daño);
-                Debug.Log("El enemigo está recibiendo daño");
+                rata.RecibirDano(daño);
             }
         }
-
-        // Desactivar el collider después de un tiempo para evitar colisiones continuas
-        StartCoroutine(DesactivarColliderTemporariamente());
     }
 
-    private IEnumerator DesactivarColliderTemporariamente()
+    private IEnumerator DesactivarColliderDespuesDeTiempo(float tiempo)
     {
-        // Esperar un tiempo y luego desactivar el collider
-        yield return new WaitForSeconds(0.1f); // Ajusta el tiempo según sea necesario
-        puntoDeAtaque.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(tiempo);
+        if (colliderDeAtaque != null)
+        {
+            colliderDeAtaque.enabled = false;
+        }
     }
 
-    // Mostrar el rango de ataque solo cuando el personaje esté atacando
+    // Mostrar el rango de ataque en el editor
     private void OnDrawGizmosSelected()
     {
-        if (puntoDeAtaque != null && atacando)
+        if (puntoDeAtaque != null)
         {
-            Gizmos.color = Color.red; // Color rojo para el gizmo
-            Gizmos.DrawWireSphere(puntoDeAtaque.position, rangoDeAtaque); // Dibujamos el rango de ataque
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(puntoDeAtaque.position, rangoDeAtaque);
         }
     }
 }

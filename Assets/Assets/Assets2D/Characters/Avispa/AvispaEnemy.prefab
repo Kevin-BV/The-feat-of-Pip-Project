@@ -163,14 +163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 3
-  rangoDeDeteccion: 3
+  rangoDeDeteccion: 9.3
   rangoDeAcercamiento: 1.5
   visual: {fileID: 4495991161489760645}
   anim: {fileID: 7604033036403167678}
   tamanoGizmo: 2
-  tiempoAntesDeSeguir: 3
-  tiempoSiguiendo: 5
-  cooldownAtaque: 1
   vidaMaxima: 2
 --- !u!54 &1839913197881539880
 Rigidbody:
@@ -895,6 +892,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7256292037456249959}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: de3a566e1a8408e44a7c3801715ec8ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 695176680909456037}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: de3a566e1a8408e44a7c3801715ec8ee,
     type: 3}
 --- !u!1 &3363311473407293926 stripped
@@ -929,6 +930,29 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
+--- !u!136 &695176680909456037
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363311473407293926}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 4.341343
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.670675, z: -0.0000010788863}
 --- !u!4 &4495991161489760645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: de3a566e1a8408e44a7c3801715ec8ee,
