@@ -350,6 +350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PapelArrugado_5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 966b605eaea845a4cb7011ed44af3947,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -693,6 +698,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedra_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79393be8b6828c4297a107274f1980c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -886,6 +896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PapelArrugado_4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6f42c75aaed4b74d8673c0a74341d97,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1064,6 +1079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arbol_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b338dde70daed33478284222b07c66e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1157,6 +1177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piedra_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa3336565914ad34a8151a5b8a6868cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1330,6 +1355,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lata_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: feedf0df4bf2b194eb57a651a11e81f4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1755,6 +1785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedra_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79393be8b6828c4297a107274f1980c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1974,6 +2009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lata_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1c61629cc753af498ba48f74a48d540,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2047,6 +2087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piedra_2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68413a992fe347b4a95f0353fc61936d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2565,6 +2610,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lata_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f53850a7249b3f47ab3e774b5301a34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3184,6 +3234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedra_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79393be8b6828c4297a107274f1980c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3282,6 +3337,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PapelArrugado_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 966b605eaea845a4cb7011ed44af3947,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3655,6 +3715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lata_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1c61629cc753af498ba48f74a48d540,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3666,110 +3731,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1171079855}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1230582780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1230582781}
-  - component: {fileID: 1230582784}
-  - component: {fileID: 1230582783}
-  - component: {fileID: 1230582782}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1230582781
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230582780}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9299, y: 23.6722, z: -2.2583}
-  m_LocalScale: {x: 23.40286, y: 30.226421, z: 20.466866}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1961885993}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1230582782
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230582780}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1230582783
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230582780}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials: []
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1230582784
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230582780}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1237635696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4041,6 +4002,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arbol_1 (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b338dde70daed33478284222b07c66e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: b338dde70daed33478284222b07c66e4,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 15110a58d99581841b38d6a89d46e21f,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4135,6 +4107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PapelArrugado_3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de902c6856455b343974e766062b89e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4209,6 +4186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lata_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: feedf0df4bf2b194eb57a651a11e81f4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4282,6 +4264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lata_4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f53850a7249b3f47ab3e774b5301a34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4488,6 +4475,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PapelArrugado_6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb0647ab1b9ded64b826721cc7af8d24,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4561,6 +4553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piedra_3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa3336565914ad34a8151a5b8a6868cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4661,6 +4658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PapelArrugado_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429c3fb864d86724aa47b64f7d65e20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4734,6 +4736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lata_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eac31526fcba5a4f88e619600ccd798,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5130,6 +5137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lata_3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eac31526fcba5a4f88e619600ccd798,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6137,6 +6149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PapelArrugado_4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6f42c75aaed4b74d8673c0a74341d97,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6221,7 +6238,7 @@ Terrain:
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
   m_GroupingID: 0
   m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 1
+  m_AllowAutoConnect: 0
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
@@ -6323,6 +6340,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arbol_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b338dde70daed33478284222b07c66e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: b338dde70daed33478284222b07c66e4,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 15110a58d99581841b38d6a89d46e21f,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6596,6 +6624,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedra_2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68413a992fe347b4a95f0353fc61936d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6607,38 +6640,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1906694751}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1961885992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1961885993}
-  m_Layer: 0
-  m_Name: CambioEscena
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1961885993
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961885992}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135, y: -15.5, z: 10.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1230582781}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2001756308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6721,6 +6722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piedra_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68413a992fe347b4a95f0353fc61936d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6905,6 +6911,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lata_3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eac31526fcba5a4f88e619600ccd798,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6979,6 +6990,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piedra_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68413a992fe347b4a95f0353fc61936d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6990,6 +7006,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2131978251}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2588937745990864614
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 564133671881863316, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_Name
+      value: CambioEscena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554527250426326921, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909646140860348925, guid: b94541942c16e5345806bb66398ade4a,
+        type: 3}
+      propertyPath: sceneName
+      value: Escena_Nivel02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b94541942c16e5345806bb66398ade4a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7001,6 +7090,6 @@ SceneRoots:
   - {fileID: 1725332771}
   - {fileID: 146791041}
   - {fileID: 1009468315}
-  - {fileID: 1961885993}
+  - {fileID: 2588937745990864614}
   - {fileID: 24144864}
   - {fileID: 1152014801}
