@@ -188,11 +188,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
-      propertyPath: sonidoCuracion
-      value: 
-      objectReference: {fileID: 8300000, guid: dc8bc3fcae1eb544abc6021ee0ca738e, type: 3}
-    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
-        type: 3}
       propertyPath: corazones.Array.data[0]
       value: 
       objectReference: {fileID: 627107506}
@@ -2493,12 +2488,12 @@ PrefabInstance:
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -133.38
+      value: -133.8
       objectReference: {fileID: 0}
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1160.53
+      value: 1159.71
       objectReference: {fileID: 0}
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
