@@ -387,6 +387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
+      propertyPath: gameOverManager
+      value: 
+      objectReference: {fileID: 1426400023}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
       propertyPath: corazones.Array.data[0]
       value: 
       objectReference: {fileID: 1844856577}
@@ -1783,6 +1788,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
+--- !u!114 &1426400023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6136485404818034549, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905b02c938c041c489da9ed8969a037e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1502780907
 GameObject:
   m_ObjectHideFlags: 0
