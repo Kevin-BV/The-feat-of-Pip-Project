@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Prologo.unity
     guid: e3b1f2451b14a6c49baad887d11de42c
   - enabled: 1
-    path: Assets/Scenes/Escena_Tutorial.unity
+    path: Assets/Scenes/Escena_Nivel01.unity
     guid: 240b682196ad44549a6cee95d04328e4
   - enabled: 1
-    path: Assets/Scenes/Escena_Nivel01.unity
+    path: Assets/Scenes/Escena_Tutorial.unity
     guid: 3762c243eb316da40852e2db0f8d8031
   - enabled: 1
     path: Assets/Scenes/Escena_Nivel02.unity
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: bb42a0287381b924bb1fcf0cf69953f8
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 0c086639984de11438c5381dac12214d
   m_configObjects: {}

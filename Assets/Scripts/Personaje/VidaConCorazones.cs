@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement; // Necesario para cargar escenas
+
 public class VidaConCorazones : MonoBehaviour
 {
     [Header("Configuración de Vida")]
@@ -96,6 +98,16 @@ public class VidaConCorazones : MonoBehaviour
             anim.SetBool("IsDead", true); // Activa la animación de muerte
         }
 
-        // Aquí puedes agregar más lógica de muerte, como mostrar un UI de Game Over o reiniciar la escena.
+        // Aquí se llama a la coroutine para esperar 2 segundos antes de cargar la escena
+        StartCoroutine(CargarEscenaGameOver());
+    }
+
+    private IEnumerator CargarEscenaGameOver()
+    {
+        // Esperar 2 segundos antes de cambiar de escena
+        yield return new WaitForSeconds(2f);
+
+        // Cambiar a la escena GameOver
+        SceneManager.LoadScene("GameOver");  // Asegúrate de que la escena GameOver exista en tu proyecto
     }
 }
