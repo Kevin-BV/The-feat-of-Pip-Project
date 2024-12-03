@@ -16,7 +16,13 @@ public class VolumenSlider_Icono : MonoBehaviour
     public GameObject sfxOffImage;      // Imagen de mute (silencio) para los efectos de sonido
 
     public AudioSource musicAudioSource;  // AudioSource que controla la música
-    public AudioSource sfxAudioSource;    // AudioSource que controla los efectos de sonido
+    public AudioSource sfxAudioSource;    // AudioSource que controla los efectos de sonido generales
+
+    public AudioSource playerSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
+    public AudioSource rataSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
+    public AudioSource avispaSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
+    public AudioSource bichoSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
+
 
     private void Start()
     {
@@ -46,8 +52,30 @@ public class VolumenSlider_Icono : MonoBehaviour
     // Este método se llamará cuando el slider de efectos de sonido cambie su valor
     public void HandleSfxVolumeChange(float value)
     {
-        // Cambiar el volumen de los efectos de sonido según el valor del slider
+        // Cambiar el volumen de los efectos de sonido generales según el valor del slider
         sfxAudioSource.volume = value;
+
+        // Cambiar el volumen del jugador según el slider de SFX
+        if (playerSfxAudioSource != null)
+        {
+            playerSfxAudioSource.volume = value;
+        }
+        // Cambiar el volumen del bicho según el slider de SFX
+        if (bichoSfxAudioSource != null)
+        {
+            bichoSfxAudioSource.volume = value;
+        }
+        // Cambiar el volumen de la rata según el slider de SFX
+        if (rataSfxAudioSource != null)
+        {
+            rataSfxAudioSource.volume = value;
+        }
+
+        // Cambiar el volumen de la avispa según el slider de SFX
+        if (avispaSfxAudioSource != null)
+        {
+            avispaSfxAudioSource.volume = value;
+        }
 
         // Actualizar el icono de los efectos de sonido
         UpdateSfxIcon(value);

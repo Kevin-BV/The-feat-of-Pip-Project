@@ -25,6 +25,11 @@ public class Rata : MonoBehaviour
 
     private Vector3 posicionAnterior; // Para verificar si hay movimiento
 
+    [Header("Sistema de Sonido")]
+    public AudioClip hiss; // Audio al caminar
+    public AudioClip hisshurt; // Audio al recibir daño
+    private AudioSource audioSource;
+
     void Start()
     {
         vidaActual = vidaMaxima;
@@ -36,6 +41,13 @@ public class Rata : MonoBehaviour
         }
 
         posicionAnterior = transform.position; // Inicializar la posición previa
+
+        // Inicializar el componente AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("No se encontró un AudioSource en el GameObject de la Rata.");
+        }
     }
 
     void Update()
@@ -48,7 +60,6 @@ public class Rata : MonoBehaviour
             return;
         }
 
-        // Detectar al jugador en el rango en X
         float distanciaX = Mathf.Abs(transform.position.x - jugador.position.x); // Solo mide distancia en X
         estaSiguiendo = distanciaX <= rangoDeDeteccion;
 
@@ -57,7 +68,6 @@ public class Rata : MonoBehaviour
             SeguirJugador();
         }
 
-        // Atacar si está en rango
         float distanciaXZ = Vector3.Distance(new Vector3(transform.position.x, 0f, transform.position.z),
                                              new Vector3(jugador.position.x, 0f, jugador.position.z));
         if (distanciaXZ <= tamanoGizmo && puedeAtacar)
@@ -65,7 +75,6 @@ public class Rata : MonoBehaviour
             AtacarJugador();
         }
 
-        // Verificar si realmente está en movimiento
         VerificarMovimiento();
     }
 
@@ -78,10 +87,8 @@ public class Rata : MonoBehaviour
 
         if (distanciaXZ > rangoDeAcercamiento)
         {
-            // Movimiento solo en X y Z
             transform.position += new Vector3(direccion.x, 0f, direccion.z) * velocidadMovimiento * Time.deltaTime;
 
-            // Girar si cambia de dirección
             if ((direccion.x > 0 && !mirandoDerecha) || (direccion.x < 0 && mirandoDerecha))
             {
                 Girar();
@@ -91,17 +98,29 @@ public class Rata : MonoBehaviour
 
     private void VerificarMovimiento()
     {
-        // Si la posición actual es diferente de la anterior, está caminando
         if (transform.position != posicionAnterior)
         {
             anim.SetBool("Walk", true);
+
+            // Reproducir sonido al caminar si no está ya sonando
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = hiss;
+                audioSource.loop = true; // Loop para el sonido de caminar
+                audioSource.Play();
+            }
         }
         else
         {
             anim.SetBool("Walk", false);
+
+            // Detener el sonido si no está caminando
+            if (audioSource.clip == hiss && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
         }
 
-        // Actualizar la posición anterior
         posicionAnterior = transform.position;
     }
 
@@ -117,7 +136,7 @@ public class Rata : MonoBehaviour
         StartCoroutine(CooldownAtaque());
     }
 
-    private System.Collections.IEnumerator CooldownAtaque()
+    private IEnumerator CooldownAtaque()
     {
         puedeAtacar = false;
         yield return new WaitForSeconds(1f); // Cooldown de ataque
@@ -139,6 +158,9 @@ public class Rata : MonoBehaviour
         vidaActual -= cantidad;
         Debug.Log($"Rata recibió {cantidad} de daño. Vida restante: {vidaActual}");
 
+        // Reproducir sonido al recibir daño
+        audioSource.PlayOneShot(hisshurt);
+
         if (vidaActual <= 0)
         {
             Morir();
@@ -149,22 +171,27 @@ public class Rata : MonoBehaviour
     {
         anim.SetTrigger("Death");
         velocidadMovimiento = 0;
+
+        // Detener cualquier sonido restante
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+
         Destroy(gameObject, 5f); // Destruir después de 5 segundos
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), rangoDeDeteccion); // Rango de detección solo en X/Z
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), rangoDeDeteccion);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), tamanoGizmo); // Rango de ataque
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), tamanoGizmo);
     }
 
-    // Detectar colisiones con un trigger
     private void OnTriggerEnter(Collider other)
     {
-        // Comprobar si el objeto que colisiona tiene el tag de ataque del jugador
         if (other.CompareTag("PlayerAttack"))
         {
             RecibirDano(1); // Ajusta el daño según sea necesario

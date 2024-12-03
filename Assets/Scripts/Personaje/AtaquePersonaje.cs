@@ -15,10 +15,13 @@ public class AtaquePersonaje : MonoBehaviour
 
     private Collider colliderDeAtaque; // Referencia al collider del punto de ataque
 
+    public AudioClip ataquefosforo; 
+    private AudioSource audioSource;
     void Start()
     {
         anim = GetComponent<Animator>();
         colliderDeAtaque = puntoDeAtaque.GetComponent<Collider>();
+        audioSource = GetComponent<AudioSource>();
 
         // Asegúrate de que el collider esté desactivado al inicio
         if (colliderDeAtaque != null)
@@ -46,6 +49,7 @@ public class AtaquePersonaje : MonoBehaviour
     {
         anim.SetTrigger("Atacar");
         tiempoDelUltimoAtaque = Time.time;
+        audioSource.PlayOneShot(ataquefosforo);
 
         // Activar el collider temporalmente
         if (colliderDeAtaque != null)

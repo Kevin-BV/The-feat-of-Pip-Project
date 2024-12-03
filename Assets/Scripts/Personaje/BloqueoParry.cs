@@ -10,10 +10,15 @@ public class BloqueoParry : MonoBehaviour
 
     public float tiempoDeBloqueo = 1f; // Duración del bloqueo en segundos
 
+    public AudioClip escudo;
+    private AudioSource audioSource;
+
     void Start()
     {
         // Obtener el Animator para controlar las animaciones
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -32,6 +37,7 @@ public class BloqueoParry : MonoBehaviour
     {
         bloqueando = true; // Indica que el jugador está bloqueando
         puedeRecibirDano = false; // Evita que el jugador reciba daño
+        audioSource.PlayOneShot(escudo);
 
         // Activar la animación de "Defenderse"
         anim.SetTrigger("Defenderse");

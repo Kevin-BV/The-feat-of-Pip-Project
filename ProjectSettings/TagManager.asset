@@ -44,3 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemigo
+    uniqueID: 2825528891
+    locked: 0
+  - name: Pip
+    uniqueID: 4061022113
+    locked: 0

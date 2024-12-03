@@ -23,6 +23,12 @@ public class Avispa : MonoBehaviour
     private bool estaSiguiendo = false; // Controla si está siguiendo al jugador
     private bool puedeAtacar = true; // Controla si puede atacar
 
+    public AudioClip buzz;
+    public AudioClip buzzhurt;
+    private AudioSource audioSource;
+
+    private bool estaReproduciendoBuzz = false; // Para evitar que el sonido de vuelo se superponga
+
     void Start()
     {
         vidaActual = vidaMaxima;
@@ -33,6 +39,9 @@ public class Avispa : MonoBehaviour
         {
             jugador = playerObj.transform;
         }
+
+        // Configurar el AudioSource
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,6 +51,8 @@ public class Avispa : MonoBehaviour
         if (jugador == null)
         {
             anim.SetBool("isFlying", false);
+            audioSource.Stop(); // Detener sonido si no está persiguiendo
+            estaReproduciendoBuzz = false;
             return;
         }
 
@@ -82,10 +93,26 @@ public class Avispa : MonoBehaviour
             {
                 Girar();
             }
+
+            // Reproducir sonido de vuelo si no se está reproduciendo
+            if (!estaReproduciendoBuzz)
+            {
+                audioSource.clip = buzz;
+                audioSource.loop = true; // Bucle para el sonido de vuelo
+                audioSource.Play();
+                estaReproduciendoBuzz = true;
+            }
         }
         else
         {
             anim.SetBool("isFlying", false);
+
+            // Detener sonido de vuelo si se detiene
+            if (estaReproduciendoBuzz)
+            {
+                audioSource.Stop();
+                estaReproduciendoBuzz = false;
+            }
         }
     }
 
@@ -119,9 +146,14 @@ public class Avispa : MonoBehaviour
     public void RecibirDano(int cantidad)
     {
         if (vidaActual <= 0) return;
-
         vidaActual -= cantidad;
         Debug.Log($"Avispa recibió {cantidad} de daño. Vida restante: {vidaActual}");
+
+        // Reproducir sonido de daño
+        audioSource.Stop(); // Detener cualquier otro sonido
+        audioSource.clip = buzzhurt;
+        audioSource.loop = false; // Sonido de daño no necesita bucle
+        audioSource.Play();
 
         if (vidaActual <= 0)
         {
