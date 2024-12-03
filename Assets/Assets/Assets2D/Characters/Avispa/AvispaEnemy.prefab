@@ -168,7 +168,7 @@ MonoBehaviour:
   rangoDeAcercamiento: 1.5
   visual: {fileID: 4495991161489760645}
   anim: {fileID: 7604033036403167678}
-  tamanoGizmo: 0
+  tamanoGizmo: 2
   vidaMaxima: 3
   buzz: {fileID: 8300000, guid: 8434dddcb4e7a7846a0fa55277b3f760, type: 3}
   buzzhurt: {fileID: 8300000, guid: 140022536e87d924d8ab638f4b4c64ff, type: 3}

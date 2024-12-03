@@ -837,6 +837,9 @@ MonoBehaviour:
   corazonLleno: {fileID: 1558716668, guid: 9fab2831f95f3e44ba41feb437c416c3, type: 3}
   corazonMitad: {fileID: 584891692, guid: 9fab2831f95f3e44ba41feb437c416c3, type: 3}
   corazonVacio: {fileID: 2115679680, guid: 9fab2831f95f3e44ba41feb437c416c3, type: 3}
+  audioSource: {fileID: 6121475406980282175}
+  sonidoDanio: {fileID: 8300000, guid: 23f9ecc201b02fc43bad45495b51daae, type: 3}
+  sonidoMuerte: {fileID: 8300000, guid: e0e2af665e8e0ca419e1666b1fc1070a, type: 3}
 --- !u!114 &9138105806929592627
 MonoBehaviour:
   m_ObjectHideFlags: 0

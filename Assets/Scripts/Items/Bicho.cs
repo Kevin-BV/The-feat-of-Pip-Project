@@ -5,22 +5,27 @@ using UnityEngine;
 public class Bicho : MonoBehaviour
 {
     [Header("Configuración")]
-    public float velocidadEscapar = 5f; // Velocidad del bicho al escapar
-    public float rangoDeteccion = 5f; // Rango del gizmo para detectar al jugador
-    public Animator anim; // Animator para las animaciones ("Idle", "Alerta", "Escapar")
+    public float velocidadEscapar = 5f;
+    public float rangoDeteccion = 5f;
+    public Animator anim;
+
+    [Header("Sonidos")]
+    public AudioSource audioSource; // Componente de AudioSource
+    public AudioClip sonidoAlerta; // Sonido al estar en alerta
+    public AudioClip sonidoCorrer; // Sonido mientras escapa
+    public AudioClip sonidoConsumido; // Sonido al ser consumido por el jugador
 
     [Header("Gizmo")]
-    public Color colorGizmo = Color.yellow; // Color del gizmo
+    public Color colorGizmo = Color.yellow;
 
-    private Transform jugador; // Referencia al jugador
-    private bool jugadorDetectado = false; // Indica si el jugador está dentro del rango
-    private bool enAlerta = false; // Controla si el bicho está en la animación de "Alerta"
-    private bool escapando = false; // Controla si el bicho está escapando
-    private bool mirandoDerecha = true; // Dirección del bicho (true = derecha, false = izquierda)
+    private Transform jugador;
+    private bool jugadorDetectado = false;
+    private bool enAlerta = false;
+    private bool escapando = false;
+    private bool mirandoDerecha = true;
 
     void Start()
     {
-        // Buscar al jugador por su tag "Player"
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
@@ -32,7 +37,6 @@ public class Bicho : MonoBehaviour
     {
         if (jugador == null) return;
 
-        // Comprobar si el jugador está dentro del rango de detección
         float distancia = Vector3.Distance(transform.position, jugador.position);
         jugadorDetectado = distancia <= rangoDeteccion;
 
@@ -46,22 +50,32 @@ public class Bicho : MonoBehaviour
     {
         enAlerta = true;
 
-        // Reproducir animación de "Alerta"
+        // Reproducir sonido de alerta
+        if (audioSource && sonidoAlerta)
+            audioSource.PlayOneShot(sonidoAlerta);
+
         anim.SetTrigger("Alerta");
         yield return new WaitForSeconds(0.5f);
 
-        // Cambiar a la animación de "Escapar"
         anim.SetTrigger("Escapar");
         escapando = true;
 
-        // Iniciar movimiento en dirección contraria al jugador
+        // Reproducir sonido de correr mientras escapa
+        if (audioSource && sonidoCorrer)
+            audioSource.loop = true;
+        audioSource.clip = sonidoCorrer;
+        audioSource.Play();
+
         while (jugadorDetectado)
         {
             Escapar();
             yield return null;
         }
 
-        // Si el jugador ya no está detectado, volver a "Idle"
+        // Detener sonido de correr
+        if (audioSource && audioSource.clip == sonidoCorrer)
+            audioSource.Stop();
+
         escapando = false;
         anim.SetTrigger("Idle");
         enAlerta = false;
@@ -69,28 +83,20 @@ public class Bicho : MonoBehaviour
 
     private void Escapar()
     {
-        // Calcular dirección contraria al jugador
         Vector3 direccionContraria = (transform.position - jugador.position).normalized;
-
-        // Asegurarse de que el movimiento solo sea en X y Z
         direccionContraria.y = 0;
 
-        // Rotar el bicho hacia la dirección del movimiento
         Girar(direccionContraria.x);
-
-        // Mover al bicho
         transform.position += direccionContraria * velocidadEscapar * Time.deltaTime;
     }
 
     private void Girar(float direccionX)
     {
-        // Si el bicho está moviéndose hacia la izquierda y no está mirando a la izquierda
         if (direccionX < 0 && mirandoDerecha)
         {
             mirandoDerecha = false;
             Voltear();
         }
-        // Si el bicho está moviéndose hacia la derecha y no está mirando a la derecha
         else if (direccionX > 0 && !mirandoDerecha)
         {
             mirandoDerecha = true;
@@ -100,7 +106,6 @@ public class Bicho : MonoBehaviour
 
     private void Voltear()
     {
-        // Invertir la escala en el eje X
         Vector3 escala = transform.localScale;
         escala.x *= -1;
         transform.localScale = escala;
@@ -108,14 +113,12 @@ public class Bicho : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Si colisiona con el jugador
         if (other.CompareTag("Player"))
         {
-            // Recuperar 1 de vida al jugador
             VidaConCorazones vidaJugador = other.GetComponent<VidaConCorazones>();
             if (vidaJugador != null)
             {
-                vidaJugador.Curar(1);
+                vidaJugador.Curar(1); // Esto activará automáticamente el sonido desde `VidaConCorazones`
                 Debug.Log("El jugador ha recuperado 1 de vida.");
             }
 
@@ -124,9 +127,9 @@ public class Bicho : MonoBehaviour
         }
     }
 
+
     private void OnDrawGizmosSelected()
     {
-        // Dibujar el rango de detección
         Gizmos.color = colorGizmo;
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }

@@ -1,37 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UI;
-
 
 public class VidaConCorazones : MonoBehaviour
 {
     [Header("Configuración de Vida")]
-    public int vidaMaxima = 6; // Vida máxima (6 puntos de vida = 3 corazones completos)
-    private int vidaActual; // Vida actual del jugador
+    public int vidaMaxima = 6;
+    private int vidaActual;
 
     [Header("Configuración del UI de Corazones")]
-    public List<Image> corazones; // Lista de imágenes de los corazones en el Canvas
-    public Sprite corazonLleno;  // Sprite de un corazón completo
-    public Sprite corazonMitad; // Sprite de un corazón a la mitad
-    public Sprite corazonVacio; // Sprite de un corazón vacío
+    public List<Image> corazones;
+    public Sprite corazonLleno;
+    public Sprite corazonMitad;
+    public Sprite corazonVacio;
+
+    [Header("Sonidos")]
+    public AudioSource audioSource; // Componente de AudioSource
+    public AudioClip sonidoDanio; // Sonido al recibir daño
+    public AudioClip sonidoMuerte; // Sonido al morir
+    public AudioClip sonidoCuracion; // Sonido al recibir HP (por ejemplo, al consumir un ítem)
 
     void Start()
     {
-        // Inicializamos la vida al máximo y actualizamos el UI
         vidaActual = vidaMaxima;
         ActualizarCorazones();
     }
 
-    /// <summary>
-    /// Método para recibir daño.
-    /// </summary>
-    /// <param name="dano">Cantidad de daño recibido.</param>
     public void RecibirDano(int dano)
     {
-        vidaActual = Mathf.Max(vidaActual - dano, 0); // Aseguramos que la vida no sea menor a 0
+        vidaActual = Mathf.Max(vidaActual - dano, 0);
         ActualizarCorazones();
+
+        // Reproducir sonido de daño
+        if (audioSource && sonidoDanio)
+            audioSource.PlayOneShot(sonidoDanio);
 
         if (vidaActual <= 0)
         {
@@ -39,46 +42,48 @@ public class VidaConCorazones : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Método para curar al jugador.
-    /// </summary>
-    /// <param name="curacion">Cantidad de puntos de vida a recuperar.</param>
     public void Curar(int curacion)
     {
-        vidaActual = Mathf.Min(vidaActual + curacion, vidaMaxima); // Aseguramos que la vida no pase del máximo
+        int vidaAnterior = vidaActual;
+        vidaActual = Mathf.Min(vidaActual + curacion, vidaMaxima);
         ActualizarCorazones();
+
+        // Solo reproducir sonido de curación si la vida aumentó
+        if (audioSource && sonidoCuracion && vidaActual > vidaAnterior)
+        {
+            audioSource.PlayOneShot(sonidoCuracion);
+        }
     }
 
-    /// <summary>
-    /// Actualiza el estado visual de los corazones en el UI.
-    /// </summary>
     private void ActualizarCorazones()
     {
         for (int i = 0; i < corazones.Count; i++)
         {
-            int puntoDeVida = (i + 1) * 2; // Cada corazón representa 2 puntos de vida
+            int puntoDeVida = (i + 1) * 2;
 
             if (vidaActual >= puntoDeVida)
             {
-                corazones[i].sprite = corazonLleno; // Corazón lleno
+                corazones[i].sprite = corazonLleno;
             }
             else if (vidaActual == puntoDeVida - 1)
             {
-                corazones[i].sprite = corazonMitad; // Corazón a la mitad
+                corazones[i].sprite = corazonMitad;
             }
             else
             {
-                corazones[i].sprite = corazonVacio; // Corazón vacío
+                corazones[i].sprite = corazonVacio;
             }
         }
     }
 
-    /// <summary>
-    /// Lógica que se ejecuta cuando la vida del jugador llega a 0.
-    /// </summary>
     private void Morir()
     {
         Debug.Log("El jugador ha muerto.");
-        // Aquí puedes implementar la lógica de muerte (reiniciar nivel, mostrar pantalla de game over, etc.)
+
+        // Reproducir sonido de muerte
+        if (audioSource && sonidoMuerte)
+            audioSource.PlayOneShot(sonidoMuerte);
+
+        // Implementar lógica de muerte aquí
     }
 }
