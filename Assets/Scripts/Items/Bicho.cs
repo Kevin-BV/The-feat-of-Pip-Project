@@ -24,12 +24,26 @@ public class Bicho : MonoBehaviour
     private bool escapando = false;
     private bool mirandoDerecha = true;
 
+    public GameObject collisionPlayer; // Referencia al Empty llamado CollisionPlayer
+    private Collider collisionPlayerCollider; // Collider esférico del Empty
+
     void Start()
     {
+        // Asignar el jugador
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
             jugador = playerObj.transform;
+        }
+
+        // Obtener el collider esférico del Empty CollisionPlayer
+        if (collisionPlayer != null)
+        {
+            collisionPlayerCollider = collisionPlayer.GetComponent<Collider>();
+            if (collisionPlayerCollider != null)
+            {
+                collisionPlayerCollider.isTrigger = true; // Asegurarse de que sea un trigger
+            }
         }
     }
 
@@ -113,6 +127,7 @@ public class Bicho : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Detecta al jugador dentro del collider esférico
         if (other.CompareTag("Player"))
         {
             VidaConCorazones vidaJugador = other.GetComponent<VidaConCorazones>();
@@ -122,18 +137,18 @@ public class Bicho : MonoBehaviour
                 Debug.Log("El jugador ha recuperado 1 de vida.");
             }
 
+            // Reproducir sonido de ser consumido
+            if (audioSource && sonidoConsumido)
+                audioSource.PlayOneShot(sonidoConsumido);
+
             // Destruir al bicho
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
-
 
     private void OnDrawGizmosSelected()
     {
+        // Dibuja un gizmo para visualizar el rango de detección
         Gizmos.color = colorGizmo;
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }

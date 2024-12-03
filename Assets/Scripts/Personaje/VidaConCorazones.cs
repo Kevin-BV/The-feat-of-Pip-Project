@@ -21,10 +21,13 @@ public class VidaConCorazones : MonoBehaviour
     public AudioClip sonidoMuerte; // Sonido al morir
     public AudioClip sonidoCuracion; // Sonido al recibir HP (por ejemplo, al consumir un ítem)
 
+    private Animator anim; // Referencia al Animator
+
     void Start()
     {
         vidaActual = vidaMaxima;
         ActualizarCorazones();
+        anim = GetComponent<Animator>(); // Obtenemos el Animator
     }
 
     public void RecibirDano(int dano)
@@ -84,6 +87,15 @@ public class VidaConCorazones : MonoBehaviour
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
 
-        // Implementar lógica de muerte aquí
+        // Detener el movimiento del personaje
+        GetComponent<MovimientoPersonaje>().enabled = false;  // Desactiva el script de movimiento para detenerlo
+
+        // Activar la animación de muerte
+        if (anim != null)
+        {
+            anim.SetBool("IsDead", true); // Activa la animación de muerte
+        }
+
+        // Aquí puedes agregar más lógica de muerte, como mostrar un UI de Game Over o reiniciar la escena.
     }
 }

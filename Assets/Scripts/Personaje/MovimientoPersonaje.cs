@@ -22,6 +22,12 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
+        // Si el personaje está muerto, no permite el movimiento
+        if (anim.GetBool("IsDead"))
+        {
+            return; // Detiene todo el movimiento si está muerto
+        }
+
         // Capturamos las entradas de movimiento
         float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
