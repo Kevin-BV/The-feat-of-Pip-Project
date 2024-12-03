@@ -10,98 +10,113 @@ public class SpiderBoss : MonoBehaviour
     public Transform player; // Referencia al jugador (arrastrar el objeto del jugador al inspector)
     public float gizmoSize = 1f; // Tamaño del Gizmo de dirección
 
-    private Vector3 startingPosition; // Posición inicial de la araña
+    public int vida = 20; // Vida de la araña (se puede editar desde el inspector)
+    private Animator animator;
+
+    public Collider ataqueCollider; // El único collider de la araña
+
+    private int attackCounter = 0; // Contador de ataques para intercalar Attack_1 y Attack_2
+
+    private float tiempoUltimoDanio = 0f; // Tiempo del último daño recibido
+
+    public float intervaloDanio = 1f; // Intervalo en segundos para que el jugador reciba daño
+
+    private bool jugadorDentroCollider = false; // Para verificar si el jugador está dentro del collider
+
+    private float tiempoUltimoAtaque = 0f; // Tiempo del último ataque para que sea cada 4 segundos
+    public float intervaloAtaque = 4f; // Intervalo entre ataques (4 segundos)
 
     void Start()
     {
-        startingPosition = transform.position; // Guardar la posición inicial
-        StartCoroutine(MoveSpider()); // Iniciar la secuencia de movimiento
+        animator = GetComponent<Animator>();
+        // Aseguramos que el collider de la araña sea un trigger
+        ataqueCollider.isTrigger = true;
     }
 
     void Update()
     {
-        // Hacer que la araña mire al jugador cambiando su escala en el eje X
+        // Lógica de movimiento de la araña (no cambia)
         if (player != null)
         {
-            // Calcular la dirección hacia el jugador
             Vector3 directionToPlayer = player.position - transform.position;
 
-            // Si el jugador está a la izquierda de la araña, invertir la escala X
             if (directionToPlayer.x < 0)
             {
-                // Cambiar la escala en el eje X para "mirar" hacia la izquierda
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             else
             {
-                // Cambiar la escala en el eje X para "mirar" hacia la derecha
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
+
+        // Verifica si ha pasado el intervalo para hacer un ataque
+        if (jugadorDentroCollider && Time.time - tiempoUltimoAtaque >= intervaloAtaque)
+        {
+            // Solo aplicamos el daño si el jugador está dentro del collider y la araña ejecuta un ataque
+            if (attackCounter < 3)
+            {
+                animator.SetTrigger("Attack_1");
+                attackCounter++;
+                // Hacer daño con Attack_1 (solo si está dentro del collider)
+                player.GetComponent<VidaConCorazones>().RecibirDano(1);
+                Debug.Log("El jugador ha recibido daño de 1 punto por Attack_1.");
+            }
+            else
+            {
+                animator.SetTrigger("Attack_2");
+                attackCounter = 0; // Reseteamos el contador
+                // Hacer daño con Attack_2 (solo si está dentro del collider)
+                player.GetComponent<VidaConCorazones>().RecibirDano(2);
+                Debug.Log("El jugador ha recibido daño de 2 puntos por Attack_2.");
+            }
+
+            tiempoUltimoAtaque = Time.time; // Actualizar el tiempo del último ataque
+        }
+
+        // Aquí eliminamos la lógica que aplicaba daño cuando el jugador está solo dentro del collider,
+        // porque el daño ahora se aplica solo durante un ataque.
     }
 
-    IEnumerator MoveSpider()
+    private void OnTriggerEnter(Collider other)
     {
-        // Esperar 10 segundos al principio antes de comenzar el movimiento
-        yield return new WaitForSeconds(waitTime);
-
-        while (true) // El ciclo continuará indefinidamente
+        // Detectamos cuando el jugador entra en el rango del collider
+        if (other.CompareTag("Player"))
         {
-            // Subir 7 espacios en Y
-            Vector3 targetPosition = startingPosition + new Vector3(0, moveAmount, 0);
-            yield return StartCoroutine(MoveToPosition(targetPosition));
-
-            // Mover a la izquierda 7 espacios en X
-            targetPosition = transform.position + new Vector3(-moveAmount, 0, 0);
-            yield return StartCoroutine(MoveToPosition(targetPosition));
-
-            // Bajar 7 espacios en Y
-            targetPosition = transform.position + new Vector3(0, -moveAmount, 0);
-            yield return StartCoroutine(MoveToPosition(targetPosition));
-
-            // Esperar 10 segundos después de completar un ciclo de movimiento
-            yield return new WaitForSeconds(waitTime);
-
-            // Subir 7 espacios en Y nuevamente
-            targetPosition = transform.position + new Vector3(0, moveAmount, 0);
-            yield return StartCoroutine(MoveToPosition(targetPosition));
-
-            // Avanzar 10 espacios a la derecha en X
-            targetPosition = transform.position + new Vector3(10, 0, 0);
-            yield return StartCoroutine(MoveToPosition(targetPosition));
-
-            // Bajar 7 espacios en Y
-            targetPosition = transform.position + new Vector3(0, -moveAmount, 0);
-            yield return StartCoroutine(MoveToPosition(targetPosition));
-
-            // Esperar 10 segundos después de completar el ciclo de movimiento hacia el otro lado
-            yield return new WaitForSeconds(waitTime);
+            jugadorDentroCollider = true; // El jugador está dentro del rango
+            Debug.Log("El jugador ha entrado en el rango de la araña.");
+        }
+        else if (other.CompareTag("PlayerAttack"))
+        {
+            Debug.Log("¡La araña está recibiendo daño!");
+            RecibirDano(1); // Aquí se llama a la función de daño
         }
     }
 
-    IEnumerator MoveToPosition(Vector3 targetPosition)
+    private void OnTriggerExit(Collider other)
     {
-        float timeToReach = Vector3.Distance(transform.position, targetPosition) / moveSpeed;
-        float elapsedTime = 0;
-
-        while (elapsedTime < timeToReach)
+        // Detectamos cuando el jugador sale del rango del collider
+        if (other.CompareTag("Player"))
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, (elapsedTime / timeToReach));
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            jugadorDentroCollider = false; // El jugador salió del rango
+            Debug.Log("El jugador ha salido del rango de la araña.");
         }
-        transform.position = targetPosition; // Asegurarse de llegar al punto final
     }
 
-    // Dibujar el Gizmo en el editor para ver la dirección
-    void OnDrawGizmos()
+    private void OnTriggerStay(Collider other)
     {
-        if (player != null)
+        // No es necesario hacer nada aquí si ya estamos manejando los ataques en Update()
+    }
+
+    public void RecibirDano(int dano)
+    {
+        vida -= dano;
+        Debug.Log("La araña recibió " + dano + " de daño. Vida restante: " + vida);
+
+        if (vida <= 0)
         {
-            // Dibujar una línea que muestra la dirección hacia el jugador
-            Gizmos.color = Color.red; // Color de la línea
-            Gizmos.DrawLine(transform.position, player.position);
-            Gizmos.DrawSphere(transform.position + (player.position - transform.position).normalized * gizmoSize, gizmoSize);
+            Debug.Log("¡La araña ha muerto!");
+            // Aquí puedes agregar la lógica de muerte (como destruir la araña, etc.)
         }
     }
 }
