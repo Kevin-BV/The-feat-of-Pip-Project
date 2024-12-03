@@ -3117,6 +3117,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3824285851981073216, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9998969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824285851981073216, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.014361584
+      objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: corazones.Array.data[0]
@@ -3137,6 +3147,26 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1421469548}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9995549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000092925745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000009864375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.029834913
+      objectReference: {fileID: 0}
     - target: {fileID: 9138105806929592627, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: audioSource
@@ -6477,7 +6507,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5500
+  m_ColorTemperature: 5135
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1225397452497691370}
   - component: {fileID: 8653372549017098669}
+  - component: {fileID: 5662222315688564689}
+  - component: {fileID: 8871966781987867577}
   m_Layer: 0
   m_Name: XButton
   m_TagString: Untagged
@@ -70,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1469438405
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 65ec61426cf8bdf4581036840350de80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,6 +86,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &5662222315688564689
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314559021730004613}
+  m_Enabled: 1
+  m_SortingLayerID: -1469438405
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+--- !u!114 &8871966781987867577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314559021730004613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b095f01347b8e44a4fdfd23abf0ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetOrden: 0
 --- !u!1 &2553894204071588327
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,8 +138,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 295.36826, y: 21.121727, z: -24.031044}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8242556339515731459}
   - {fileID: 1225397452497691370}
@@ -149,6 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8242556339515731459}
   - component: {fileID: 2608270934414352296}
+  - component: {fileID: 2844242685101076617}
+  - component: {fileID: 8037298591014911628}
   m_Layer: 0
   m_Name: Caja de fosforos
   m_TagString: Untagged
@@ -165,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 6138995542083344606}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2164396, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 2.51, y: -15.521727, z: 43.431046}
+  m_LocalPosition: {x: 2.51, y: -15.521727, z: 46.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -209,8 +238,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1469438405
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 25c15bfb5c872fb4aa0b81099ff8b218, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -223,3 +252,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2844242685101076617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138995542083344606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b095f01347b8e44a4fdfd23abf0ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetOrden: 0
+--- !u!210 &8037298591014911628
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138995542083344606}
+  m_Enabled: 1
+  m_SortingLayerID: -1469438405
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
