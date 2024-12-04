@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Necesario para trabajar con UI
 
+using UnityEngine.SceneManagement; // Para cambiar de escena
+
 public class SpiderBoss : MonoBehaviour
 {
     public float moveSpeed = 5f; // Velocidad de movimiento
     public float moveAmount = 7f; // Cantidad de movimiento
     public float waitTime = 10f; // Tiempo de espera en segundos al principio y entre ciclos
-    public Transform player; // Referencia al jugador (arrastrar el objeto del jugador al inspector)
+    public Transform player; // Referencia al jugador
     public float gizmoSize = 1f; // Tamaño del Gizmo de dirección
 
-    public int vida = 50; // Vida de la araña (se puede editar desde el inspector)
+    public int vida = 50; // Vida de la araña
     private Animator animator;
 
     public Collider ataqueCollider; // El único collider de la araña
@@ -19,11 +21,9 @@ public class SpiderBoss : MonoBehaviour
     private int attackCounter = 0; // Contador de ataques para intercalar Attack_1 y Attack_2
 
     private float tiempoUltimoDanio = 0f; // Tiempo del último daño recibido
-
     public float intervaloDanio = 1f; // Intervalo en segundos para que el jugador reciba daño
 
-    private bool jugadorDentroCollider = false; // Para verificar si el jugador está dentro del collider
-
+    private bool jugadorDentroCollider = false; // Verifica si el jugador está dentro del collider
     private float tiempoUltimoAtaque = 0f; // Tiempo del último ataque para que sea cada 4 segundos
     public float intervaloAtaque = 4f; // Intervalo entre ataques (4 segundos)
 
@@ -31,19 +31,24 @@ public class SpiderBoss : MonoBehaviour
     public Image barraVida; // Barra de vida del boss (relleno)
     public Image bordeBarraVida; // Borde de la barra de vida (opcional)
 
+    private bool estaMuerta = false; // Indica si la araña está muerta
+
+    [Tooltip("Nombre de la escena de créditos")]
+    public string escenaCreditos = "Creditos"; // Escena que se cargará tras la muerte
+
     void Start()
     {
         animator = GetComponent<Animator>();
-        // Aseguramos que el collider de la araña sea un trigger
         ataqueCollider.isTrigger = true;
-
-        // Inicializar la barra de vida al comienzo
         ActualizarBarraVida();
     }
 
     void Update()
     {
-        // Lógica de movimiento de la araña (no cambia)
+        // Si está muerta, no hace nada
+        if (estaMuerta) return;
+
+        // Lógica de movimiento de la araña
         if (player != null)
         {
             Vector3 directionToPlayer = player.position - transform.position;
@@ -58,86 +63,100 @@ public class SpiderBoss : MonoBehaviour
             }
         }
 
-        // Verifica si ha pasado el intervalo para hacer un ataque
+        // Ataque solo si el jugador está en rango
         if (jugadorDentroCollider && Time.time - tiempoUltimoAtaque >= intervaloAtaque)
         {
-            // Solo aplicamos el daño si el jugador está dentro del collider y la araña ejecuta un ataque
             if (attackCounter < 3)
             {
                 animator.SetTrigger("Attack_1");
                 attackCounter++;
-                // Hacer daño con Attack_1 (solo si está dentro del collider)
                 player.GetComponent<VidaConCorazones>().RecibirDano(1);
                 Debug.Log("El jugador ha recibido daño de 1 punto por Attack_1.");
             }
             else
             {
                 animator.SetTrigger("Attack_2");
-                attackCounter = 0; // Reseteamos el contador
-                // Hacer daño con Attack_2 (solo si está dentro del collider)
+                attackCounter = 0;
                 player.GetComponent<VidaConCorazones>().RecibirDano(2);
                 Debug.Log("El jugador ha recibido daño de 2 puntos por Attack_2.");
             }
 
-            tiempoUltimoAtaque = Time.time; // Actualizar el tiempo del último ataque
+            tiempoUltimoAtaque = Time.time;
         }
-
-        // Aquí eliminamos la lógica que aplicaba daño cuando el jugador está solo dentro del collider,
-        // porque el daño ahora se aplica solo durante un ataque.
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Detectamos cuando el jugador entra en el rango del collider
+        if (estaMuerta) return; // No detecta colisiones si está muerta
+
         if (other.CompareTag("Player"))
         {
-            jugadorDentroCollider = true; // El jugador está dentro del rango
+            jugadorDentroCollider = true;
             Debug.Log("El jugador ha entrado en el rango de la araña.");
         }
         else if (other.CompareTag("PlayerAttack"))
         {
             Debug.Log("¡La araña está recibiendo daño!");
-            RecibirDano(1); // Aquí se llama a la función de daño
+            RecibirDano(1);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Detectamos cuando el jugador sale del rango del collider
+        if (estaMuerta) return;
+
         if (other.CompareTag("Player"))
         {
-            jugadorDentroCollider = false; // El jugador salió del rango
+            jugadorDentroCollider = false;
             Debug.Log("El jugador ha salido del rango de la araña.");
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        // No es necesario hacer nada aquí si ya estamos manejando los ataques en Update()
-    }
-
     public void RecibirDano(int dano)
     {
+        if (estaMuerta) return; // No puede recibir daño si ya está muerta
+
         vida -= dano;
         Debug.Log("La araña recibió " + dano + " de daño. Vida restante: " + vida);
-
-        // Actualizamos la barra de vida cada vez que la araña recibe daño
         ActualizarBarraVida();
 
         if (vida <= 0)
         {
-            Debug.Log("¡La araña ha muerto!");
-            // Aquí puedes agregar la lógica de muerte (como destruir la araña, etc.)
+            Morir();
+        }
+    }
+
+    private void Morir()
+    {
+        if (estaMuerta) return; // Asegura que solo se ejecute una vez
+
+        estaMuerta = true; // Marca que la araña está muerta
+        animator.SetTrigger("Death"); // Reproduce la animación de muerte
+        Debug.Log("¡La araña ha muerto!");
+
+        // Desactiva el collider y detiene toda lógica
+        ataqueCollider.enabled = false;
+
+        // Cambia a la escena de créditos tras 5 segundos
+        Invoke("CambiarEscenaCreditos", 5f);
+    }
+
+    private void CambiarEscenaCreditos()
+    {
+        if (!string.IsNullOrEmpty(escenaCreditos))
+        {
+            SceneManager.LoadScene(escenaCreditos);
+        }
+        else
+        {
+            Debug.LogWarning("El nombre de la escena de créditos no está configurado en el inspector.");
         }
     }
 
     private void ActualizarBarraVida()
     {
-        // Calculamos el valor del relleno de la barra en función de la vida restante
-        float porcentajeVida = (float)vida / 50f; // Asumiendo que la vida máxima es 50
+        float porcentajeVida = (float)vida / 50f;
         barraVida.fillAmount = porcentajeVida;
-
-        // Debug.Log para verificar que se está actualizando correctamente
         Debug.Log("Barra de vida actualizada. Vida: " + vida + " / " + 50 + " | Relleno: " + porcentajeVida);
     }
 }
