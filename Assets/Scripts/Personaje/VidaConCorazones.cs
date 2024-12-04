@@ -24,26 +24,31 @@ public class VidaConCorazones : MonoBehaviour
     public AudioClip sonidoCuracion; // Sonido al recibir HP (por ejemplo, al consumir un ítem)
 
     private Animator anim; // Referencia al Animator
+    private BloqueoParry bloqueoParry; // Referencia al script de bloqueo para verificar invulnerabilidad
 
     void Start()
     {
         vidaActual = vidaMaxima;
         ActualizarCorazones();
         anim = GetComponent<Animator>(); // Obtenemos el Animator
+        bloqueoParry = GetComponent<BloqueoParry>(); // Obtenemos la referencia del script de bloqueo
     }
 
     public void RecibirDano(int dano)
     {
-        vidaActual = Mathf.Max(vidaActual - dano, 0);
-        ActualizarCorazones();
-
-        // Reproducir sonido de daño
-        if (audioSource && sonidoDanio)
-            audioSource.PlayOneShot(sonidoDanio);
-
-        if (vidaActual <= 0)
+        if (bloqueoParry.PuedeRecibirDano()) // Solo recibir daño si el jugador no está bloqueando
         {
-            Morir();
+            vidaActual = Mathf.Max(vidaActual - dano, 0);
+            ActualizarCorazones();
+
+            // Reproducir sonido de daño
+            if (audioSource && sonidoDanio)
+                audioSource.PlayOneShot(sonidoDanio);
+
+            if (vidaActual <= 0)
+            {
+                Morir();
+            }
         }
     }
 
