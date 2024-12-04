@@ -22,6 +22,7 @@ public class VolumenSlider_Icono : MonoBehaviour
     public AudioSource rataSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
     public AudioSource avispaSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
     public AudioSource bichoSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
+    public AudioSource aranaSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
 
 
     private void Start()
@@ -77,8 +78,22 @@ public class VolumenSlider_Icono : MonoBehaviour
             avispaSfxAudioSource.volume = value;
         }
 
+        if (aranaSfxAudioSource != null)
+        {
+            aranaSfxAudioSource.volume = value;
+        }
+
+
         // Actualizar el icono de los efectos de sonido
         UpdateSfxIcon(value);
+
+        sfxAudioSource.volume = value;
+
+        if (aranaSfxAudioSource != null)
+        {
+            aranaSfxAudioSource.volume = value;  // Asegúrate de que este valor se aplica.
+            Debug.Log($"Volumen de SpiderBoss ajustado a: {value}");
+        }
     }
 
     private void UpdateMusicIcon(float volume)
