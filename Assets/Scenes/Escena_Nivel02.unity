@@ -4341,6 +4341,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.46729484
       objectReference: {fileID: 0}
+    - target: {fileID: 5938555410660605747, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: volumenSlider
+      value: 
+      objectReference: {fileID: 1778518896}
     - target: {fileID: 6608226352060219652, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -4721,6 +4726,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1778518894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1778518896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1778518894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7177ef17452e1f44eb27751e79212bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1783157248
 GameObject:
   m_ObjectHideFlags: 0
