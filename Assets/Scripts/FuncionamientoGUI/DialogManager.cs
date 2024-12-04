@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Asegúrate de importar TextMeshPro
+using TMPro;
 
 public class DialogManager : MonoBehaviour
 {

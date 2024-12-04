@@ -2130,8 +2130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fdc8886dcdf7a4d9e942e7c7e0cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: "Estos escarabajos te regeneran HP, \xA1Atrapa uno!"
+  firstDialogText: "Esos bichos recuperan tu salud, \xA1Atrapa ese!"
+  secondDialogText: 
   dialogManager: {fileID: 974842083}
+  dialogDuration: 6
 --- !u!65 &590264508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2151,8 +2153,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.702938, y: 18.964684, z: 16.592485}
-  m_Center: {x: -16.35776, y: 29.55109, z: -19.598743}
+  m_Size: {x: 17.969398, y: 18.964684, z: 16.592484}
+  m_Center: {x: -16.952314, y: 29.55109, z: -19.598743}
 --- !u!4 &590264509
 Transform:
   m_ObjectHideFlags: 0
@@ -2162,7 +2164,7 @@ Transform:
   m_GameObject: {fileID: 590264506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.92, y: -22.01, z: 27.81}
+  m_LocalPosition: {x: 54.57, y: -22.01, z: 27.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2297,9 +2299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fdc8886dcdf7a4d9e942e7c7e0cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: Para atacar debes hacer CLICK IZQUIERDO, y para bloquear debes hacer
-    CLICK DERECHO.
+  firstDialogText: Para atacar debes hacer CLICK IZQUIERDO, y para bloquear CLICK
+    DERECHO.
+  secondDialogText: 
   dialogManager: {fileID: 974842083}
+  dialogDuration: 6
 --- !u!65 &622828384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2319,8 +2323,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.702938, y: 18.964684, z: 16.592485}
-  m_Center: {x: -16.35776, y: 29.55109, z: -19.598743}
+  m_Size: {x: 13.1457405, y: 18.964684, z: 16.592484}
+  m_Center: {x: -17.502611, y: 29.55109, z: -19.598743}
 --- !u!4 &622828385
 Transform:
   m_ObjectHideFlags: 0
@@ -4494,8 +4498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -422.90027}
-  m_SizeDelta: {x: 0, y: -901.0029}
+  m_AnchoredPosition: {x: -1.9588013, y: -422.90027}
+  m_SizeDelta: {x: -58.7651, y: -901.0029}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1237269256
 PrefabInstance:
@@ -5564,9 +5568,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fdc8886dcdf7a4d9e942e7c7e0cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: Bienvenido al mundo Pip. Para moverte debes usar WASD, y para saltar
-    la tecla ESPACIO
+  firstDialogText: Bienvenido al mundo, Pip.
+  secondDialogText: Para moverte debes usar las teclas WASD, y para saltar debes
+    presionar la tecla ESPACIO
   dialogManager: {fileID: 974842083}
+  dialogDuration: 6
 --- !u!1001 &1610478946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6220,8 +6226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fdc8886dcdf7a4d9e942e7c7e0cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: 
+  firstDialogText: "\xA1Mata a la rata para continuar tu traves\xEDa!"
+  secondDialogText: 
   dialogManager: {fileID: 974842083}
+  dialogDuration: 10
 --- !u!65 &1792804073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6241,8 +6249,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.702938, y: 18.964684, z: 16.592485}
-  m_Center: {x: -16.35776, y: 29.55109, z: -19.598743}
+  m_Size: {x: 25.58852, y: 18.964684, z: 16.592484}
+  m_Center: {x: -10.782763, y: 29.55109, z: -19.598743}
 --- !u!4 &1792804074
 Transform:
   m_ObjectHideFlags: 0
@@ -6252,7 +6260,7 @@ Transform:
   m_GameObject: {fileID: 1792804071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.81, y: -22.01, z: 27.81}
+  m_LocalPosition: {x: 68.72, y: -22.01, z: 27.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
