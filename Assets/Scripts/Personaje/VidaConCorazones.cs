@@ -85,6 +85,8 @@ public class VidaConCorazones : MonoBehaviour
     {
         Debug.Log("El jugador ha muerto.");
 
+        PlayerPrefs.SetString("UltimaEscena", SceneManager.GetActiveScene().name);
+
         // Reproducir sonido de muerte
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
