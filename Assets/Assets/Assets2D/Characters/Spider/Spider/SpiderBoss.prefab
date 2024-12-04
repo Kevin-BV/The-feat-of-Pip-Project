@@ -229,7 +229,7 @@ MonoBehaviour:
   waitTime: 10
   player: {fileID: 0}
   gizmoSize: 1
-  vida: 20
+  vida: 50
   ataqueCollider: {fileID: 8309110319794021559}
   intervaloDanio: 4
   intervaloAtaque: 4

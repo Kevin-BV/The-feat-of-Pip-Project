@@ -188,6 +188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462549727346159935, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
         type: 3}
+      propertyPath: vida
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462549727346159935, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1520023226}
@@ -611,6 +616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvispaEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295117708178773220, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
