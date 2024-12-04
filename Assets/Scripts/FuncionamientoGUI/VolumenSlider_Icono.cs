@@ -6,125 +6,83 @@ public class VolumenSlider_Icono : MonoBehaviour
     public Slider musicSlider;  // Slider para controlar el volumen de la música
     public Slider sfxSlider;    // Slider para controlar el volumen de los efectos de sonido
 
-    public GameObject musicIconObject;  // GameObject que contiene las imágenes de sonido de la música
-    public GameObject sfxIconObject;    // GameObject que contiene las imágenes de sonido de los efectos de sonido
-
     public GameObject musicOnImage;     // Imagen de sonido activado para la música
-    public GameObject musicOffImage;    // Imagen de mute (silencio) para la música
+    public GameObject musicOffImage;    // Imagen de mute para la música
 
     public GameObject sfxOnImage;       // Imagen de sonido activado para los efectos de sonido
-    public GameObject sfxOffImage;      // Imagen de mute (silencio) para los efectos de sonido
+    public GameObject sfxOffImage;      // Imagen de mute para los efectos de sonido
 
     public AudioSource musicAudioSource;  // AudioSource que controla la música
-    public AudioSource sfxAudioSource;    // AudioSource que controla los efectos de sonido generales
+    public AudioSource sfxAudioSource;    // AudioSource general de efectos de sonido
 
-    public AudioSource playerSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
-    public AudioSource rataSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
-    public AudioSource avispaSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
-    public AudioSource bichoSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
-    public AudioSource aranaSfxAudioSource; // AudioSource específico para los efectos de sonido del jugador
-
+    public AudioSource playerSfxAudioSource;  // AudioSource para los efectos del jugador
+    public AudioSource rataSfxAudioSource;    // AudioSource para los efectos de la rata
+    public AudioSource avispaSfxAudioSource;  // AudioSource para los efectos de la avispa
+    public AudioSource bichoSfxAudioSource;   // AudioSource para los efectos del bicho
+    public AudioSource aranaSfxAudioSource;   // AudioSource para los efectos de la araña
 
     private void Start()
     {
-        // Asegurarnos de que el volumen de los sliders esté sincronizado con los valores actuales
+        // Sincronizar los sliders con los valores actuales
         musicSlider.value = musicAudioSource.volume;
         sfxSlider.value = sfxAudioSource.volume;
 
-        // Asignar los eventos OnValueChanged para cada slider
+        // Asignar eventos de cambio de volumen
         musicSlider.onValueChanged.AddListener(HandleMusicVolumeChange);
         sfxSlider.onValueChanged.AddListener(HandleSfxVolumeChange);
 
-        // Establecer las imágenes correctas al inicio
+        // Sincronizar los valores iniciales de los SFX
+        SincronizarTodosLosSfx();
+
+        // Actualizar íconos
         UpdateMusicIcon(musicAudioSource.volume);
         UpdateSfxIcon(sfxAudioSource.volume);
     }
 
-    // Este método se llamará cuando el slider de música cambie su valor
     public void HandleMusicVolumeChange(float value)
     {
-        // Cambiar el volumen de la música según el valor del slider
+        // Cambiar el volumen de la música
         musicAudioSource.volume = value;
 
-        // Actualizar el icono de la música
+        // Actualizar el ícono
         UpdateMusicIcon(value);
     }
 
-    // Este método se llamará cuando el slider de efectos de sonido cambie su valor
     public void HandleSfxVolumeChange(float value)
     {
-        // Cambiar el volumen de los efectos de sonido generales según el valor del slider
+        // Cambiar el volumen general de efectos de sonido
         sfxAudioSource.volume = value;
 
-        // Cambiar el volumen del jugador según el slider de SFX
-        if (playerSfxAudioSource != null)
-        {
-            playerSfxAudioSource.volume = value;
-        }
-        // Cambiar el volumen del bicho según el slider de SFX
-        if (bichoSfxAudioSource != null)
-        {
-            bichoSfxAudioSource.volume = value;
-        }
-        // Cambiar el volumen de la rata según el slider de SFX
-        if (rataSfxAudioSource != null)
-        {
-            rataSfxAudioSource.volume = value;
-        }
+        // Aplicar el cambio a todos los SFX individuales
+        if (playerSfxAudioSource != null) playerSfxAudioSource.volume = value;
+        if (rataSfxAudioSource != null) rataSfxAudioSource.volume = value;
+        if (avispaSfxAudioSource != null) avispaSfxAudioSource.volume = value;
+        if (bichoSfxAudioSource != null) bichoSfxAudioSource.volume = value;
+        if (aranaSfxAudioSource != null) aranaSfxAudioSource.volume = value;
 
-        // Cambiar el volumen de la avispa según el slider de SFX
-        if (avispaSfxAudioSource != null)
-        {
-            avispaSfxAudioSource.volume = value;
-        }
-
-        if (aranaSfxAudioSource != null)
-        {
-            aranaSfxAudioSource.volume = value;
-        }
-
-
-        // Actualizar el icono de los efectos de sonido
+        // Actualizar el ícono de SFX
         UpdateSfxIcon(value);
+    }
 
-        sfxAudioSource.volume = value;
-
-        if (aranaSfxAudioSource != null)
-        {
-            aranaSfxAudioSource.volume = value;  // Asegúrate de que este valor se aplica.
-            Debug.Log($"Volumen de SpiderBoss ajustado a: {value}");
-        }
+    private void SincronizarTodosLosSfx()
+    {
+        // Sincronizar los volúmenes iniciales de los SFX con el slider
+        if (playerSfxAudioSource != null) playerSfxAudioSource.volume = sfxSlider.value;
+        if (rataSfxAudioSource != null) rataSfxAudioSource.volume = sfxSlider.value;
+        if (avispaSfxAudioSource != null) avispaSfxAudioSource.volume = sfxSlider.value;
+        if (bichoSfxAudioSource != null) bichoSfxAudioSource.volume = sfxSlider.value;
+        if (aranaSfxAudioSource != null) aranaSfxAudioSource.volume = sfxSlider.value;
     }
 
     private void UpdateMusicIcon(float volume)
     {
-        if (volume == 0)
-        {
-            // Si el volumen de la música es 0, mostrar la imagen de mute de música
-            musicOnImage.SetActive(false);
-            musicOffImage.SetActive(true);
-        }
-        else
-        {
-            // Si el volumen de la música no es 0, mostrar la imagen de sonido activado de música
-            musicOnImage.SetActive(true);
-            musicOffImage.SetActive(false);
-        }
+        musicOnImage.SetActive(volume > 0);
+        musicOffImage.SetActive(volume == 0);
     }
 
     private void UpdateSfxIcon(float volume)
     {
-        if (volume == 0)
-        {
-            // Si el volumen de los efectos de sonido es 0, mostrar la imagen de mute de SFX
-            sfxOnImage.SetActive(false);
-            sfxOffImage.SetActive(true);
-        }
-        else
-        {
-            // Si el volumen de los efectos de sonido no es 0, mostrar la imagen de sonido activado de SFX
-            sfxOnImage.SetActive(true);
-            sfxOffImage.SetActive(false);
-        }
+        sfxOnImage.SetActive(volume > 0);
+        sfxOffImage.SetActive(volume == 0);
     }
 }

@@ -7,31 +7,21 @@ using UnityEngine.SceneManagement;
 public class SpiderBoss : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float moveAmount = 7f;
-    public float waitTime = 10f;
     public Transform player;
-    public float gizmoSize = 1f;
 
     public int vida = 50;
     private Animator animator;
 
     public Collider ataqueCollider;
-
     private int attackCounter = 0;
-
-    private float tiempoUltimoDanio = 0f;
-    public float intervaloDanio = 1f;
 
     private bool jugadorDentroCollider = false;
     private float tiempoUltimoAtaque = 0f;
     public float intervaloAtaque = 4f;
 
     public Image barraVida;
-    public Image bordeBarraVida;
 
     private bool estaMuerta = false;
-
-    [Tooltip("Nombre de la escena de créditos")]
     public string escenaCreditos = "Creditos";
 
     public AudioSource audioSource;
@@ -46,14 +36,23 @@ public class SpiderBoss : MonoBehaviour
         ataqueCollider.isTrigger = true;
         ActualizarBarraVida();
 
-        audioSource = FindObjectOfType<VolumenSlider_Icono>().aranaSfxAudioSource;
+        // Asegurar que el AudioSource se sincronice con el deslizador desde el inicio
+        var volumenController = FindObjectOfType<VolumenSlider_Icono>();
+        if (volumenController != null)
+        {
+            audioSource = volumenController.aranaSfxAudioSource;
+            if (audioSource != null)
+            {
+                audioSource.volume = volumenController.sfxSlider.value;
+            }
+        }
     }
 
     void Update()
     {
         if (estaMuerta) return;
 
-        // Reproduce el sonido de "sonidoAraña" constantemente
+        // Reproduce el sonido de la araña en bucle si no está ya reproduciéndose
         if (!estaReproduciendoSonidoAraña && sonidoAraña != null)
         {
             audioSource.clip = sonidoAraña;
@@ -66,32 +65,18 @@ public class SpiderBoss : MonoBehaviour
         if (player != null)
         {
             Vector3 directionToPlayer = player.position - transform.position;
-
-            if (directionToPlayer.x < 0)
-            {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
-            else
-            {
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
+            transform.localScale = new Vector3(
+                directionToPlayer.x < 0 ? Mathf.Abs(transform.localScale.x) : -Mathf.Abs(transform.localScale.x),
+                transform.localScale.y,
+                transform.localScale.z
+            );
         }
 
         if (jugadorDentroCollider && Time.time - tiempoUltimoAtaque >= intervaloAtaque)
         {
-            if (attackCounter < 3)
-            {
-                animator.SetTrigger("Attack_1");
-                attackCounter++;
-                player.GetComponent<VidaConCorazones>().RecibirDano(1);
-            }
-            else
-            {
-                animator.SetTrigger("Attack_2");
-                attackCounter = 0;
-                player.GetComponent<VidaConCorazones>().RecibirDano(2);
-            }
-
+            animator.SetTrigger(attackCounter < 3 ? "Attack_1" : "Attack_2");
+            player.GetComponent<VidaConCorazones>().RecibirDano(attackCounter < 3 ? 1 : 2);
+            attackCounter = (attackCounter + 1) % 4;
             tiempoUltimoAtaque = Time.time;
         }
     }
@@ -100,24 +85,15 @@ public class SpiderBoss : MonoBehaviour
     {
         if (estaMuerta) return;
 
-        if (other.CompareTag("Player"))
-        {
-            jugadorDentroCollider = true;
-        }
-        else if (other.CompareTag("PlayerAttack"))
-        {
-            RecibirDano(1);
-        }
+        if (other.CompareTag("Player")) jugadorDentroCollider = true;
+        else if (other.CompareTag("PlayerAttack")) RecibirDano(1);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (estaMuerta) return;
 
-        if (other.CompareTag("Player"))
-        {
-            jugadorDentroCollider = false;
-        }
+        if (other.CompareTag("Player")) jugadorDentroCollider = false;
     }
 
     public void RecibirDano(int dano)
@@ -127,16 +103,8 @@ public class SpiderBoss : MonoBehaviour
         vida -= dano;
         ActualizarBarraVida();
 
-        // Reproduce el sonido de daño
-        if (sonidoHurt != null)
-        {
-            audioSource.PlayOneShot(sonidoHurt);
-        }
-
-        if (vida <= 0)
-        {
-            Morir();
-        }
+        if (sonidoHurt != null) audioSource.PlayOneShot(sonidoHurt);
+        if (vida <= 0) Morir();
     }
 
     private void Morir()
@@ -145,10 +113,7 @@ public class SpiderBoss : MonoBehaviour
 
         estaMuerta = true;
         animator.SetTrigger("Death");
-
-        // Detiene el sonido constante y cualquier otra reproducción
         audioSource.Stop();
-
         ataqueCollider.enabled = false;
 
         Invoke("CambiarEscenaCreditos", 5f);
@@ -157,14 +122,11 @@ public class SpiderBoss : MonoBehaviour
     private void CambiarEscenaCreditos()
     {
         if (!string.IsNullOrEmpty(escenaCreditos))
-        {
             SceneManager.LoadScene(escenaCreditos);
-        }
     }
 
     private void ActualizarBarraVida()
     {
-        float porcentajeVida = (float)vida / 50f;
-        barraVida.fillAmount = porcentajeVida;
+        barraVida.fillAmount = (float)vida / 50f;
     }
 }

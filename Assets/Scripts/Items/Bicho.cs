@@ -27,6 +27,9 @@ public class Bicho : MonoBehaviour
     public GameObject collisionPlayer; // Referencia al Empty llamado CollisionPlayer
     private Collider collisionPlayerCollider; // Collider esférico del Empty
 
+    // Slider de volumen de SFX (referencia global)
+    private VolumenSlider_Icono volumenSlider;
+
     void Start()
     {
         // Asignar el jugador
@@ -45,6 +48,13 @@ public class Bicho : MonoBehaviour
                 collisionPlayerCollider.isTrigger = true; // Asegurarse de que sea un trigger
             }
         }
+
+        // Obtener referencia al VolumenSlider_Icono
+        volumenSlider = FindObjectOfType<VolumenSlider_Icono>();
+        if (volumenSlider != null && audioSource != null)
+        {
+            audioSource.volume = volumenSlider.sfxSlider.value; // Sincronizar volumen inicial
+        }
     }
 
     void Update()
@@ -57,6 +67,12 @@ public class Bicho : MonoBehaviour
         if (jugadorDetectado && !enAlerta)
         {
             StartCoroutine(ActivarAlerta());
+        }
+
+        // Actualizar volumen dinámicamente en tiempo real
+        if (volumenSlider != null && audioSource != null)
+        {
+            audioSource.volume = volumenSlider.sfxSlider.value;
         }
     }
 
@@ -76,9 +92,11 @@ public class Bicho : MonoBehaviour
 
         // Reproducir sonido de correr mientras escapa
         if (audioSource && sonidoCorrer)
+        {
             audioSource.loop = true;
-        audioSource.clip = sonidoCorrer;
-        audioSource.Play();
+            audioSource.clip = sonidoCorrer;
+            audioSource.Play();
+        }
 
         while (jugadorDetectado)
         {
