@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Necesario para trabajar con UI
 
 public class SpiderBoss : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SpiderBoss : MonoBehaviour
     public Transform player; // Referencia al jugador (arrastrar el objeto del jugador al inspector)
     public float gizmoSize = 1f; // Tamaño del Gizmo de dirección
 
-    public int vida = 20; // Vida de la araña (se puede editar desde el inspector)
+    public int vida = 50; // Vida de la araña (se puede editar desde el inspector)
     private Animator animator;
 
     public Collider ataqueCollider; // El único collider de la araña
@@ -26,11 +27,18 @@ public class SpiderBoss : MonoBehaviour
     private float tiempoUltimoAtaque = 0f; // Tiempo del último ataque para que sea cada 4 segundos
     public float intervaloAtaque = 4f; // Intervalo entre ataques (4 segundos)
 
+    // Referencia a la barra de vida
+    public Image barraVida; // Barra de vida del boss (relleno)
+    public Image bordeBarraVida; // Borde de la barra de vida (opcional)
+
     void Start()
     {
         animator = GetComponent<Animator>();
         // Aseguramos que el collider de la araña sea un trigger
         ataqueCollider.isTrigger = true;
+
+        // Inicializar la barra de vida al comienzo
+        ActualizarBarraVida();
     }
 
     void Update()
@@ -113,10 +121,23 @@ public class SpiderBoss : MonoBehaviour
         vida -= dano;
         Debug.Log("La araña recibió " + dano + " de daño. Vida restante: " + vida);
 
+        // Actualizamos la barra de vida cada vez que la araña recibe daño
+        ActualizarBarraVida();
+
         if (vida <= 0)
         {
             Debug.Log("¡La araña ha muerto!");
             // Aquí puedes agregar la lógica de muerte (como destruir la araña, etc.)
         }
+    }
+
+    private void ActualizarBarraVida()
+    {
+        // Calculamos el valor del relleno de la barra en función de la vida restante
+        float porcentajeVida = (float)vida / 50f; // Asumiendo que la vida máxima es 50
+        barraVida.fillAmount = porcentajeVida;
+
+        // Debug.Log para verificar que se está actualizando correctamente
+        Debug.Log("Barra de vida actualizada. Vida: " + vida + " / " + 50 + " | Relleno: " + porcentajeVida);
     }
 }

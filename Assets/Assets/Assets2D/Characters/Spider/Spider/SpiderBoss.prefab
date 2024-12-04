@@ -146,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1852104679945936267
 Transform:
   m_ObjectHideFlags: 0
@@ -233,6 +233,8 @@ MonoBehaviour:
   ataqueCollider: {fileID: 8309110319794021559}
   intervaloDanio: 4
   intervaloAtaque: 4
+  barraVida: {fileID: 0}
+  bordeBarraVida: {fileID: 0}
 --- !u!136 &7300808026114667541
 CapsuleCollider:
   m_ObjectHideFlags: 0

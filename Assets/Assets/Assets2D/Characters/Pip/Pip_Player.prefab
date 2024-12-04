@@ -815,10 +815,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6994199
+  m_Radius: 1.2887486
   m_Height: 4.7178273
   m_Direction: 1
-  m_Center: {x: 0.1730999, y: 0.59753424, z: 0.13344856}
+  m_Center: {x: 0.2418958, y: 0.59753424, z: 0.1334485}
 --- !u!114 &4449989712704843358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,6 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoDeBloqueo: 0.5
+  tiempoInvulnerabilidad: 0.5
   escudo: {fileID: 8300000, guid: c444706be6328bc48b35b0d229a0abc7, type: 3}
 --- !u!82 &6121475406980282175
 AudioSource:
