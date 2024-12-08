@@ -44,7 +44,7 @@ public class Puntaje : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Puntaje: " + score;
+            scoreText.text = "" + score;
         }
         else
         {

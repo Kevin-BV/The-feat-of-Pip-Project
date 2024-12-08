@@ -1,10 +1,10 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
     [SerializeField] private GameObject dialogUI; // Referencia al panel del diálogo
-    [SerializeField] private TMP_Text dialogTextComponent; // Referencia al componente TextMeshPro
+    [SerializeField] private Text FuenteTexto;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialog(string dialogText)
     {
-        dialogTextComponent.text = dialogText;
+        FuenteTexto.text = dialogText;
         dialogUI.SetActive(true);
     }
 
