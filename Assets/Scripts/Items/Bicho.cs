@@ -27,9 +27,12 @@ public class Bicho : MonoBehaviour
     public GameObject collisionPlayer; // Referencia al Empty llamado CollisionPlayer
     private Collider collisionPlayerCollider; // Collider esférico del Empty
 
+<<<<<<< Updated upstream
     // Slider de volumen de SFX (referencia global)
     private VolumenSlider_Icono volumenSlider;
 
+=======
+>>>>>>> Stashed changes
     void Start()
     {
         // Asignar el jugador
@@ -48,6 +51,7 @@ public class Bicho : MonoBehaviour
                 collisionPlayerCollider.isTrigger = true; // Asegurarse de que sea un trigger
             }
         }
+<<<<<<< Updated upstream
 
         // Obtener referencia al VolumenSlider_Icono
         volumenSlider = FindObjectOfType<VolumenSlider_Icono>();
@@ -55,6 +59,8 @@ public class Bicho : MonoBehaviour
         {
             audioSource.volume = volumenSlider.sfxSlider.value; // Sincronizar volumen inicial
         }
+=======
+>>>>>>> Stashed changes
     }
 
     void Update()
