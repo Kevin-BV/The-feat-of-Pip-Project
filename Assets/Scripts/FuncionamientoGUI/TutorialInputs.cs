@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class TutorialInputs : MonoBehaviour
 {
-    [Header("Imagen a activar")]
-    public Image targetImage; // La imagen que quieres activar desde el inspector
+    [Header("Objeto a activar/desactivar")]
+    public GameObject targetObject; // El objeto que quieres activar/desactivar desde el inspector
 
     private void Start()
     {
-        if (targetImage != null)
+        if (targetObject != null)
         {
-            targetImage.gameObject.SetActive(false); // Asegurarte de que la imagen está desactivada al inicio
+            targetObject.SetActive(false); // Asegúrate de que el objeto está desactivado al inicio
         }
     }
 
@@ -20,13 +21,13 @@ public class TutorialInputs : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Verifica si el objeto tiene el tag "Player"
         {
-            if (targetImage != null)
+            if (targetObject != null)
             {
-                targetImage.gameObject.SetActive(true); // Activa la imagen
+                targetObject.SetActive(true); // Activa el objeto
             }
             else
             {
-                Debug.LogWarning("No se ha asignado ninguna imagen en el inspector.");
+                Debug.LogWarning("No se ha asignado ningún objeto en el inspector.");
             }
         }
     }
@@ -35,9 +36,9 @@ public class TutorialInputs : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Verifica si el objeto tiene el tag "Player"
         {
-            if (targetImage != null)
+            if (targetObject != null)
             {
-                targetImage.gameObject.SetActive(false); // Desactiva la imagen
+                targetObject.SetActive(false); // Desactiva el objeto
             }
         }
     }
