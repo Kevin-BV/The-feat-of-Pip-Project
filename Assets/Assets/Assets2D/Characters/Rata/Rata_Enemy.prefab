@@ -3589,6 +3589,7 @@ GameObject:
   - component: {fileID: 1881311679210733809}
   - component: {fileID: 584137218819684800}
   - component: {fileID: 7463350174655434939}
+  - component: {fileID: -54228561134984266}
   m_Layer: 6
   m_Name: Rata_Enemy
   m_TagString: Enemy
@@ -3759,6 +3760,21 @@ CapsuleCollider:
   m_Height: 7.2194014
   m_Direction: 1
   m_Center: {x: -3.1097007, y: 0, z: 0}
+--- !u!114 &-54228561134984266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527873623093158354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e0ed699b0727449b5bf0b9f8497055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1358330270073521157, guid: a2da71a6537cbcf418eb038878e782cc,
+    type: 3}
+  spawnCount: 2
 --- !u!1 &8582812272387065683
 GameObject:
   m_ObjectHideFlags: 0

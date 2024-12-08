@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 7313290660221212503}
   - component: {fileID: 7300808026114667541}
   - component: {fileID: 2278489045180502470}
+  - component: {fileID: 4907419591680055136}
   m_Layer: 6
   m_Name: SpiderBoss
   m_TagString: Enemy
@@ -227,17 +228,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  moveAmount: 7
-  waitTime: 10
   player: {fileID: 0}
-  gizmoSize: 1
   vida: 50
   ataqueCollider: {fileID: 8309110319794021559}
-  intervaloDanio: 4
   intervaloAtaque: 4
   barraVida: {fileID: 0}
-  bordeBarraVida: {fileID: 0}
   escenaCreditos: Creditos
+  audioSource: {fileID: 0}
+  "sonidoAra\xF1a": {fileID: 0}
+  sonidoHurt: {fileID: 0}
 --- !u!114 &7313290660221212503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +285,21 @@ SortingGroup:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &4907419591680055136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546269188671874548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e0ed699b0727449b5bf0b9f8497055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1358330270073521157, guid: a2da71a6537cbcf418eb038878e782cc,
+    type: 3}
+  spawnCount: 4
 --- !u!1 &1671222920156011771
 GameObject:
   m_ObjectHideFlags: 0
