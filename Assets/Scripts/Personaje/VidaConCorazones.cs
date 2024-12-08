@@ -24,20 +24,14 @@ public class VidaConCorazones : MonoBehaviour
     public AudioClip sonidoCuracion; // Sonido al recibir HP (por ejemplo, al consumir un ítem)
 
     private Animator anim; // Referencia al Animator
-<<<<<<< Updated upstream
     private BloqueoParry bloqueoParry; // Referencia al script de bloqueo para verificar invulnerabilidad
-=======
->>>>>>> Stashed changes
 
     void Start()
     {
         vidaActual = vidaMaxima;
         ActualizarCorazones();
         anim = GetComponent<Animator>(); // Obtenemos el Animator
-<<<<<<< Updated upstream
         bloqueoParry = GetComponent<BloqueoParry>(); // Obtenemos la referencia del script de bloqueo
-=======
->>>>>>> Stashed changes
     }
 
     public void RecibirDano(int dano)
@@ -111,7 +105,6 @@ public class VidaConCorazones : MonoBehaviour
             anim.SetBool("IsDead", true); // Activa la animación de muerte
         }
 
-<<<<<<< Updated upstream
         // Aquí se llama a la coroutine para esperar 2 segundos antes de cargar la escena
         StartCoroutine(CargarEscenaGameOver());
     }
@@ -123,8 +116,5 @@ public class VidaConCorazones : MonoBehaviour
 
         // Cambiar a la escena GameOver
         SceneManager.LoadScene("GameOver");  // Asegúrate de que la escena GameOver exista en tu proyecto
-=======
-        // Aquí puedes agregar más lógica de muerte, como mostrar un UI de Game Over o reiniciar la escena.
->>>>>>> Stashed changes
     }
 }
