@@ -99,6 +99,163 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Cara_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 436
+      y: 193
+      width: 65
+      height: 42
+    spriteID: 6a00823064a2edb41a00d030547fb3ad
+    spriteBone:
+    - name: Cabeza
+      guid: 862074ec7e57bac4796684b2b8250193
+      position: {x: 63.574585, y: 36.978897, z: 0}
+      rotation: {x: 0, y: 0, z: -0.9227481, w: 0.38540366}
+      length: 55.832497
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 65, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 42}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 65, y: 42}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 436, y: 193}
+    spritePosition: {x: 133, y: 172}
+  - name: Cara_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 431
+      y: 114
+      width: 67
+      height: 37
+    spriteID: 19b09ce4636e79445ba08e5a906d2fb5
+    spriteBone:
+    - name: Cabeza
+      guid: 862074ec7e57bac4796684b2b8250193
+      position: {x: 64.574585, y: 33.978897, z: 0}
+      rotation: {x: 0, y: 0, z: -0.9227481, w: 0.38540366}
+      length: 55.832497
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    - name: PataL_3
+      guid: d025a448dfcf5ad4bab4a8bf7099ed88
+      position: {x: 45.659363, y: 36.820084, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9897017, w: -0.1431457}
+      length: 86.77046
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4286643968
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 67, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 37}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 67, y: 37}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 431, y: 114}
+    spritePosition: {x: 132, y: 175}
   - name: Colmillo_R
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -265,163 +422,6 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 153, y: 381}
     spritePosition: {x: 125, y: 123}
-  - name: Cara_2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 431
-      y: 114
-      width: 67
-      height: 37
-    spriteID: 19b09ce4636e79445ba08e5a906d2fb5
-    spriteBone:
-    - name: Cabeza
-      guid: 862074ec7e57bac4796684b2b8250193
-      position: {x: 64.574585, y: 33.978897, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9227481, w: 0.38540366}
-      length: 55.832497
-      parentId: -1
-      color:
-        serializedVersion: 2
-        rgba: 4294967040
-    - name: PataL_3
-      guid: d025a448dfcf5ad4bab4a8bf7099ed88
-      position: {x: 45.659363, y: 36.820084, z: 0}
-      rotation: {x: 0, y: 0, z: 0.9897017, w: -0.1431457}
-      length: 86.77046
-      parentId: -1
-      color:
-        serializedVersion: 2
-        rgba: 4286643968
-    spriteOutline: []
-    vertices:
-    - position: {x: 0, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 67, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0, y: 37}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 67, y: 37}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    spritePhysicsOutline: []
-    indices: 000000000200000001000000010000000200000003000000
-    edges:
-    - {x: 0, y: 1}
-    - {x: 0, y: 2}
-    - {x: 1, y: 3}
-    - {x: 2, y: 3}
-    tessellationDetail: 0
-    uvTransform: {x: 431, y: 114}
-    spritePosition: {x: 132, y: 175}
-  - name: Cara_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 436
-      y: 193
-      width: 65
-      height: 42
-    spriteID: 6a00823064a2edb41a00d030547fb3ad
-    spriteBone:
-    - name: Cabeza
-      guid: 862074ec7e57bac4796684b2b8250193
-      position: {x: 63.574585, y: 36.978897, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9227481, w: 0.38540366}
-      length: 55.832497
-      parentId: -1
-      color:
-        serializedVersion: 2
-        rgba: 4294967040
-    spriteOutline: []
-    vertices:
-    - position: {x: 0, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 65, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0, y: 42}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 65, y: 42}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    spritePhysicsOutline: []
-    indices: 000000000200000001000000010000000200000003000000
-    edges:
-    - {x: 0, y: 1}
-    - {x: 0, y: 2}
-    - {x: 1, y: 3}
-    - {x: 2, y: 3}
-    tessellationDetail: 0
-    uvTransform: {x: 436, y: 193}
-    spritePosition: {x: 133, y: 172}
   - name: Cabeza
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4243,10 +4243,40 @@ ScriptedImporter:
     flatten: 0
     isImported: 0
     isVisible: 1
+  - name: Cara
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 3caa58b9bbc1f42488c10d7a127da3f8
+    layerID: 2621037
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Cara_1
+    spriteName: Cara_1
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 6a00823064a2edb41a00d030547fb3ad
+    layerID: 677995343
+    mosaicPosition: {x: 436, y: 193}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cara_2
+    spriteName: Cara_2
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 19b09ce4636e79445ba08e5a906d2fb5
+    layerID: 1081279870
+    mosaicPosition: {x: 431, y: 114}
+    flatten: 0
+    isImported: 1
+    isVisible: 0
   - name: Colmillo_R
     spriteName: Colmillo_R
     isGroup: 0
-    parentIndex: 0
+    parentIndex: 1
     spriteID: ad47fb9b179c21146b0253b77886fc2f
     layerID: -967136226
     mosaicPosition: {x: 153, y: 319}
@@ -4256,30 +4286,10 @@ ScriptedImporter:
   - name: Colmillo_L
     spriteName: Colmillo_L
     isGroup: 0
-    parentIndex: 0
+    parentIndex: 1
     spriteID: e9716335084d477458673011691bb0d6
     layerID: -1417474920
     mosaicPosition: {x: 153, y: 381}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Cara_2
-    spriteName: Cara_2
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 19b09ce4636e79445ba08e5a906d2fb5
-    layerID: 1081279870
-    mosaicPosition: {x: 431, y: 114}
-    flatten: 0
-    isImported: 1
-    isVisible: 0
-  - name: Cara_1
-    spriteName: Cara_1
-    isGroup: 0
-    parentIndex: 0
-    spriteID: 6a00823064a2edb41a00d030547fb3ad
-    layerID: 677995343
-    mosaicPosition: {x: 436, y: 193}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -4316,7 +4326,7 @@ ScriptedImporter:
   - name: Pata_R
     spriteName: 
     isGroup: 1
-    parentIndex: 7
+    parentIndex: 8
     spriteID: f1554b66b1ba219429a44e9d3ed34c87
     layerID: 1061094385
     mosaicPosition: {x: 0, y: 0}
@@ -4326,7 +4336,7 @@ ScriptedImporter:
   - name: PataR_4
     spriteName: PataR_4
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: 26456682c70a5d24087454f9dfd350e6
     layerID: -934621111
     mosaicPosition: {x: 267, y: 4}
@@ -4336,7 +4346,7 @@ ScriptedImporter:
   - name: PataR_3
     spriteName: PataR_3
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: ce244b67cd59a8843badfee760038afe
     layerID: -934621118
     mosaicPosition: {x: 4, y: 154}
@@ -4346,7 +4356,7 @@ ScriptedImporter:
   - name: PataR_2
     spriteName: PataR_2
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: c9c52e058431af7429a4bbca6bd834ec
     layerID: -934621117
     mosaicPosition: {x: 267, y: 193}
@@ -4356,7 +4366,7 @@ ScriptedImporter:
   - name: PataR_1
     spriteName: PataR_1
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 9
     spriteID: 8e5729ec696d1aa4e8c4d59b239452a5
     layerID: -934621116
     mosaicPosition: {x: 267, y: 259}
@@ -4366,7 +4376,7 @@ ScriptedImporter:
   - name: Pata_L
     spriteName: 
     isGroup: 1
-    parentIndex: 7
+    parentIndex: 8
     spriteID: 6602d3e539e7a66429d940fe9a29ad81
     layerID: 610755691
     mosaicPosition: {x: 0, y: 0}
@@ -4376,7 +4386,7 @@ ScriptedImporter:
   - name: PataL_4
     spriteName: PataL_4
     isGroup: 0
-    parentIndex: 13
+    parentIndex: 14
     spriteID: 8a7edee9cc85fc243bb2ccad59f2bfe4
     layerID: -934621285
     mosaicPosition: {x: 267, y: 114}
@@ -4386,7 +4396,7 @@ ScriptedImporter:
   - name: PataL_3
     spriteName: PataL_3
     isGroup: 0
-    parentIndex: 13
+    parentIndex: 14
     spriteID: 4cea9c002b7b3a14f903ece3dd430620
     layerID: -934621280
     mosaicPosition: {x: 153, y: 147}
@@ -4396,7 +4406,7 @@ ScriptedImporter:
   - name: PataL_2
     spriteName: PataL_2
     isGroup: 0
-    parentIndex: 13
+    parentIndex: 14
     spriteID: 8eadbfb8be3360444ba61597a2a2a060
     layerID: -934621279
     mosaicPosition: {x: 153, y: 4}
@@ -4406,7 +4416,7 @@ ScriptedImporter:
   - name: PataL_1
     spriteName: PataL_1
     isGroup: 0
-    parentIndex: 13
+    parentIndex: 14
     spriteID: cdec7e57e53538443afb95bd14dc2fea
     layerID: -934621282
     mosaicPosition: {x: 4, y: 279}
@@ -4424,7 +4434,13 @@ ScriptedImporter:
     isImported: 1
     isVisible: 1
   sharedRigPSDLayers: []
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: 
+    name: Cara_2
+    layerId: 0
+    flatten: 0
+    isGroup: 0
+    importLayer: 0
   importFileNodeState: 1
   platformSettingsDirtyTick: 0
   spriteSizeExpandChanged: 0
