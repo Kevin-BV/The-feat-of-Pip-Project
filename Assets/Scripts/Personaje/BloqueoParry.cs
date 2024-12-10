@@ -15,62 +15,65 @@ public class BloqueoParry : MonoBehaviour
     public AudioClip escudo;
     private AudioSource audioSource;
 
+    // Referencia al script de ataque
+    public AtaquePersonaje scriptAtaque;
+
     void Start()
     {
-        // Obtener el Animator para controlar las animaciones
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        // Buscar el script de ataque en el mismo objeto si no está asignado
+        if (scriptAtaque == null)
+        {
+            scriptAtaque = GetComponent<AtaquePersonaje>();
+        }
     }
 
     void Update()
     {
-        // Detectamos si se presiona el clic derecho y no está bloqueando
         if (Input.GetMouseButtonDown(1) && !bloqueando)
         {
             Bloquear();
         }
     }
 
-    /// <summary>
-    /// Ejecuta el bloqueo y activa la animación "Defenderse".
-    /// </summary>
     private void Bloquear()
     {
-        bloqueando = true; // Indica que el jugador está bloqueando
-        puedeRecibirDano = false; // Evita que el jugador reciba daño
+        bloqueando = true;
+        puedeRecibirDano = false;
         audioSource.PlayOneShot(escudo);
-
-        // Activar la animación de "Defenderse"
         anim.SetTrigger("Defenderse");
 
-        // Inicia la lógica de terminar el bloqueo después del tiempo configurado
+        // Desactivar el ataque
+        if (scriptAtaque != null)
+        {
+            scriptAtaque.enabled = false;
+        }
+
         StartCoroutine(DesactivarBloqueo());
         StartCoroutine(ActivarInvulnerabilidad());
     }
 
-    /// <summary>
-    /// Corrutina que desactiva el bloqueo tras un tiempo.
-    /// </summary>
     IEnumerator DesactivarBloqueo()
     {
         yield return new WaitForSeconds(tiempoDeBloqueo);
 
-        bloqueando = false; // Permite volver a bloquear
+        bloqueando = false;
+
+        // Reactivar el ataque
+        if (scriptAtaque != null)
+        {
+            scriptAtaque.enabled = true;
+        }
     }
 
-    /// <summary>
-    /// Corrutina que activa la invulnerabilidad del jugador después de bloquear.
-    /// </summary>
     IEnumerator ActivarInvulnerabilidad()
     {
         yield return new WaitForSeconds(tiempoInvulnerabilidad);
-
-        puedeRecibirDano = true; // Vuelve a permitir recibir daño después del tiempo de invulnerabilidad
+        puedeRecibirDano = true;
     }
 
-    /// <summary>
-    /// Verifica si el jugador puede recibir daño.
-    /// </summary>
     public bool PuedeRecibirDano()
     {
         return puedeRecibirDano;

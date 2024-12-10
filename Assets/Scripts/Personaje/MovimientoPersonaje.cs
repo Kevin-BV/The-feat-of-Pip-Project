@@ -22,18 +22,18 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
-        // Si el personaje está muerto, no permite el movimiento
-        if (anim.GetBool("IsDead"))
-        {
-            return; // Detiene todo el movimiento si está muerto
-        }
+          // Si el personaje está muerto o recibiendo daño, no permite el movimiento
+            if (anim.GetBool("IsDead") || anim.GetBool("IsDamaged"))
+            {
+                return; // Detiene todo el movimiento si está muerto o recibiendo daño
+            }
 
-        // Capturamos las entradas de movimiento
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-        float movimientoVertical = Input.GetAxis("Vertical");
+            // Capturamos las entradas de movimiento
+            float movimientoHorizontal = Input.GetAxis("Horizontal");
+            float movimientoVertical = Input.GetAxis("Vertical");
 
-        // Creamos el vector de movimiento
-        Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical);
+            // Creamos el vector de movimiento
+            Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical);
 
         // Movemos al personaje si hay movimiento
         if (movimiento.magnitude > 0.1f) // Verificamos si el personaje se está moviendo

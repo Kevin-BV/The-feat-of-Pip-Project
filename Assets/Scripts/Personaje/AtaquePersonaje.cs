@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class AtaquePersonaje : MonoBehaviour
 {
+    [Header("Configuración del ataque")]
     public float rangoDeAtaque = 1f; // Radio del ataque
     public int daño = 1; // Daño que inflige el ataque
     public Transform puntoDeAtaque; // Punto desde donde se detectará el ataque
     public LayerMask capaEnemigos; // Capa de los enemigos para detectar colisiones
 
+    [Header("Cooldown del ataque")]
+    public float tiempoEntreAtaques = 0.5f; // Tiempo de cooldown entre ataques
+
+    [Header("Audio")]
+    public AudioClip ataquefosforo;
+
     private Animator anim;
-    private float tiempoEntreAtaques = 0.5f; // Tiempo de cooldown entre ataques
     private float tiempoDelUltimoAtaque = 0f; // Momento en que se hizo el último ataque
-
-    private Collider colliderDeAtaque; // Referencia al collider del punto de ataque
-
-    public AudioClip ataquefosforo; 
     private AudioSource audioSource;
+
+    // Referencia al collider del punto de ataque (si lo usas)
+    private Collider colliderDeAtaque;
+
     void Start()
     {
         anim = GetComponent<Animator>();
-        colliderDeAtaque = puntoDeAtaque.GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
+        colliderDeAtaque = puntoDeAtaque.GetComponent<Collider>();
 
-        // Asegúrate de que el collider esté desactivado al inicio
+        // Desactiva el collider de ataque al inicio
         if (colliderDeAtaque != null)
         {
             colliderDeAtaque.enabled = false;
@@ -32,38 +38,40 @@ public class AtaquePersonaje : MonoBehaviour
 
     void Update()
     {
-        // Click izquierdo: activa el collider para el ataque
-        if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
+        // Si se presiona el botón izquierdo del ratón, ha pasado el cooldown y no está recibiendo daño
+        if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques && !anim.GetBool("IsDamaged"))
         {
-            ActivarColliderDeAtaque();
-        }
-
-        // Click izquierdo: daño directo con Physics.OverlapSphere
-        if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques)
-        {
-            HacerDañoDirecto();
+            EjecutarAtaque();
         }
     }
 
-    private void ActivarColliderDeAtaque()
+    private void EjecutarAtaque()
     {
+        // Reproducir la animación de ataque
         anim.SetTrigger("Atacar");
-        tiempoDelUltimoAtaque = Time.time;
-        audioSource.PlayOneShot(ataquefosforo);
 
-        // Activar el collider temporalmente
+        // Reproducir el sonido del ataque
+        if (ataquefosforo != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(ataquefosforo);
+        }
+
+        // Registrar el tiempo del ataque
+        tiempoDelUltimoAtaque = Time.time;
+
+        // Realizar daño directo con Physics.OverlapSphere
+        HacerDaño();
+
+        // Activar temporalmente el collider de ataque (si se usa)
         if (colliderDeAtaque != null)
         {
             colliderDeAtaque.enabled = true;
-            StartCoroutine(DesactivarColliderDespuesDeTiempo(0.1f)); // Ajusta el tiempo según la animación
+            StartCoroutine(DesactivarColliderDespuesDeTiempo(0.1f)); // Ajusta el tiempo según la duración de la animación
         }
     }
 
-    private void HacerDañoDirecto()
+    private void HacerDaño()
     {
-        anim.SetTrigger("Atacar");
-        tiempoDelUltimoAtaque = Time.time;
-
         // Detectar enemigos dentro del rango usando Physics.OverlapSphere
         Collider[] enemigosEnRango = Physics.OverlapSphere(puntoDeAtaque.position, rangoDeAtaque, capaEnemigos);
 

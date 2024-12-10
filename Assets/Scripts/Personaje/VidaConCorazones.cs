@@ -36,10 +36,17 @@ public class VidaConCorazones : MonoBehaviour
 
     public void RecibirDano(int dano)
     {
-        if (bloqueoParry.PuedeRecibirDano()) // Solo recibir daño si el jugador no está bloqueando
+        if (bloqueoParry.PuedeRecibirDano() && !anim.GetBool("IsDamaged")) // Solo recibir daño si no está bloqueando ni en animación de daño
         {
             vidaActual = Mathf.Max(vidaActual - dano, 0);
             ActualizarCorazones();
+
+            // Activar la animación de daño
+            if (anim != null)
+            {
+                anim.SetTrigger("Damage"); // Reproducimos la animación de daño
+                anim.SetBool("IsDamaged", true); // Evitamos acciones durante el daño
+            }
 
             // Reproducir sonido de daño
             if (audioSource && sonidoDanio)
@@ -49,6 +56,14 @@ public class VidaConCorazones : MonoBehaviour
             {
                 Morir();
             }
+        }
+    }
+
+    public void TerminarAnimacionDanio()
+    {
+        if (anim != null)
+        {
+            anim.SetBool("IsDamaged", false); // Permitimos volver a atacar y moverse
         }
     }
 

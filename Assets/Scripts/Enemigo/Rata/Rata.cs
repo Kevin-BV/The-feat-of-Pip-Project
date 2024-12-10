@@ -8,7 +8,7 @@ public class Rata : MonoBehaviour
     public float rangoDeDeteccion = 5f; // Rango del gizmo para detectar al jugador
     public float rangoDeAcercamiento = 1.5f; // Distancia mínima a la que se detiene del jugador
     public Transform visual; // Objeto visual para animaciones
-    public Animator anim; // Animator para las animaciones ("idle", "walk", "attack", "death")
+    public Animator anim; // Animator para las animaciones ("idle", "walk", "attack", "damage", "death")
 
     [Header("Configuración del Gizmo")]
     public float tamanoGizmo = 1f; // Rango de ataque
@@ -22,6 +22,7 @@ public class Rata : MonoBehaviour
 
     private bool estaSiguiendo = false; // Controla si está siguiendo al jugador
     private bool puedeAtacar = true; // Controla si puede atacar
+    private bool estaRecibiendoDano = false; // Controla si la rata está en la animación de daño
 
     private Vector3 posicionAnterior; // Para verificar si hay movimiento
 
@@ -42,7 +43,6 @@ public class Rata : MonoBehaviour
 
         posicionAnterior = transform.position; // Inicializar la posición previa
 
-        // Inicializar el componente AudioSource
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -52,7 +52,7 @@ public class Rata : MonoBehaviour
 
     void Update()
     {
-        if (vidaActual <= 0) return;
+        if (vidaActual <= 0 || estaRecibiendoDano) return; // No hacer nada si está muerta o recibiendo daño
 
         if (jugador == null)
         {
@@ -102,11 +102,10 @@ public class Rata : MonoBehaviour
         {
             anim.SetBool("Walk", true);
 
-            // Reproducir sonido al caminar si no está ya sonando
             if (!audioSource.isPlaying)
             {
                 audioSource.clip = hiss;
-                audioSource.loop = true; // Loop para el sonido de caminar
+                audioSource.loop = true;
                 audioSource.Play();
             }
         }
@@ -114,7 +113,6 @@ public class Rata : MonoBehaviour
         {
             anim.SetBool("Walk", false);
 
-            // Detener el sonido si no está caminando
             if (audioSource.clip == hiss && audioSource.isPlaying)
             {
                 audioSource.Stop();
@@ -139,7 +137,7 @@ public class Rata : MonoBehaviour
     private IEnumerator CooldownAtaque()
     {
         puedeAtacar = false;
-        yield return new WaitForSeconds(1f); // Cooldown de ataque
+        yield return new WaitForSeconds(1f);
         puedeAtacar = true;
     }
 
@@ -153,13 +151,15 @@ public class Rata : MonoBehaviour
 
     public void RecibirDano(int cantidad)
     {
-        if (vidaActual <= 0) return;
+        if (vidaActual <= 0 || estaRecibiendoDano) return;
 
         vidaActual -= cantidad;
         Debug.Log($"Rata recibió {cantidad} de daño. Vida restante: {vidaActual}");
 
-        // Reproducir sonido al recibir daño
         audioSource.PlayOneShot(hisshurt);
+        anim.SetTrigger("Damage");
+
+        StartCoroutine(DesactivarAtaqueDuranteDaño());
 
         if (vidaActual <= 0)
         {
@@ -167,18 +167,26 @@ public class Rata : MonoBehaviour
         }
     }
 
+    private IEnumerator DesactivarAtaqueDuranteDaño()
+    {
+        estaRecibiendoDano = true;
+        puedeAtacar = false;
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length); // Espera la duración de la animación "Damage"
+        estaRecibiendoDano = false;
+        puedeAtacar = true;
+    }
+
     private void Morir()
     {
         anim.SetTrigger("Death");
         velocidadMovimiento = 0;
 
-        // Detener cualquier sonido restante
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
         }
 
-        Destroy(gameObject, 5f); // Destruir después de 5 segundos
+        Destroy(gameObject, 5f);
     }
 
     private void OnDrawGizmosSelected()
@@ -194,7 +202,7 @@ public class Rata : MonoBehaviour
     {
         if (other.CompareTag("PlayerAttack"))
         {
-            RecibirDano(1); // Ajusta el daño según sea necesario
+            RecibirDano(1);
         }
     }
 }
