@@ -30,6 +30,8 @@ public class SpiderBoss : MonoBehaviour
 
     private bool estaReproduciendoSonidoAraña = false;
 
+    private bool estaEnDamage = false; // Nueva variable para controlar el estado de daño
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -50,7 +52,7 @@ public class SpiderBoss : MonoBehaviour
 
     void Update()
     {
-        if (estaMuerta) return;
+        if (estaMuerta || estaEnDamage) return; // Bloquear movimiento y ataques si está muerta o en daño
 
         // Reproduce el sonido de la araña en bucle si no está ya reproduciéndose
         if (!estaReproduciendoSonidoAraña && sonidoAraña != null)
@@ -98,13 +100,26 @@ public class SpiderBoss : MonoBehaviour
 
     public void RecibirDano(int dano)
     {
-        if (estaMuerta) return;
+        if (estaMuerta || estaEnDamage) return; // Evitar recibir daño si está muerto o ya está en la animación de daño
 
         vida -= dano;
         ActualizarBarraVida();
 
+        // Activar la animación de daño
+        if (animator != null)
+        {
+            animator.SetTrigger("Damage");
+            estaEnDamage = true; // Bloquear acciones mientras está en daño
+        }
+
         if (sonidoHurt != null) audioSource.PlayOneShot(sonidoHurt);
         if (vida <= 0) Morir();
+    }
+
+    // Método para terminar la animación de daño
+    public void TerminarAnimacionDanio()
+    {
+        estaEnDamage = false; // Permitir acciones nuevamente
     }
 
     private void Morir()

@@ -770,6 +770,7 @@ MonoBehaviour:
   capaEnemigos:
     serializedVersion: 2
     m_Bits: 64
+  tiempoEntreAtaques: 1.25
   ataquefosforo: {fileID: 8300000, guid: ece47363916f86c4c875159a6f8f71e4, type: 3}
 --- !u!54 &1048026258664994575
 Rigidbody:
@@ -860,6 +861,7 @@ MonoBehaviour:
   tiempoDeBloqueo: 0.5
   tiempoInvulnerabilidad: 0.5
   escudo: {fileID: 8300000, guid: c444706be6328bc48b35b0d229a0abc7, type: 3}
+  scriptAtaque: {fileID: 0}
 --- !u!82 &6121475406980282175
 AudioSource:
   m_ObjectHideFlags: 0
