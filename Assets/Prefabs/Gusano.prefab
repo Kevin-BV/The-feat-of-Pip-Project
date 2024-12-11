@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,6 +330,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -9.724
       objectReference: {fileID: 0}
+    - target: {fileID: 3135312449457440316, guid: 80974e2d713ae6142813944a8ef2a6ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea825369e46b7d142a3f9732b78f795c, type: 2}
     - target: {fileID: 4269878149344056760, guid: 80974e2d713ae6142813944a8ef2a6ff,
         type: 3}
       propertyPath: m_LocalRotation.w
