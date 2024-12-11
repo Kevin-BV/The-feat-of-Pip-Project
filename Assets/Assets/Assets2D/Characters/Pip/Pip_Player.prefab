@@ -819,9 +819,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.2887486
-  m_Height: 4.7178273
+  m_Height: 4.333907
   m_Direction: 1
-  m_Center: {x: 0.2418958, y: 0.59753424, z: 0.1334485}
+  m_Center: {x: 0.2418958, y: 0.7894951, z: 0.1334485}
 --- !u!114 &4449989712704843358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,7 +1362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716642081059944536}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000010471547, y: -0.000000104715454, z: 0.5162374, w: 0.8564455}
+  m_LocalRotation: {x: -0.00000008994066, y: -0.00000008994065, z: 0.42806742, w: 0.9037468}
   m_LocalPosition: {x: 0, y: -0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2202,7 +2202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6563283744165266453}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.34973595, w: 0.93684834}
+  m_LocalRotation: {x: 0, y: 0, z: -0.22445863, w: 0.97448367}
   m_LocalPosition: {x: -0.1, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2471,7 +2471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6663365287710394101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.27292162, w: 0.9620363}
+  m_LocalRotation: {x: 0, y: 0, z: -0.18370932, w: 0.9829806}
   m_LocalPosition: {x: 0.76, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3319,7 +3319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960571305020653810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.5323734, w: 0.8465096}
+  m_LocalRotation: {x: 0.00000006973969, y: 0.000000074030986, z: 0.4560604, w: 0.8899488}
   m_LocalPosition: {x: 0.02, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3773,6 +3773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FuegoParticula
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408986257295388876, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038733456948477512, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
