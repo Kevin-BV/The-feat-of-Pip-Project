@@ -6,7 +6,7 @@ public class AtaquePersonaje : MonoBehaviour
 {
     [Header("Configuración del ataque")]
     public float rangoDeAtaque = 1f; // Radio del ataque
-    public int daño = 1; // Daño que inflige el ataque
+    public int dano = 1; // Daño que inflige el ataque
     public Transform puntoDeAtaque; // Punto desde donde se detectará el ataque
     public LayerMask capaEnemigos; // Capa de los enemigos para detectar colisiones
 
@@ -80,7 +80,7 @@ public class AtaquePersonaje : MonoBehaviour
             // Llamar a la función RecibirDano de los enemigos si la tienen
             if (enemigo.TryGetComponent(out Rata rata))
             {
-                rata.RecibirDano(daño);
+                rata.RecibirDano(dano);
             }
         }
     }

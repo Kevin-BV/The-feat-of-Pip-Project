@@ -88,7 +88,14 @@ public class SpiderBoss : MonoBehaviour
         if (estaMuerta) return;
 
         if (other.CompareTag("Player")) jugadorDentroCollider = true;
-        else if (other.CompareTag("PlayerAttack")) RecibirDano(1);
+        else if (other.CompareTag("PlayerAttack"))
+        {
+            var jugador = other.GetComponentInParent<AtaquePersonaje>(); // Asegúrate de usar el script correcto
+            if (jugador != null)
+            {
+                RecibirDano(jugador.dano); // Usa el daño dinámico del jugador
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
