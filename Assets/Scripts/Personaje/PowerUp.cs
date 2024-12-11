@@ -8,30 +8,34 @@ public class PowerUp : MonoBehaviour
     private bool jugadorDentroDelTrigger = false; // Verifica si el jugador está en el trigger
     private AtaquePersonaje ataquePersonaje; // Referencia al script de ataque del jugador
 
+    [Header("Efectos Visuales")]
+    public GameObject efectoPowerUp; // Objeto hijo que contiene el ParticleSystem
+
+    private bool powerUpActivo = false; // Variable para evitar activar el Power-Up más de una vez
+
     private void OnTriggerEnter(Collider other)
     {
-        // Detecta si el jugador entra en el trigger
         if (other.CompareTag("Player"))
         {
             jugadorDentroDelTrigger = true;
             ataquePersonaje = other.GetComponent<AtaquePersonaje>();
+            Debug.Log("Jugador dentro del trigger del Power-Up.");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Detecta si el jugador sale del trigger
         if (other.CompareTag("Player"))
         {
             jugadorDentroDelTrigger = false;
             ataquePersonaje = null;
+            Debug.Log("Jugador salió del trigger del Power-Up.");
         }
     }
 
     private void Update()
     {
-        // Si el jugador está dentro del trigger y presiona la tecla X
-        if (jugadorDentroDelTrigger && Input.GetKeyDown(KeyCode.X))
+        if (jugadorDentroDelTrigger && Input.GetKeyDown(KeyCode.X) && !powerUpActivo)
         {
             ActivarPowerUp();
         }
@@ -39,35 +43,39 @@ public class PowerUp : MonoBehaviour
 
     private void ActivarPowerUp()
     {
-        // Si el script de ataque del jugador no es nulo
         if (ataquePersonaje != null)
         {
-            // Duplica el daño del jugador
-            StartCoroutine(AplicarPowerUp(ataquePersonaje));
+            powerUpActivo = true;
 
-            // Mensaje en consola para indicar que el Power-Up se activó
-            Debug.Log("¡Power-Up activado! Daño duplicado por " + duracionPowerUp + " segundos.");
+            Debug.Log("Power-Up activado. Duplicando daño del jugador.");
+            if (efectoPowerUp != null)
+            {
+                efectoPowerUp.SetActive(true); // Activa el GameObject con el ParticleSystem
+            }
 
-            // Destruye el objeto del Power-Up
-            Destroy(gameObject);
+            StartCoroutine(AplicarPowerUp());
+            Destroy(gameObject); // Destruye el objeto PowerUp
         }
     }
 
-    private IEnumerator AplicarPowerUp(AtaquePersonaje ataquePersonaje)
+    private IEnumerator AplicarPowerUp()
     {
-        // Almacena el daño original
-        int dañoOriginal = ataquePersonaje.dano;
+        int dano = ataquePersonaje.dano;
 
-        // Duplica el daño
-        ataquePersonaje.dano = dañoOriginal * 2;
+        ataquePersonaje.ModificarDano(dano * 2);
+        Debug.Log($"Daño inicial: {dano}, Daño con Power-Up: {ataquePersonaje.dano}");
 
-        // Espera la duración del Power-Up
         yield return new WaitForSeconds(duracionPowerUp);
 
-        // Restaura el daño original
-        ataquePersonaje.dano = dañoOriginal;
+        ataquePersonaje.ModificarDano(dano);
+        Debug.Log($"Power-Up finalizado. Daño restaurado a: {ataquePersonaje.dano}");
 
-        // Mensaje en consola para indicar que el Power-Up terminó
-        Debug.Log("El efecto del Power-Up ha terminado. Daño restaurado a " + dañoOriginal + ".");
+        if (efectoPowerUp != null)
+        {
+            efectoPowerUp.SetActive(false); // Desactiva el GameObject con el ParticleSystem
+            Debug.Log("Efecto visual desactivado.");
+        }
+
+        powerUpActivo = false;
     }
 }

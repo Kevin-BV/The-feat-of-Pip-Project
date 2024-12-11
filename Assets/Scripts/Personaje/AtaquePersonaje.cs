@@ -38,7 +38,6 @@ public class AtaquePersonaje : MonoBehaviour
 
     void Update()
     {
-        // Si se presiona el botón izquierdo del ratón, ha pasado el cooldown y no está recibiendo daño
         if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques && !anim.GetBool("IsDamaged"))
         {
             EjecutarAtaque();
@@ -47,37 +46,30 @@ public class AtaquePersonaje : MonoBehaviour
 
     private void EjecutarAtaque()
     {
-        // Reproducir la animación de ataque
         anim.SetTrigger("Atacar");
 
-        // Reproducir el sonido del ataque
         if (ataquefosforo != null && audioSource != null)
         {
             audioSource.PlayOneShot(ataquefosforo);
         }
 
-        // Registrar el tiempo del ataque
         tiempoDelUltimoAtaque = Time.time;
 
-        // Realizar daño directo con Physics.OverlapSphere
         HacerDaño();
 
-        // Activar temporalmente el collider de ataque (si se usa)
         if (colliderDeAtaque != null)
         {
             colliderDeAtaque.enabled = true;
-            StartCoroutine(DesactivarColliderDespuesDeTiempo(0.1f)); // Ajusta el tiempo según la duración de la animación
+            StartCoroutine(DesactivarColliderDespuesDeTiempo(0.1f));
         }
     }
 
     private void HacerDaño()
     {
-        // Detectar enemigos dentro del rango usando Physics.OverlapSphere
         Collider[] enemigosEnRango = Physics.OverlapSphere(puntoDeAtaque.position, rangoDeAtaque, capaEnemigos);
 
         foreach (Collider enemigo in enemigosEnRango)
         {
-            // Llamar a la función RecibirDano de los enemigos si la tienen
             if (enemigo.TryGetComponent(out Rata rata))
             {
                 rata.RecibirDano(dano);
@@ -94,7 +86,13 @@ public class AtaquePersonaje : MonoBehaviour
         }
     }
 
-    // Mostrar el rango de ataque en el editor
+    // Método público para modificar el daño desde otros scripts
+    public void ModificarDano(int nuevoDano)
+    {
+        Debug.Log($"Modificando daño: {dano} -> {nuevoDano}");
+        dano = nuevoDano;
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (puntoDeAtaque != null)
