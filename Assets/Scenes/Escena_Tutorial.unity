@@ -4084,6 +4084,11 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1716819775817417142}
+    - target: {fileID: 3824285851981073216, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.22445863
+      objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: corazones.Array.data[0]
@@ -4099,6 +4104,26 @@ PrefabInstance:
       propertyPath: corazones.Array.data[2]
       value: 
       objectReference: {fileID: 1716819775817417139}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8899488
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000006973969
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000074030986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4560604
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8428,21 +8453,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.09
       objectReference: {fileID: 0}
@@ -8491,25 +8501,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2553894204071588327, guid: 164c67e44f047684a82c19af6c00956e,
         type: 3}
       propertyPath: m_Name
       value: CajaDeFosforos
-      objectReference: {fileID: 0}
-    - target: {fileID: 2553894204071588327, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8242556339515731459, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 46.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

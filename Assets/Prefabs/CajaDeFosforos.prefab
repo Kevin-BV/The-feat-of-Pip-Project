@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 5662222315688564689}
   - component: {fileID: 8871966781987867577}
   - component: {fileID: 5883320724021051076}
-  - component: {fileID: 7670059601554584933}
   m_Layer: 0
   m_Name: XButton
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,19 +135,6 @@ CapsuleCollider:
   m_Height: 2.52
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.0000019073486}
---- !u!114 &7670059601554584933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314559021730004613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c59389e2d0933449e501c498be8cba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duracionPowerUp: 10
 --- !u!1 &2553894204071588327
 GameObject:
   m_ObjectHideFlags: 0

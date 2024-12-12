@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - PlayerAttack
   - Puntaje
+  - PowerUp
   layers:
   - Default
   - TransparentFX

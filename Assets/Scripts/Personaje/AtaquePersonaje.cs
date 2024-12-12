@@ -16,11 +16,15 @@ public class AtaquePersonaje : MonoBehaviour
     [Header("Audio")]
     public AudioClip ataquefosforo;
 
+    [Header("Power-Up")]
+    public GameObject efectoPowerUp; // GameObject del ParticleSystem hijo del jugador
+    public float duracionPowerUp = 10f; // Duración del efecto Power-Up
+
     private Animator anim;
     private float tiempoDelUltimoAtaque = 0f; // Momento en que se hizo el último ataque
     private AudioSource audioSource;
 
-    // Referencia al collider del punto de ataque (si lo usas)
+    private bool jugadorDentroDePowerUp = false; // Verifica si el jugador está dentro del trigger del Power-Up
     private Collider colliderDeAtaque;
 
     void Start()
@@ -34,6 +38,12 @@ public class AtaquePersonaje : MonoBehaviour
         {
             colliderDeAtaque.enabled = false;
         }
+
+        // Desactiva el efecto visual al inicio
+        if (efectoPowerUp != null)
+        {
+            efectoPowerUp.SetActive(false);
+        }
     }
 
     void Update()
@@ -41,6 +51,12 @@ public class AtaquePersonaje : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time >= tiempoDelUltimoAtaque + tiempoEntreAtaques && !anim.GetBool("IsDamaged"))
         {
             EjecutarAtaque();
+        }
+
+        // Activa el Power-Up al presionar X si está dentro del trigger
+        if (jugadorDentroDePowerUp && Input.GetKeyDown(KeyCode.X))
+        {
+            StartCoroutine(ActivarPowerUp());
         }
     }
 
@@ -86,11 +102,58 @@ public class AtaquePersonaje : MonoBehaviour
         }
     }
 
-    // Método público para modificar el daño desde otros scripts
     public void ModificarDano(int nuevoDano)
     {
         Debug.Log($"Modificando daño: {dano} -> {nuevoDano}");
         dano = nuevoDano;
+    }
+
+    private IEnumerator ActivarPowerUp()
+    {
+        // Asegúrate de que el Power-Up no se active múltiples veces
+        jugadorDentroDePowerUp = false;
+
+        // Almacena el daño original
+        int danoOriginal = dano;
+
+        // Duplica el daño y activa el efecto visual
+        ModificarDano(danoOriginal * 2);
+        Debug.Log("Power-Up activado. Daño duplicado a: " + dano);
+        if (efectoPowerUp != null)
+        {
+            efectoPowerUp.SetActive(true);
+        }
+
+        // Espera la duración del Power-Up
+        yield return new WaitForSeconds(duracionPowerUp);
+
+        // Restaura el daño original y desactiva el efecto visual
+        ModificarDano(danoOriginal);
+        Debug.Log("Power-Up finalizado. Daño restaurado a: " + dano);
+        if (efectoPowerUp != null)
+        {
+            efectoPowerUp.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Si entra en el trigger de un objeto con el tag PowerUp
+        if (other.CompareTag("PowerUp"))
+        {
+            jugadorDentroDePowerUp = true;
+            Debug.Log("Jugador dentro del trigger del Power-Up.");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // Si sale del trigger del objeto PowerUp
+        if (other.CompareTag("PowerUp"))
+        {
+            jugadorDentroDePowerUp = false;
+            Debug.Log("Jugador salió del trigger del Power-Up.");
+        }
     }
 
     private void OnDrawGizmosSelected()
