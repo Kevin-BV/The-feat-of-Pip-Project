@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AtaquePersonaje : MonoBehaviour
 {
     [Header("Configuración del ataque")]
@@ -18,7 +18,10 @@ public class AtaquePersonaje : MonoBehaviour
 
     [Header("Power-Up")]
     public GameObject efectoPowerUp; // GameObject del ParticleSystem hijo del jugador
-    public float duracionPowerUp = 10f; // Duración del efecto Power-Up
+    public float duracionPowerUp = 8f; // Duración del efecto Power-Up
+
+    [Header("UI del Power-Up")]
+    public Image[] barraPowerUp; // Arreglo de imágenes para la barra del Power-Up
 
     private Animator anim;
     private float tiempoDelUltimoAtaque = 0f; // Momento en que se hizo el último ataque
@@ -44,6 +47,9 @@ public class AtaquePersonaje : MonoBehaviour
         {
             efectoPowerUp.SetActive(false);
         }
+
+        // Asegúrate de que solo una imagen esté activa al inicio
+        ResetBarraPowerUp();
     }
 
     void Update()
@@ -124,8 +130,16 @@ public class AtaquePersonaje : MonoBehaviour
             efectoPowerUp.SetActive(true);
         }
 
-        // Espera la duración del Power-Up
-        yield return new WaitForSeconds(duracionPowerUp);
+        // Inicia la cuenta regresiva del Power-Up
+        for (int i = 0; i < barraPowerUp.Length; i++)
+        {
+            barraPowerUp[i].enabled = true;
+            if (i > 0) barraPowerUp[i - 1].enabled = false;
+            yield return new WaitForSeconds(duracionPowerUp / barraPowerUp.Length);
+        }
+
+        // Apaga todas las imágenes al finalizar
+        ResetBarraPowerUp();
 
         // Restaura el daño original y desactiva el efecto visual
         ModificarDano(danoOriginal);
@@ -133,6 +147,14 @@ public class AtaquePersonaje : MonoBehaviour
         if (efectoPowerUp != null)
         {
             efectoPowerUp.SetActive(false);
+        }
+    }
+
+    private void ResetBarraPowerUp()
+    {
+        foreach (var imagen in barraPowerUp)
+        {
+            imagen.enabled = false;
         }
     }
 
