@@ -149,6 +149,6 @@ public class SpiderBoss : MonoBehaviour
 
     private void ActualizarBarraVida()
     {
-        barraVida.fillAmount = (float)vida / 50f;
+        barraVida.fillAmount = (float)vida / 25f;
     }
 }
