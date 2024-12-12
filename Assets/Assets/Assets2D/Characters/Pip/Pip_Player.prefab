@@ -2210,7 +2210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6563283744165266453}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.22445855, w: 0.97448367}
+  m_LocalRotation: {x: 0, y: 0, z: -0.22445863, w: 0.97448367}
   m_LocalPosition: {x: -0.1, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2952,7 +2952,7 @@ GameObject:
   m_Layer: 6
   m_Name: Fuego
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3327,7 +3327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960571305020653810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000010460956, y: 0.00000011104651, z: 0.45606026, w: 0.8899489}
+  m_LocalRotation: {x: 0.00000006973969, y: 0.000000074030986, z: 0.4560604, w: 0.8899488}
   m_LocalPosition: {x: 0.02, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3792,10 +3792,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3163939943898421863, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
+        type: 3}
+      propertyPath: torchTip
+      value: 
+      objectReference: {fileID: 6376888881429550456}
     - target: {fileID: 4038733456948477512, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753961575547128830, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4753961575547128830, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
@@ -3820,17 +3830,17 @@ PrefabInstance:
     - target: {fileID: 8094944698856381193, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8094944698856381193, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8094944698856381193, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8094944698856381193, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
         type: 3}
@@ -3866,11 +3876,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8901551637646317241, guid: cf9cb6b6f788efb42995fc5f8a657e5d,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.m_ColorSpace
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
