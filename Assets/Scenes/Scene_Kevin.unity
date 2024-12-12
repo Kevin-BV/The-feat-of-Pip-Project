@@ -433,16 +433,6 @@ PrefabInstance:
       objectReference: {fileID: 1004315641}
     - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
-      propertyPath: duracionPowerUp
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
-        type: 3}
-      propertyPath: barraPowerUp.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
-        type: 3}
       propertyPath: barraPowerUp.Array.data[0]
       value: 
       objectReference: {fileID: 2083095476}
