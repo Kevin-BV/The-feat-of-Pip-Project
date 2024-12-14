@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class AtaquePersonaje : MonoBehaviour
 {
     [Header("Configuración del ataque")]
@@ -19,6 +20,7 @@ public class AtaquePersonaje : MonoBehaviour
     [Header("Power-Up")]
     public GameObject efectoPowerUp; // GameObject del ParticleSystem hijo del jugador
     public float duracionPowerUp = 8f; // Duración del efecto Power-Up
+    public GameObject objetoPowerUp; // Referencia al objeto de Power-Up en la escena
 
     [Header("UI del Power-Up")]
     public Image[] barraPowerUp; // Arreglo de imágenes para la barra del Power-Up
@@ -29,6 +31,9 @@ public class AtaquePersonaje : MonoBehaviour
 
     private bool jugadorDentroDePowerUp = false; // Verifica si el jugador está dentro del trigger del Power-Up
     private Collider colliderDeAtaque;
+
+    private int contadorUsosPowerUp = 0; // Contador de activaciones del Power-Up
+    private const int maxUsosPowerUp = 2; // Máximo de usos permitidos
 
     void Start()
     {
@@ -62,7 +67,7 @@ public class AtaquePersonaje : MonoBehaviour
         // Activa el Power-Up al presionar X si está dentro del trigger
         if (jugadorDentroDePowerUp && Input.GetKeyDown(KeyCode.X))
         {
-            StartCoroutine(ActivarPowerUp());
+            ActivarPowerUpConLimite();
         }
     }
 
@@ -108,10 +113,24 @@ public class AtaquePersonaje : MonoBehaviour
         }
     }
 
-    public void ModificarDano(int nuevoDano)
+    private void ActivarPowerUpConLimite()
     {
-        Debug.Log($"Modificando daño: {dano} -> {nuevoDano}");
-        dano = nuevoDano;
+        if (contadorUsosPowerUp < maxUsosPowerUp)
+        {
+            contadorUsosPowerUp++;
+            Debug.Log($"Power-Up activado. Usos restantes: {maxUsosPowerUp - contadorUsosPowerUp}");
+
+            StartCoroutine(ActivarPowerUp());
+        }
+        else
+        {
+            // Destruye el objeto de Power-Up después de 2 usos
+            if (objetoPowerUp != null)
+            {
+                Debug.Log("Power-Up agotado y destruido.");
+                Destroy(objetoPowerUp);
+            }
+        }
     }
 
     private IEnumerator ActivarPowerUp()
@@ -148,6 +167,12 @@ public class AtaquePersonaje : MonoBehaviour
         {
             efectoPowerUp.SetActive(false);
         }
+    }
+
+    public void ModificarDano(int nuevoDano)
+    {
+        Debug.Log($"Modificando daño: {dano} -> {nuevoDano}");
+        dano = nuevoDano;
     }
 
     private void ResetBarraPowerUp()
