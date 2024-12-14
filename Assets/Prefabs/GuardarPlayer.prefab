@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6747560615411938394}
   - component: {fileID: 4100643412583564854}
-  - component: {fileID: 6304789866702686037}
   m_Layer: 0
   m_Name: GuardarPlayer
   m_TagString: Untagged
@@ -54,20 +53,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.71, y: 10.58, z: 12.88}
   m_Center: {x: 0.47, y: 0, z: 5.34}
---- !u!114 &6304789866702686037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745415448524186517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bc212df24322948a5b4046b5482afa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab1: {fileID: 1224446435440822425, guid: ba17967b9aee6d94488ab5f9665c2208,
-    type: 3}
-  playerPrefab2: {fileID: 1224446435440822425, guid: aa423d4dec4882c48acd42ca657d7c1b,
-    type: 3}
-  playerPrefab3: {fileID: 0}
