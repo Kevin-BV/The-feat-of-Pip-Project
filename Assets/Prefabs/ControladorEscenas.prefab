@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3272992821926457335}
-  - component: {fileID: 4120863441786317485}
+  - component: {fileID: 2931754111389992301}
   m_Layer: 0
   m_Name: ControladorEscenas
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4120863441786317485
+--- !u!114 &2931754111389992301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1011627716794437113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124a4e9937fdea64db7753d4f26c962c, type: 3}
+  m_Script: {fileID: 11500000, guid: e4ca0a3002f3187439244dfdefb83f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escenaFinal: Escena_Nivel01
-  tagEnemy: Enemy
+  tiempoEspera: 6
+  hudActivar: {fileID: 0}

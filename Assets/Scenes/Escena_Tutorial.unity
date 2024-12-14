@@ -673,6 +673,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControladorEscenas
       objectReference: {fileID: 0}
+    - target: {fileID: 1011627716794437113, guid: 72d29d6a74a99ab40a6596fe3477f042,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931754111389992301, guid: 72d29d6a74a99ab40a6596fe3477f042,
+        type: 3}
+      propertyPath: hudActivar
+      value: 
+      objectReference: {fileID: 1450111051}
+    - target: {fileID: 2931754111389992301, guid: 72d29d6a74a99ab40a6596fe3477f042,
+        type: 3}
+      propertyPath: nombreEscenaSiguiente
+      value: Escena_Nivel01
+      objectReference: {fileID: 0}
     - target: {fileID: 3272992821926457335, guid: 72d29d6a74a99ab40a6596fe3477f042,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5667,6 +5682,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b37da1abdb80084580f94c98b7e650d, type: 3}
+--- !u!1 &1450111051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8207958388182330252, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1716819775817417138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450111053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450111051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5546ad60b0dbea4a903d9047f4f15d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombreEscena: Escena_Nivel01
 --- !u!1001 &1463119439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8315,6 +8349,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1450111053}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CambiarEscena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CambioEscena, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2540370558387923999, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_Sprite
@@ -8628,7 +8682,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2001619310}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8207958388182330252, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1450111053}
   m_SourcePrefab: {fileID: 100100000, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c, type: 3}
 --- !u!114 &1716819775817417139 stripped
 MonoBehaviour:
