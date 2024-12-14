@@ -9,6 +9,9 @@ TagManager:
   - PlayerAttack
   - Puntaje
   - PowerUp
+  - ZonePip1
+  - ZonePip2
+  - ZonePip3
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ public class SkinsPip : MonoBehaviour
 {
     public GameObject objetoASpawnear; // Objeto que será spawneado, asignado desde el inspector
     private Transform jugador; // Referencia al jugador
+    private bool jugadorDentroTrigger = false; // Verificar si el jugador está dentro del trigger
+    private bool yaSpawneado = false; // Controlar que solo spawnee una vez
 
     private void Start()
     {
@@ -27,16 +29,43 @@ public class SkinsPip : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("El jugador ha entrado en el trigger.");
+            jugadorDentroTrigger = true;
+        }
+    }
 
-            // Spawnear el objeto en la posición del jugador
-            if (objetoASpawnear != null && jugador != null)
-            {
-                Instantiate(objetoASpawnear, jugador.position, Quaternion.identity);
-            }
-            else
-            {
-                Debug.LogError("No se ha asignado el objeto a spawnear o el jugador es nulo.");
-            }
+    private void OnTriggerExit(Collider other)
+    {
+        // Verificar si el jugador ha salido del trigger
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("El jugador ha salido del trigger.");
+            jugadorDentroTrigger = false;
+        }
+    }
+
+    private void Update()
+    {
+        // Comprobar si el jugador está en el trigger y presionó la tecla X
+        if (jugadorDentroTrigger && !yaSpawneado && Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("Tecla X presionada. Destruyendo al jugador y spawneando objeto...");
+            StartCoroutine(SpawnObjetoDespuesDeUnSegundo());
+            yaSpawneado = true; // Evitar que se ejecute más de una vez
+        }
+    }
+
+    private IEnumerator SpawnObjetoDespuesDeUnSegundo()
+    {
+        if (jugador != null)
+        {
+            Vector3 posicionJugador = jugador.position;
+            Destroy(jugador.gameObject); // Destruir al jugador
+            yield return new WaitForSeconds(1f); // Esperar 1 segundo
+            Instantiate(objetoASpawnear, posicionJugador, Quaternion.identity); // Spawnear el objeto en la posición del jugador
+        }
+        else
+        {
+            Debug.LogError("No se encontró al jugador para destruir o spawnear el objeto.");
         }
     }
 }
