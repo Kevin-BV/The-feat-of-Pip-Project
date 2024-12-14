@@ -117,10 +117,10 @@ MonoBehaviour:
         type: 3}
     - m_Name: CascaraBot_Back-Perfil
       m_Hash: 989627546
-      m_Sprite: {fileID: 1691207916966952159, guid: 6ec00da94e1237d42be5d1434f50eb38,
+      m_Sprite: {fileID: -3854266644230331321, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1691207916966952159, guid: 6ec00da94e1237d42be5d1434f50eb38,
+      m_SpriteOverride: {fileID: -3854266644230331321, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: Escudo_3/4
       m_Hash: 1022305891
@@ -167,5 +167,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 21
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638697897683655061
+  m_ModificationHash: 638697933813918926
   m_Version: 1
