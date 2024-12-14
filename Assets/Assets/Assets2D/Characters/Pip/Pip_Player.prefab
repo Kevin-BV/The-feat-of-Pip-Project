@@ -1371,7 +1371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716642081059944536}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000006789924, y: -0.00000006789922, z: 0.6604258, w: 0.7508913}
+  m_LocalRotation: {x: -0.000000104741254, y: -0.00000010474124, z: 0.5153867, w: 0.8569577}
   m_LocalPosition: {x: 0, y: -0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2211,7 +2211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6563283744165266453}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.41335872, w: 0.9105683}
+  m_LocalRotation: {x: 0, y: 0, z: -0.3492796, w: 0.9370186}
   m_LocalPosition: {x: -0.1, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2480,7 +2480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6663365287710394101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.21077555, w: 0.97753453}
+  m_LocalRotation: {x: 0, y: 0, z: -0.27243635, w: 0.9621738}
   m_LocalPosition: {x: 0.76, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2781,7 +2781,7 @@ SpriteRenderer:
   m_SortingLayerID: -1469438405
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: 7740928773196949334, guid: 6ec00da94e1237d42be5d1434f50eb38,
+  m_Sprite: {fileID: -8833407168971436206, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 465722749f89b624fa321c33271ecf70,
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 2738622b68ef98443992fbef7f9b7e3e,
     type: 3}
 --- !u!114 &4986457538847865036
 MonoBehaviour:
@@ -2823,7 +2823,7 @@ MonoBehaviour:
   m_CategoryHash: 0.0000237629
   m_labelHash: 3.7953657e-19
   m_SpriteKey: 0
-  m_SpriteHash: 294669051
+  m_SpriteHash: 520897072
 --- !u!1 &7300266030769721470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 0.0000237629
-  m_labelHash: 2.76823e-18
+  m_labelHash: 5.1489835e-36
   m_SpriteKey: 0
   m_SpriteHash: 900415614
 --- !u!1 &7960571305020653810
@@ -3328,7 +3328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960571305020653810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.68866026, w: 0.7250842}
+  m_LocalRotation: {x: 0, y: 0, z: 0.53158593, w: 0.8470044}
   m_LocalPosition: {x: 0.02, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
