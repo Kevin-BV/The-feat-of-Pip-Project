@@ -21,151 +21,199 @@ MonoBehaviour:
       m_Hash: 435725611
       m_Sprite: {fileID: 4285816935016157132, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 4285816935016157132, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: OjoDer_2
       m_Hash: 15856785
       m_Sprite: {fileID: 7111144302152767996, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 7111144302152767996, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: OjosDer_3
       m_Hash: 575423075
       m_Sprite: {fileID: -3071457164269769897, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -3071457164269769897, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: OjoIzq_1
       m_Hash: 726964234
       m_Sprite: {fileID: -8188570073614793209, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -8188570073614793209, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: OjoIzq_2
       m_Hash: 845007280
       m_Sprite: {fileID: 7599039780509134627, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 7599039780509134627, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: OjoIzq_3
       m_Hash: 89848102
       m_Sprite: {fileID: 8812501139655926568, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 8812501139655926568, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: Pico
       m_Hash: 1049781436
       m_Sprite: {fileID: 608930854411751212, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 608930854411751212, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraTopFront-Perfil
       m_Hash: 790351267
       m_Sprite: {fileID: -8833407168971436206, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -8833407168971436206, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraTop_Front-3/4
       m_Hash: 551553522
       m_Sprite: {fileID: 7740928773196949334, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 7740928773196949334, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraBot_Front-Perfil
       m_Hash: 183406446
       m_Sprite: {fileID: 1691207916966952159, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 1691207916966952159, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraBot_Front-3/4
       m_Hash: 81462135
       m_Sprite: {fileID: -1044750190050634134, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -1044750190050634134, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraTop_Back-Perfil
       m_Hash: 484287921
       m_Sprite: {fileID: 3253676714478501721, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 3253676714478501721, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraTop_Back-3/4
       m_Hash: 1042074316
       m_Sprite: {fileID: -3688909106726558684, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -3688909106726558684, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraBot_Back-3/4
       m_Hash: 349315754
       m_Sprite: {fileID: -4667523497173778210, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -4667523497173778210, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: CascaraBot_Back-Perfil
       m_Hash: 989627546
       m_Sprite: {fileID: 1691207916966952159, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1691207916966952159, guid: 6ec00da94e1237d42be5d1434f50eb38,
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -3854266644230331321, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: Escudo_3/4
       m_Hash: 1022305891
       m_Sprite: {fileID: -688642106757804910, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -688642106757804910, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: Escudo_Perfil
       m_Hash: 411476200
       m_Sprite: {fileID: 8146784561913585295, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 8146784561913585295, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: Cabeza_3/4
       m_Hash: 509574409
       m_Sprite: {fileID: -4446580205749893055, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -4446580205749893055, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: Cabeza_Perfil
       m_Hash: 266918319
       m_Sprite: {fileID: -454807862277656644, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: -454807862277656644, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: PataIzq_Front
       m_Hash: 78249213
       m_Sprite: {fileID: 5931210447697591288, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 5931210447697591288, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
     - m_Name: PataIzq_Perfil
       m_Hash: 26082641
       m_Sprite: {fileID: 5343929077673788474, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
-      m_FromMain: 0
+      m_FromMain: 1
       m_SpriteOverride: {fileID: 5343929077673788474, guid: 6ec00da94e1237d42be5d1434f50eb38,
         type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: PipEasterEgg
+    m_Hash: 14025936
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: CascaraTop_Perfil
+      m_Hash: 388640495
+      m_Sprite: {fileID: -8833407168971436206, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8833407168971436206, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+    - m_Name: CascaraTop_3/4
+      m_Hash: 148125490
+      m_Sprite: {fileID: 7740928773196949334, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7740928773196949334, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+    - m_Name: CascaraBot_Perfil
+      m_Hash: 969986490
+      m_Sprite: {fileID: 1691207916966952159, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1691207916966952159, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+    - m_Name: CascaraBot_3/4
+      m_Hash: 962213894
+      m_Sprite: {fileID: -1044750190050634134, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1044750190050634134, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+    - m_Name: Escudo_Front
+      m_Hash: 430872852
+      m_Sprite: {fileID: -688642106757804910, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -688642106757804910, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+    - m_Name: Escudo_Perfil
+      m_Hash: 411476200
+      m_Sprite: {fileID: 8146784561913585295, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8146784561913585295, guid: 1d5d4c68ffcc1884fb91b3a749423aa7,
+        type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 21
-  m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638697897683655061
+    m_EntryOverrideCount: 0
+  m_PrimaryLibraryGUID: 465722749f89b624fa321c33271ecf70
+  m_ModificationHash: 638697908271666777
   m_Version: 1
