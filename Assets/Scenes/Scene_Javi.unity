@@ -663,6 +663,21 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.22445847
       objectReference: {fileID: 0}
+    - target: {fileID: 4986457538847865036, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_labelHash
+      value: 5.49892e-25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986457538847865036, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_SpriteHash
+      value: 294669051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986457538847865036, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_CategoryHash
+      value: 1.9654523e-38
+      objectReference: {fileID: 0}
     - target: {fileID: 6017872018157558708, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: m_LocalRotation.w
