@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PipBotellin
+  m_Controller: {fileID: 9100000, guid: 11f6afdb32704504e866025d7eab206b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: cfd971b5e72ea9044a7b5a6bb3c2b468, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f845129fd750a734a9093846f094d655, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c25e3b55bb9ce9c4385f74443b1fda8c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 87e067cbfa3e72e46afffab0ce19e8bc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6d5ac1ae38b728a43831d816499c9b91, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 933ec847d0a5dd04b8028de6c1014db0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1653309dae1581444bae0f27265a222a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0d525521888b13744b8e73e51ac73b46, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 600bd1d07af18ef4797ce80e0ec48328, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4b9c243725cc50e42af8561e316d2ece, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 448cbfeadf1fb534a9f01dd1f885bb7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c1bfbb0f5fd3aa24e92dacd9934f2fc3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d47b5d848cccda24fbec88648a391e06, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 60ec1e96983716d4bac2b9e743836d4b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a631d9c7ea6dd184ea3f5818e15d04f2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 90af8a0a016058d4787cc56246573be2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d00ccbed43d6cad4c931e003ece35af3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 382583ed3f9e37340aa5a1479821b27e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 14a119957d9c1a94583d1140723eae5a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 87a6f48c83d903649b5b07afc76eb6a5, type: 2}
