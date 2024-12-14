@@ -15,14 +15,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Escena_Tutorial.unity
     guid: 240b682196ad44549a6cee95d04328e4
   - enabled: 1
+    path: Assets/Scenes/Escena_Nivel01.unity
+    guid: f6e535104e9daef4fa24a3688c8db810
+  - enabled: 1
     path: Assets/Scenes/Escena_Nivel02.unity
     guid: 3762c243eb316da40852e2db0f8d8031
   - enabled: 1
     path: Assets/Scenes/Escena_Nivel03.unity
     guid: 18f7402d87ba8ed42b6e9dfe9f1de787
   - enabled: 1
+    path: Assets/Scenes/Escena_Nivel04.unity
+    guid: cd0881ca21792924ba8059a19d474917
+  - enabled: 1
     path: Assets/Scenes/Escena_Nivel05.unity
     guid: 049e3a1d2f95ea849a8941b0b523a8f2
+  - enabled: 1
+    path: Assets/Scenes/Escena_TiendaInt.unity
+    guid: 16f7f40e0f17a5a49a5820158549e565
+  - enabled: 1
+    path: Assets/Scenes/Escena_TiendaExt.unity
+    guid: 459ce485c097a6849bc756780bf64d5a
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 0c086639984de11438c5381dac12214d

@@ -4105,7 +4105,7 @@ PrefabInstance:
     - target: {fileID: 7909646140860348925, guid: b94541942c16e5345806bb66398ade4a,
         type: 3}
       propertyPath: sceneName
-      value: Escena_Nivel03
+      value: Escena_Nivel04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
