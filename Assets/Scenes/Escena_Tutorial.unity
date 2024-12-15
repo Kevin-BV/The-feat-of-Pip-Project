@@ -228,18 +228,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842427}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &12693565 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2931754111389992301, guid: 72d29d6a74a99ab40a6596fe3477f042,
-    type: 3}
-  m_PrefabInstance: {fileID: 148847114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4ca0a3002f3187439244dfdefb83f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &30231087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,6 +523,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 429c3fb864d86724aa47b64f7d65e20b, type: 3}
+--- !u!1 &126287920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 280838278249741016, guid: 6d701b657e7fa784e89a5713ace24bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 524045155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &126497911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2283,11 @@ PrefabInstance:
       propertyPath: corazones.Array.data[2]
       value: 
       objectReference: {fileID: 1716819775817417139}
+    - target: {fileID: 4814180521803698285, guid: 6d701b657e7fa784e89a5713ace24bd2,
+        type: 3}
+      propertyPath: efectoPowerUp
+      value: 
+      objectReference: {fileID: 126287920}
     - target: {fileID: 4814180521803698285, guid: 6d701b657e7fa784e89a5713ace24bd2,
         type: 3}
       propertyPath: objetoPowerUp
@@ -5944,11 +5943,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1716819775817417138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1450111053
+--- !u!114 &1450111053 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6331406337234300008, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1716819775817417138}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450111051}
   m_Enabled: 1
@@ -5956,7 +5955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5546ad60b0dbea4a903d9047f4f15d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: Escena_Nivel01
 --- !u!1001 &1463119439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8398,12 +8396,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1450111053}
+      objectReference: {fileID: 0}
     - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 12693565}
+      objectReference: {fileID: 1450111053}
     - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -8412,7 +8410,7 @@ PrefabInstance:
     - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReanudarJuego
+      value: CambiarEscena
       objectReference: {fileID: 0}
     - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
@@ -8422,7 +8420,7 @@ PrefabInstance:
     - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ActivarCambioEscena, Assembly-CSharp
+      value: CambioEscena, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2540370558387923999, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
@@ -8639,6 +8637,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1421469548}
+    - target: {fileID: 6331406337234300008, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: nombreEscena
+      value: Escena_Nivel01
+      objectReference: {fileID: 0}
     - target: {fileID: 6377503352579931450, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_Name
@@ -8737,11 +8740,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2001619310}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8207958388182330252, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1450111053}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c, type: 3}
 --- !u!114 &1716819775817417139 stripped
 MonoBehaviour:
