@@ -17,7 +17,7 @@ public class Arañita : MonoBehaviour
     public int vidaMaxima = 4; // Vida máxima
     private int vidaActual; // Vida actual
 
-    private Transform jugador; // Referencia al jugador
+    public Transform jugador; // Referencia al jugador
     private bool mirandoDerecha = true; // Control de dirección
 
     private bool estaSiguiendo = false; // Controla si está siguiendo al jugador

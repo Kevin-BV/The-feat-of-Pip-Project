@@ -2510,7 +2510,7 @@ MonoBehaviour:
     m_Bits: 64
   tiempoEntreAtaques: 1.25
   ataquefosforo: {fileID: 8300000, guid: ece47363916f86c4c875159a6f8f71e4, type: 3}
-  efectoPowerUp: {fileID: 3593245401838725487}
+  efectoPowerUp: {fileID: 280838278249741016}
   duracionPowerUp: 8
   objetoPowerUp: {fileID: 0}
   barraPowerUp:

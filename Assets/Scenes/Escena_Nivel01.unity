@@ -2019,6 +2019,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5709858591171284637, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 1296155933}
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2442,6 +2447,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5709858591171284637, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 1296155933}
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -4151,6 +4161,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5709858591171284637, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 1296155933}
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -6140,6 +6155,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1296155933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8171794941428780962, guid: 6d701b657e7fa784e89a5713ace24bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 155697854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1308186577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8964,11 +8985,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvispaEnemy (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 3295117708178773220, guid: c1776e81b754fe541b6106163f51a5c5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9019,26 +9035,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
+    - target: {fileID: 5709858591171284637, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9707709
-      objectReference: {fileID: 0}
-    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.00000001452635
-      objectReference: {fileID: 0}
-    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.0000000033210963
-      objectReference: {fileID: 0}
-    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.2400083
-      objectReference: {fileID: 0}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 1296155933}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
