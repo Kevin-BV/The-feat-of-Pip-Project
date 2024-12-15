@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 157758947142726597}
   m_Layer: 0
   m_Name: CajaDeFosforos
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -46,7 +46,7 @@ public class Arañita : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("No se encontró un AudioSource en el GameObject de la Arañita.");
+            Debug.LogError("No se encontró un AudioSource en el GameObject de la arañita.");
         }
     }
 
@@ -78,15 +78,9 @@ public class Arañita : MonoBehaviour
         VerificarMovimiento();
     }
 
+
     private void SeguirJugador()
     {
-        // Si la velocidad es 0, entra en animación Idle y sale de la función
-        if (velocidadMovimiento <= 0)
-        {
-            anim.SetBool("Walk", false);
-            return;
-        }
-
         Vector3 direccion = new Vector3(jugador.position.x - transform.position.x, 0f, jugador.position.z - transform.position.z).normalized;
 
         float distanciaXZ = Vector3.Distance(new Vector3(transform.position.x, 0f, transform.position.z),
@@ -105,12 +99,6 @@ public class Arañita : MonoBehaviour
 
     private void VerificarMovimiento()
     {
-        if (velocidadMovimiento <= 0)
-        {
-            anim.SetBool("Walk", false);
-            return;
-        }
-
         if (transform.position != posicionAnterior)
         {
             anim.SetBool("Walk", true);
@@ -147,12 +135,14 @@ public class Arañita : MonoBehaviour
         StartCoroutine(CooldownAtaque());
     }
 
+
     private IEnumerator CooldownAtaque()
     {
         puedeAtacar = false;
         yield return new WaitForSeconds(1f);
         puedeAtacar = true;
     }
+
 
     private void Girar()
     {
@@ -170,7 +160,7 @@ public class Arañita : MonoBehaviour
         Debug.Log($"Arañita recibió {cantidad} de daño. Vida restante: {vidaActual}");
 
         audioSource.PlayOneShot(hisshurt);
-        anim.SetTrigger("Hurt");
+        anim.SetTrigger("Damage");
 
         StartCoroutine(DesactivarAtaqueDuranteDaño());
 
@@ -179,6 +169,7 @@ public class Arañita : MonoBehaviour
             Morir();
         }
     }
+
 
     private IEnumerator DesactivarAtaqueDuranteDaño()
     {
@@ -201,6 +192,7 @@ public class Arañita : MonoBehaviour
 
         Destroy(gameObject, 5f);
     }
+
 
     private void OnDrawGizmosSelected()
     {
