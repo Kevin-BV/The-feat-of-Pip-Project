@@ -148,7 +148,9 @@ public class Arañita : MonoBehaviour
     {
         mirandoDerecha = !mirandoDerecha;
         Vector3 nuevaEscala = visual.localScale;
-        nuevaEscala.x *= -1;
+
+        // Asegura que mirando a la derecha sea negativo
+        nuevaEscala.x = Mathf.Abs(nuevaEscala.x) * (mirandoDerecha ? -1 : 1);
         visual.localScale = nuevaEscala;
     }
 
@@ -160,7 +162,7 @@ public class Arañita : MonoBehaviour
         Debug.Log($"Arañita recibió {cantidad} de daño. Vida restante: {vidaActual}");
 
         audioSource.PlayOneShot(hisshurt);
-        anim.SetTrigger("Damage");
+        anim.SetTrigger("Hurt");
 
         StartCoroutine(DesactivarAtaqueDuranteDaño());
 
