@@ -1152,6 +1152,7 @@ MonoBehaviour:
   puntajeVidaExtra: 50
   puntajeVelocidad: 30
   puntajeLuciernaga: 40
+  sonidoPuntaje: {fileID: 8300000, guid: 02b13905c7a3c3c48aebdee219101d50, type: 3}
 --- !u!1 &1284332259466086135
 GameObject:
   m_ObjectHideFlags: 0
