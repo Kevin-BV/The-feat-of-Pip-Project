@@ -754,6 +754,9 @@ MonoBehaviour:
   velocidad: 5
   fuerzaDeSalto: 7
   objetoLuciernaga: {fileID: 0}
+  puntajeScript: {fileID: 3099825619520058367}
+  costoVelocidad: 30
+  costoLuciernaga: 40
 --- !u!114 &5149540186419521326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +865,8 @@ MonoBehaviour:
   sonidoMuerte: {fileID: 8300000, guid: e0e2af665e8e0ca419e1666b1fc1070a, type: 3}
   sonidoCuracion: {fileID: 8300000, guid: dc8bc3fcae1eb544abc6021ee0ca738e, type: 3}
   sonidoVidaExtra: {fileID: 0}
+  puntajeScript: {fileID: 3099825619520058367}
+  costoVidaExtra: 50
 --- !u!114 &9138105806929592627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,6 +1116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Puntaje
   scoreText: {fileID: 0}
+  puntajeVidaExtra: 50
+  puntajeVelocidad: 30
+  puntajeLuciernaga: 40
 --- !u!1 &1284332259466086135
 GameObject:
   m_ObjectHideFlags: 0
