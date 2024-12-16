@@ -3118,11 +3118,6 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 870319850}
-    - target: {fileID: 3099825619520058367, guid: ba17967b9aee6d94488ab5f9665c2208,
-        type: 3}
-      propertyPath: sonidoPuntaje
-      value: 
-      objectReference: {fileID: 8300000, guid: 02b13905c7a3c3c48aebdee219101d50, type: 3}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: corazonExtra

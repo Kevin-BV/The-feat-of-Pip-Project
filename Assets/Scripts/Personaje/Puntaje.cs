@@ -20,8 +20,9 @@ public class Puntaje : MonoBehaviour
     public int puntajeVelocidad = 30; // Puntaje para aumentar velocidad
     public int puntajeLuciernaga = 40; // Puntaje para luciérnaga
 
-    // Sonido para sumar puntaje
-    public AudioClip sonidoPuntaje;
+    // Sonidos
+    public AudioClip sonidoPuntaje;  // Sonido cuando se suma el puntaje
+    public AudioClip sonidoCompra;   // Sonido cuando se gasta el puntaje
     private AudioSource audioSource;
 
     private void Start()
@@ -86,6 +87,13 @@ public class Puntaje : MonoBehaviour
             score -= cantidad;
             PlayerPrefs.SetInt("Puntaje", score);  // Guardar el puntaje actualizado
             UpdateScoreText();
+
+            // Reproducir sonido de compra
+            if (sonidoCompra != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(sonidoCompra);
+            }
+
             return true;
         }
         return false;
