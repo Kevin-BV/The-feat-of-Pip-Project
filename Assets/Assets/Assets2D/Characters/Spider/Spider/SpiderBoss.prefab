@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   player: {fileID: 0}
-  vida: 25
+  vida: 50
   ataqueCollider: {fileID: 8309110319794021559}
   intervaloAtaque: 4
   barraVida: {fileID: 0}
@@ -240,8 +240,8 @@ MonoBehaviour:
   "ara\xF1aPeque\xF1aPrefab": {fileID: 945945371762099627, guid: 4a59e76bd3c60654fae806c831c279c9,
     type: 3}
   "puntoGeneracionAra\xF1as": {fileID: 1852104679945936267}
-  tiempoGeneracion50: 10
-  tiempoGeneracion25: 5
+  tiempoGeneracion50: 15
+  tiempoGeneracion25: 10
 --- !u!114 &7313290660221212503
 MonoBehaviour:
   m_ObjectHideFlags: 0

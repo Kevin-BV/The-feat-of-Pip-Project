@@ -35,8 +35,8 @@ public class SpiderBoss : MonoBehaviour
     // Nuevas variables para generar arañas pequeñas
     public GameObject arañaPequeñaPrefab; // Prefab de las arañas pequeñas
     public Transform puntoGeneracionArañas; // Punto de generación de las arañas pequeñas
-    public float tiempoGeneracion50 = 5f; // Tiempo para generar arañas cuando tiene menos del 50% de vida
-    public float tiempoGeneracion25 = 2f; // Tiempo para generar arañas cuando tiene menos del 25% de vida
+    public float tiempoGeneracion50 = 15f; // Tiempo para generar arañas cuando tiene menos del 50% de vida
+    public float tiempoGeneracion25 = 10f; // Tiempo para generar arañas cuando tiene menos del 25% de vida
     private float tiempoUltimaGeneracion = 0f; // Para controlar el tiempo entre generaciones
     private bool generandoArañas = false; // Para controlar si se están generando las arañas
 
@@ -89,7 +89,7 @@ public class SpiderBoss : MonoBehaviour
             tiempoGeneracion50 = tiempoGeneracion25; // Aumenta la velocidad de generación
         }
 
-        if (vida <= 50 || vida <= 25) // Generar arañas a partir de 50% y 25% de vida
+        if (vida <= 25 || vida <= 10) // Generar arañas a partir de 50% y 25% de vida
         {
             if (Time.time - tiempoUltimaGeneracion >= tiempoGeneracion50)
             {
