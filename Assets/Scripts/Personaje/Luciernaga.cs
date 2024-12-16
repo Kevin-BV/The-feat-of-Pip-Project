@@ -55,7 +55,9 @@ public class Luciernaga : MonoBehaviour
 
             // Ajustar la escala en el eje X para que la luciérnaga mire hacia el punto de mira
             Vector3 nuevaEscala = transform.localScale;
-            nuevaEscala.x = direccionX; // Asignar la dirección en X
+
+            // Establecer la escala X a 0.5f y aplicar la dirección de rotación
+            nuevaEscala.x = 0.5f * direccionX; // Ajustar la escala en X para reflejar la dirección
             transform.localScale = nuevaEscala;
         }
     }
