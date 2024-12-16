@@ -5256,6 +5256,11 @@ PrefabInstance:
       objectReference: {fileID: 736096260}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
+      propertyPath: puntajeScript
+      value: 
+      objectReference: {fileID: 1511118117}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
       propertyPath: backgroundGrande
       value: 
       objectReference: {fileID: 1013557040}
@@ -5279,6 +5284,11 @@ PrefabInstance:
       propertyPath: corazones.Array.data[3]
       value: 
       objectReference: {fileID: 1050407938}
+    - target: {fileID: 4452768978062918775, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: puntajeScript
+      value: 
+      objectReference: {fileID: 1511118117}
     - target: {fileID: 4452768978062918775, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: objetoLuciernaga
@@ -22856,6 +22866,18 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1511118117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3099825619520058367, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 361097219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314e7c112ef089d46a839939c36a9ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1657936725
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,6 +20,10 @@ public class MovimientoPersonaje : MonoBehaviour
     private bool enColliderLuciernaga = false; // Variable para el rango de activación
     private bool luciernagaActivada = false;
 
+    public Puntaje puntajeScript; // Referencia al script de puntaje
+    public int costoVelocidad = 30; // Costo en puntaje para aumentar la velocidad
+    public int costoLuciernaga = 40; // Costo en puntaje para activar luciérnaga
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -57,29 +61,47 @@ public class MovimientoPersonaje : MonoBehaviour
         // Activar la luciérnaga si está en el rango y presiona X
         if (enColliderLuciernaga && Input.GetKeyDown(KeyCode.X) && !luciernagaActivada)
         {
-            if (objetoLuciernaga != null)
+            if (puntajeScript.ConsumirPuntaje(costoLuciernaga))
             {
-                objetoLuciernaga.SetActive(true);
-                luciernagaActivada = true;
-                PlayerPrefs.SetInt("LuciérnagaActivada", 1); // Guardar activación
-                PlayerPrefs.Save();
-                Debug.Log("Luciérnaga activada y guardada.");
+                if (objetoLuciernaga != null)
+                {
+                    objetoLuciernaga.SetActive(true);
+                    luciernagaActivada = true;
+                    PlayerPrefs.SetInt("LuciérnagaActivada", 1); // Guardar activación
+                    PlayerPrefs.Save();
+                    Debug.Log("Luciérnaga activada y guardada.");
+                }
+            }
+            else
+            {
+                Debug.Log("No tienes suficiente puntaje para activar la luciérnaga.");
             }
         }
 
         // Aumentar velocidad si está en el collider y presiona X
         if (puedeAumentarVelocidad && !velocidadAumentada && Input.GetKeyDown(KeyCode.X))
         {
-            velocidad = velocidadOriginal * 1.5f;
-            velocidadAumentada = true;
+            if (puntajeScript.ConsumirPuntaje(costoVelocidad))
+            {
+                velocidad = velocidadOriginal * 1.5f;
+                velocidadAumentada = true;
 
-            PlayerPrefs.SetFloat("VelocidadPlayer", velocidad); // Guardar la velocidad
-            PlayerPrefs.Save();
-            Debug.Log("Velocidad aumentada y guardada.");
+                PlayerPrefs.SetFloat("VelocidadPlayer", velocidad); // Guardar la velocidad
+                PlayerPrefs.Save();
+                Debug.Log("Velocidad aumentada y guardada.");
+            }
+            else
+            {
+                Debug.Log("No tienes suficiente puntaje para aumentar la velocidad.");
+            }
         }
 
         // Movimiento
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
+        // Resto del código sin cambios...
+    
+
+    // Movimiento
+    float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
         Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical);
 

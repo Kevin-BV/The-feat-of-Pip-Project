@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 public class Puntaje : MonoBehaviour
 {
     // El puntaje actual
@@ -12,6 +14,11 @@ public class Puntaje : MonoBehaviour
 
     // Referencia al texto del Canvas donde se mostrará el puntaje
     public Text scoreText;
+
+    // Variables para consumir puntaje
+    public int puntajeVidaExtra = 50; // Puntaje para vida extra
+    public int puntajeVelocidad = 30; // Puntaje para aumentar velocidad
+    public int puntajeLuciernaga = 40; // Puntaje para luciérnaga
 
     private void Start()
     {
@@ -56,5 +63,18 @@ public class Puntaje : MonoBehaviour
     {
         // Limpia el puntaje al cerrar el juego (opcional)
         PlayerPrefs.DeleteKey("Puntaje");
+    }
+
+    // Método para consumir puntaje cuando se usa una habilidad
+    public bool ConsumirPuntaje(int cantidad)
+    {
+        if (score >= cantidad)
+        {
+            score -= cantidad;
+            PlayerPrefs.SetInt("Puntaje", score);  // Guardar el puntaje actualizado
+            UpdateScoreText();
+            return true;
+        }
+        return false;
     }
 }

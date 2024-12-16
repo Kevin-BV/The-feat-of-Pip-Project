@@ -29,6 +29,9 @@ public class VidaConCorazones : MonoBehaviour
     private Animator anim;
     private BloqueoParry bloqueoParry;
 
+    public Puntaje puntajeScript; // Referencia al script de puntaje
+    public int costoVidaExtra = 50; // Costo en puntaje para activar vida extra
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -50,7 +53,14 @@ public class VidaConCorazones : MonoBehaviour
     {
         if (puedeActivarVidaExtra && Input.GetKeyDown(KeyCode.X))
         {
-            ActivarVidaExtra();
+            if (puntajeScript.ConsumirPuntaje(costoVidaExtra))
+            {
+                ActivarVidaExtra();
+            }
+            else
+            {
+                Debug.Log("No tienes suficiente puntaje para activar la vida extra.");
+            }
         }
     }
 
@@ -104,7 +114,6 @@ public class VidaConCorazones : MonoBehaviour
 
     private void GuardarUltimaEscena()
     {
-        // Guardar la última escena actual
         string escenaActual = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("UltimaEscena", escenaActual);
         Debug.Log("Escena guardada: " + escenaActual);
@@ -130,20 +139,38 @@ public class VidaConCorazones : MonoBehaviour
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
 
-        GetComponent<MovimientoPersonaje>().enabled = false;
-
         if (anim != null)
         {
             anim.SetBool("IsDead", true);
         }
+
+        StartCoroutine(ActivarAnimacionMuerte());
+    }
+
+    private IEnumerator ActivarAnimacionMuerte()
+    {
+        anim.SetTrigger("DeathPhase1"); // Primera animación de muerte
+        yield return new WaitForSeconds(1.5f); // Duración estimada de la primera animación
+        anim.SetTrigger("DeathPhase2"); // Segunda animación de muerte
+        yield return new WaitForSeconds(1.5f);
 
         StartCoroutine(CargarEscenaGameOver());
     }
 
     private IEnumerator CargarEscenaGameOver()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
+        ReiniciarVida();
         SceneManager.LoadScene("GameOver");
+    }
+
+    private void ReiniciarVida()
+    {
+        vidaMaxima = 6;
+        vidaActual = vidaMaxima;
+        GuardarEnPlayerPrefs("VidaActual", vidaActual);
+        GuardarEnPlayerPrefs("VidaMaxima", vidaMaxima);
+        Debug.Log("Vida reiniciada a su valor original");
     }
 
     private void OnTriggerEnter(Collider other)
