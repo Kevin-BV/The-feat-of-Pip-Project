@@ -16,6 +16,7 @@ public class AtaquePersonaje : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip ataquefosforo;
+    public AudioClip sonidoPowerUp; // Sonido para el Power-Up
 
     [Header("Power-Up")]
     public GameObject efectoPowerUp; // GameObject del ParticleSystem hijo del jugador
@@ -147,6 +148,12 @@ public class AtaquePersonaje : MonoBehaviour
         if (efectoPowerUp != null)
         {
             efectoPowerUp.SetActive(true);
+        }
+
+        // Reproduce el sonido de Power-Up
+        if (sonidoPowerUp != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sonidoPowerUp);
         }
 
         // Inicia la cuenta regresiva del Power-Up

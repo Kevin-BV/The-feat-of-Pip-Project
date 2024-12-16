@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;  // Necesario para trabajar con botones
 
 public class BorrarPuntaje : MonoBehaviour
 {
-    // Método para borrar el puntaje
+    public Button botonBorrar;  // Referencia al botón en el inspector
+
+    void Start()
+    {
+        // Asegurarse de que el botón esté configurado correctamente
+        if (botonBorrar != null)
+        {
+            botonBorrar.onClick.AddListener(ResetScore);  // Asignar el método al botón
+        }
+    }
+
+    // Método para borrar todos los PlayerPrefs
     public void ResetScore()
     {
-        // Borra el puntaje almacenado en PlayerPrefs
-        PlayerPrefs.DeleteKey("Puntaje");
-        Debug.Log("El puntaje ha sido reiniciado.");
+        // Borra todos los PlayerPrefs
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Todos los PlayerPrefs han sido reiniciados.");
     }
 }
