@@ -10,6 +10,9 @@ public class MovimientoPersonaje : MonoBehaviour
     private bool enSuelo = true; // Variable para verificar si está en el suelo
     private Rigidbody rb;
     private Animator anim;
+    private bool puedeAumentarVelocidad = false; // Verifica si el player está en el collider
+    private bool velocidadAumentada = false; // Verifica si ya se aumentó la velocidad
+    private float velocidadOriginal; // Guarda la velocidad original del jugador
 
     void Start()
     {
@@ -18,35 +21,54 @@ public class MovimientoPersonaje : MonoBehaviour
 
         // Obtenemos el Animator para controlar las animaciones
         anim = GetComponent<Animator>();
+
+        // Guardamos la velocidad original
+        velocidadOriginal = velocidad;
+
+        // Solo cargar velocidad desde PlayerPrefs si no estamos en el editor
+        if (!Application.isEditor)
+        {
+            velocidad = PlayerPrefs.GetFloat("VelocidadPlayer", velocidadOriginal);
+            if (velocidad > velocidadOriginal)
+            {
+                velocidadAumentada = true;
+            }
+        }
     }
 
     void Update()
     {
-          // Si el personaje está muerto o recibiendo daño, no permite el movimiento
-            if (anim.GetBool("IsDead") || anim.GetBool("IsDamaged"))
+        // Si el personaje está muerto o recibiendo daño, no permite el movimiento
+        if (anim.GetBool("IsDead") || anim.GetBool("IsDamaged"))
+        {
+            return; // Detiene todo el movimiento si está muerto o recibiendo daño
+        }
+
+        // Aumentar velocidad si está en el collider y presiona X (solo una vez)
+        if (puedeAumentarVelocidad && !velocidadAumentada && Input.GetKeyDown(KeyCode.X))
+        {
+            velocidad = velocidadOriginal * 1.5f; // Aumenta la velocidad en un 50%
+            velocidadAumentada = true; // Marca que ya se aumentó
+
+            // Guardar en PlayerPrefs solo si no estamos en el editor
+            if (!Application.isEditor)
             {
-                return; // Detiene todo el movimiento si está muerto o recibiendo daño
+                PlayerPrefs.SetFloat("VelocidadPlayer", velocidad);
+                PlayerPrefs.Save();
             }
+        }
 
-            // Capturamos las entradas de movimiento
-            float movimientoHorizontal = Input.GetAxis("Horizontal");
-            float movimientoVertical = Input.GetAxis("Vertical");
+        // Capturamos las entradas de movimiento
+        float movimientoHorizontal = Input.GetAxis("Horizontal");
+        float movimientoVertical = Input.GetAxis("Vertical");
 
-            // Creamos el vector de movimiento
-            Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical);
+        // Creamos el vector de movimiento
+        Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical);
 
         // Movemos al personaje si hay movimiento
         if (movimiento.magnitude > 0.1f) // Verificamos si el personaje se está moviendo
         {
             anim.SetBool("Correr", true); // Activamos la animación de correr
-
-            // Volteamos el personaje según la dirección del movimiento horizontal
-            if (movimientoHorizontal != 0)
-            {
-                Vector3 escala = transform.localScale;
-                escala.x = Mathf.Sign(movimientoHorizontal) * Mathf.Abs(escala.x); // Voltear en X
-                transform.localScale = escala;
-            }
 
             // Movemos el personaje
             transform.Translate(movimiento.normalized * velocidad * Time.deltaTime, Space.World);
@@ -72,6 +94,33 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             enSuelo = true; // Indicamos que está en el suelo
             anim.SetBool("Saltar", false); // Detenemos la animación de salto
+        }
+    }
+
+    // Detecta cuando entra en el collider con tag VelocidadExtra
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("VelocidadExtra"))
+        {
+            puedeAumentarVelocidad = true; // Habilita el aumento de velocidad
+        }
+    }
+
+    // Detecta cuando sale del collider con tag VelocidadExtra
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("VelocidadExtra"))
+        {
+            puedeAumentarVelocidad = false; // Deshabilita el aumento de velocidad
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        // Resetear PlayerPrefs al salir del juego en el editor
+        if (Application.isEditor)
+        {
+            PlayerPrefs.DeleteKey("VelocidadPlayer");
         }
     }
 }
