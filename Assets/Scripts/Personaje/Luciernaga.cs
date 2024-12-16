@@ -13,6 +13,22 @@ public class Luciernaga : MonoBehaviour
     public float rangoMinimo = 3f; // Distancia mínima al jugador
     public float rangoMaximo = 6f; // Distancia máxima al jugador
 
+    [Header("Sonido de la Luciérnaga")]
+    public AudioClip sonidoVuelo; // Sonido de vuelo
+    private AudioSource audioSource; // AudioSource para reproducir el sonido
+
+    private void Start()
+    {
+        // Obtener el AudioSource en el objeto
+        audioSource = GetComponent<AudioSource>();
+
+        // Verificar si no hay un AudioSource, agregar uno
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
+
     private void Update()
     {
         if (jugador == null || puntoDeMira == null) return; // Si no hay jugador o punto de mira asignados, no hace nada
@@ -41,6 +57,12 @@ public class Luciernaga : MonoBehaviour
 
         // Actualizamos la posición de la luciérnaga
         transform.position += direccion * velocidad * Time.deltaTime;
+
+        // Reproducir el sonido de vuelo si se está moviendo
+        if (direccion != Vector3.zero && sonidoVuelo != null && !audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(sonidoVuelo);
+        }
 
         // Rotar hacia el punto de mira en el eje X
         RotarHaciaPuntoDeMira();
