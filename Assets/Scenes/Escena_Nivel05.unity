@@ -2053,7 +2053,7 @@ PrefabInstance:
     - target: {fileID: 5616884764915986035, guid: c8c3190ec1e917240ab7bfff4d71b880,
         type: 3}
       propertyPath: tiempoDeEspera
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5616884764915986035, guid: c8c3190ec1e917240ab7bfff4d71b880,
         type: 3}
