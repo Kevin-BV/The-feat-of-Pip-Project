@@ -12,6 +12,7 @@ TagManager:
   - ZonePip1
   - ZonePip2
   - ZonePip3
+  - VidaExtra
   layers:
   - Default
   - TransparentFX
