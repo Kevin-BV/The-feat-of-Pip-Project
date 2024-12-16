@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.94
+  m_AmbientIntensity: 0.09
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.1818654, g: 0.22544561, b: 0.335849, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -753,79 +753,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268359351}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &290482323
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -18.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2553894204071588327, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_Name
-      value: CajaDeFosforos
-      objectReference: {fileID: 0}
-    - target: {fileID: 2553894204071588327, guid: 164c67e44f047684a82c19af6c00956e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 164c67e44f047684a82c19af6c00956e, type: 3}
 --- !u!114 &409811961 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6429404097726625864, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
@@ -1430,6 +1357,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a59e76bd3c60654fae806c831c279c9, type: 3}
+--- !u!82 &595668168 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4770344725294274459, guid: 4a59e76bd3c60654fae806c831c279c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 595668167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &624842096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4786,6 +4719,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1514808710}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1514808712 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6121475406980282175, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 1514808710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1553515644
 GameObject:
   m_ObjectHideFlags: 0
@@ -5540,6 +5479,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8bda8b40191d3043bce87b598224f2a, type: 3}
+--- !u!82 &1767614186 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8845523708193442084, guid: b8bda8b40191d3043bce87b598224f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1767614185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771192575
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,6 +5577,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1986962684349253661, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fb8ed93cb705b2042909cd40d5217001, type: 3}
     - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: sfxSlider
@@ -5676,7 +5626,12 @@ PrefabInstance:
         type: 3}
       propertyPath: rataSfxAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1767614186}
+    - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
+        type: 3}
+      propertyPath: aranaSfxAudioSource
+      value: 
+      objectReference: {fileID: 595668168}
     - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: bichoSfxAudioSource
@@ -5691,7 +5646,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerSfxAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1514808712}
     - target: {fileID: 6650961083961115892, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: m_Name
@@ -6102,7 +6057,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.21509439, g: 0.11808761, b: 0.06939837, a: 1}
-  m_Intensity: 3.27
+  m_Intensity: 5.77
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6763,7 +6718,6 @@ SceneRoots:
   - {fileID: 1778518894}
   - {fileID: 1832867658}
   - {fileID: 624842099}
-  - {fileID: 290482323}
   - {fileID: 463555586}
   - {fileID: 595668167}
   - {fileID: 711424254}
