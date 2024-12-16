@@ -2087,6 +2087,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
+      propertyPath: corazonExtra
+      value: 
+      objectReference: {fileID: 1139723690}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: backgroundGrande
+      value: 
+      objectReference: {fileID: 1139723692}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
       propertyPath: corazones.Array.data[0]
       value: 
       objectReference: {fileID: 1655113823}
@@ -2100,6 +2110,11 @@ PrefabInstance:
       propertyPath: corazones.Array.data[2]
       value: 
       objectReference: {fileID: 637853501}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: corazones.Array.data[3]
+      value: 
+      objectReference: {fileID: 1139723691}
     - target: {fileID: 4986457538847865036, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: m_labelHash
@@ -4422,6 +4437,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117136939}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1139723690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6232054685984684890, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1139723691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6612073705279559908, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139723690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1139723692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 938969263259709576, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1140652224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7125,6 +7164,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1778518895}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1844856577}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CambiarEscena
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347394994485970504, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CambioEscena, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2841565466376775854, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -7294,6 +7348,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1844856574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1844856577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6331406337234300008, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844856576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5546ad60b0dbea4a903d9047f4f15d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1844856578 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 998122709958534788, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
