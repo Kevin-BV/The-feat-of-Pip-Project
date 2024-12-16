@@ -776,7 +776,8 @@ MonoBehaviour:
   ataquefosforo: {fileID: 8300000, guid: ece47363916f86c4c875159a6f8f71e4, type: 3}
   efectoPowerUp: {fileID: 458255301141646747}
   duracionPowerUp: 8
-  objetoPowerUp: {fileID: 0}
+  objetoPowerUp: {fileID: 1983813286163920534, guid: 5389a03b502b0a3408c5f997eef59f23,
+    type: 3}
   barraPowerUp:
   - {fileID: 0}
   - {fileID: 0}
@@ -1377,7 +1378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716642081059944536}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000008994066, y: -0.00000008994065, z: 0.42806742, w: 0.9037468}
+  m_LocalRotation: {x: 0.000000017988143, y: 0.000000017988139, z: 0.42806733, w: 0.9037469}
   m_LocalPosition: {x: 0, y: -0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2217,7 +2218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6563283744165266453}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.22445855, w: 0.97448367}
+  m_LocalRotation: {x: 0, y: 0, z: -0.22445814, w: 0.9744838}
   m_LocalPosition: {x: -0.1, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2486,7 +2487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6663365287710394101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.18370932, w: 0.9829806}
+  m_LocalRotation: {x: 0, y: 0, z: -0.18371, w: 0.98298055}
   m_LocalPosition: {x: 0.76, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3365,7 +3366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960571305020653810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000010460956, y: 0.00000011104651, z: 0.45606026, w: 0.8899489}
+  m_LocalRotation: {x: 0.00000006973972, y: 0.00000007403102, z: 0.4560603, w: 0.88994884}
   m_LocalPosition: {x: 0.02, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
