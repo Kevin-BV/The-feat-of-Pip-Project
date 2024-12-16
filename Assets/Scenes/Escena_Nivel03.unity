@@ -2162,6 +2162,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727530606}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &756126185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6232054685984684890, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &756126186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6612073705279559908, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756126185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &756126187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 938969263259709576, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844856574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &849621350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,6 +4541,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
+      propertyPath: corazonExtra
+      value: 
+      objectReference: {fileID: 756126185}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: backgroundGrande
+      value: 
+      objectReference: {fileID: 756126187}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
       propertyPath: corazones.Array.data[0]
       value: 
       objectReference: {fileID: 204674220}
@@ -4530,6 +4564,11 @@ PrefabInstance:
       propertyPath: corazones.Array.data[2]
       value: 
       objectReference: {fileID: 1844856575}
+    - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: corazones.Array.data[3]
+      value: 
+      objectReference: {fileID: 756126186}
     - target: {fileID: 4986457538847865036, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: m_labelHash
