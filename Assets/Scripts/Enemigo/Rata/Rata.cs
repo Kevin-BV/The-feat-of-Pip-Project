@@ -12,6 +12,7 @@ public class Rata : MonoBehaviour
 
     [Header("Configuración del Gizmo")]
     public float tamanoGizmo = 1f; // Rango de ataque
+    public Transform puntoDeAtaque; // Objeto vacío para definir el rango de ataque (se puede modificar en el Inspector)
 
     [Header("Sistema de Vida")]
     public int vidaMaxima = 4; // Vida máxima
@@ -189,13 +190,17 @@ public class Rata : MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
+    // Modificado para usar el objeto Empty para el Gizmo
     private void OnDrawGizmosSelected()
     {
+        if (puntoDeAtaque != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(puntoDeAtaque.position, tamanoGizmo); // Gizmo basado en el Empty y tamaño editable
+        }
+
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), rangoDeDeteccion);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), tamanoGizmo);
     }
 
     private void OnTriggerEnter(Collider other)
