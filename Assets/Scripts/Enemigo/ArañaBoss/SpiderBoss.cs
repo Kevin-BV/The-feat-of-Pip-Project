@@ -32,6 +32,14 @@ public class SpiderBoss : MonoBehaviour
 
     private bool estaEnDamage = false; // Nueva variable para controlar el estado de daño
 
+    // Nuevas variables para generar arañas pequeñas
+    public GameObject arañaPequeñaPrefab; // Prefab de las arañas pequeñas
+    public Transform puntoGeneracionArañas; // Punto de generación de las arañas pequeñas
+    public float tiempoGeneracion50 = 5f; // Tiempo para generar arañas cuando tiene menos del 50% de vida
+    public float tiempoGeneracion25 = 2f; // Tiempo para generar arañas cuando tiene menos del 25% de vida
+    private float tiempoUltimaGeneracion = 0f; // Para controlar el tiempo entre generaciones
+    private bool generandoArañas = false; // Para controlar si se están generando las arañas
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -74,6 +82,23 @@ public class SpiderBoss : MonoBehaviour
             );
         }
 
+        // Generación de arañas
+        if (vida <= 25 && !generandoArañas) // Empieza a generar arañas al 25%
+        {
+            generandoArañas = true;
+            tiempoGeneracion50 = tiempoGeneracion25; // Aumenta la velocidad de generación
+        }
+
+        if (vida <= 50 || vida <= 25) // Generar arañas a partir de 50% y 25% de vida
+        {
+            if (Time.time - tiempoUltimaGeneracion >= tiempoGeneracion50)
+            {
+                GenerarAraña();
+                tiempoUltimaGeneracion = Time.time;
+            }
+        }
+
+        // Lógica de ataque
         if (jugadorDentroCollider && Time.time - tiempoUltimoAtaque >= intervaloAtaque)
         {
             animator.SetTrigger(attackCounter < 3 ? "Attack_1" : "Attack_2");
@@ -149,6 +174,14 @@ public class SpiderBoss : MonoBehaviour
 
     private void ActualizarBarraVida()
     {
-        barraVida.fillAmount = (float)vida / 25f;
+        barraVida.fillAmount = (float)vida / 50f;
+    }
+
+    private void GenerarAraña()
+    {
+        if (arañaPequeñaPrefab != null && puntoGeneracionArañas != null)
+        {
+            Instantiate(arañaPequeñaPrefab, puntoGeneracionArañas.position, Quaternion.identity);
+        }
     }
 }
