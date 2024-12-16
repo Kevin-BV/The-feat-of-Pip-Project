@@ -34,9 +34,9 @@ public class VidaConCorazones : MonoBehaviour
         anim = GetComponent<Animator>();
         bloqueoParry = GetComponent<BloqueoParry>();
 
-        // Cargar la vida del jugador usando PlayerPrefs
-        vidaMaxima = PlayerPrefs.GetInt("VidaMaxima", 6);
-        vidaActual = vidaMaxima;  // Reseteamos la vida actual al máximo en cada inicio
+        // Cargar la vida del jugador solo si no estamos en el editor
+        vidaMaxima = CargarDesdePlayerPrefs("VidaMaxima", 6);
+        vidaActual = vidaMaxima;
 
         if (vidaMaxima == vidaMaximaConExtra)
         {
@@ -60,11 +60,10 @@ public class VidaConCorazones : MonoBehaviour
         if (vidaMaxima < vidaMaximaConExtra)
         {
             vidaMaxima = vidaMaximaConExtra;
-            vidaActual = vidaMaxima;  // Rellenamos la vida al activar vida extra
+            vidaActual = vidaMaxima;
 
-            // Guardar nueva vida máxima
-            PlayerPrefs.SetInt("VidaMaxima", vidaMaxima);
-            PlayerPrefs.SetInt("VidaActual", vidaActual);
+            GuardarEnPlayerPrefs("VidaMaxima", vidaMaxima);
+            GuardarEnPlayerPrefs("VidaActual", vidaActual);
 
             corazonExtra.SetActive(true);
             backgroundGrande.SetActive(true);
@@ -83,7 +82,7 @@ public class VidaConCorazones : MonoBehaviour
         if (bloqueoParry.PuedeRecibirDano() && !anim.GetBool("IsDamaged"))
         {
             vidaActual = Mathf.Max(vidaActual - dano, 0);
-            PlayerPrefs.SetInt("VidaActual", vidaActual); // Guardar la vida actual
+            GuardarEnPlayerPrefs("VidaActual", vidaActual);
 
             ActualizarCorazones();
 
@@ -107,7 +106,7 @@ public class VidaConCorazones : MonoBehaviour
     {
         int vidaAnterior = vidaActual;
         vidaActual = Mathf.Min(vidaActual + curacion, vidaMaxima);
-        PlayerPrefs.SetInt("VidaActual", vidaActual); // Guardar la vida actual
+        GuardarEnPlayerPrefs("VidaActual", vidaActual);
 
         ActualizarCorazones();
 
@@ -143,7 +142,7 @@ public class VidaConCorazones : MonoBehaviour
     private void Morir()
     {
         Debug.Log("El jugador ha muerto.");
-        PlayerPrefs.SetString("UltimaEscena", SceneManager.GetActiveScene().name);
+        GuardarEnPlayerPrefs("UltimaEscena", SceneManager.GetActiveScene().name);
 
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
@@ -190,12 +189,25 @@ public class VidaConCorazones : MonoBehaviour
         }
     }
 
-    // Al cambiar de escena o morir, reseteamos la vida
-    private void OnEnable()
+    // Métodos de Helper para PlayerPrefs
+    private int CargarDesdePlayerPrefs(string key, int defaultValue)
     {
-        // Reseteamos la vida al entrar en la escena
-        vidaActual = vidaMaxima;
-        PlayerPrefs.SetInt("VidaActual", vidaActual);
-        ActualizarCorazones();
+        return Application.isEditor ? defaultValue : PlayerPrefs.GetInt(key, defaultValue);
+    }
+
+    private void GuardarEnPlayerPrefs(string key, int value)
+    {
+        if (!Application.isEditor)  // Evita guardar en el editor
+        {
+            PlayerPrefs.SetInt(key, value);
+        }
+    }
+
+    private void GuardarEnPlayerPrefs(string key, string value)
+    {
+        if (!Application.isEditor)  // Evita guardar en el editor
+        {
+            PlayerPrefs.SetString(key, value);
+        }
     }
 }

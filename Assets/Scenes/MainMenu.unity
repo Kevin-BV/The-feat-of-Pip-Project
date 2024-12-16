@@ -668,7 +668,7 @@ MonoBehaviour:
       - m_Target: {fileID: 709939103}
         m_TargetAssemblyTypeName: CambioEscena, Assembly-CSharp
         m_MethodName: CambiarEscena
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3352,6 +3352,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 473878674666639930, guid: c770ceba951e5be479c6399c7d4729e3,
+        type: 3}
+      propertyPath: nombreEscena
+      value: Prologo
+      objectReference: {fileID: 0}
     - target: {fileID: 660233927973612768, guid: c770ceba951e5be479c6399c7d4729e3,
         type: 3}
       propertyPath: m_Name
