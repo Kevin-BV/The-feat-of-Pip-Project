@@ -10,7 +10,7 @@ public class VidaConCorazones : MonoBehaviour
     [Header("Configuración de Vida")]
     public int vidaMaxima = 6;
     private int vidaActual;
-    private int vidaMaximaConExtra = 8; // Vida máxima cuando se activa la mejora
+    private int vidaMaximaConExtra = 8;
     private bool puedeActivarVidaExtra = false;
 
     [Header("Configuración del UI de Corazones")]
@@ -19,30 +19,36 @@ public class VidaConCorazones : MonoBehaviour
     public Sprite corazonMitad;
     public Sprite corazonVacio;
 
-    public GameObject corazonExtra; // Corazón adicional del HUD (desactivado por defecto)
-    public GameObject backgroundGrande; // Nuevo background grande para los corazones
+    public GameObject corazonExtra;
+    public GameObject backgroundGrande;
 
     [Header("Sonidos")]
-    public AudioSource audioSource; // Componente de AudioSource
-    public AudioClip sonidoDanio; // Sonido al recibir daño
-    public AudioClip sonidoMuerte; // Sonido al morir
-    public AudioClip sonidoCuracion; // Sonido al recibir HP
-    public AudioClip sonidoVidaExtra; // Sonido cuando se activa la vida extra
+    public AudioSource audioSource;
+    public AudioClip sonidoDanio, sonidoMuerte, sonidoCuracion, sonidoVidaExtra;
 
     private Animator anim;
     private BloqueoParry bloqueoParry;
 
     void Start()
     {
-        vidaActual = vidaMaxima;
-        ActualizarCorazones();
         anim = GetComponent<Animator>();
         bloqueoParry = GetComponent<BloqueoParry>();
+
+        // Cargar la vida del jugador usando PlayerPrefs
+        vidaMaxima = PlayerPrefs.GetInt("VidaMaxima", 6);
+        vidaActual = vidaMaxima;  // Reseteamos la vida actual al máximo en cada inicio
+
+        if (vidaMaxima == vidaMaximaConExtra)
+        {
+            corazonExtra.SetActive(true);
+            backgroundGrande.SetActive(true);
+        }
+
+        ActualizarCorazones();
     }
 
     void Update()
     {
-        // Si está en el trigger y presiona X
         if (puedeActivarVidaExtra && Input.GetKeyDown(KeyCode.X))
         {
             ActivarVidaExtra();
@@ -51,16 +57,20 @@ public class VidaConCorazones : MonoBehaviour
 
     private void ActivarVidaExtra()
     {
-        if (vidaMaxima < vidaMaximaConExtra) // Solo si aún no está activada
+        if (vidaMaxima < vidaMaximaConExtra)
         {
-            vidaMaxima = vidaMaximaConExtra; // Aumentar vida máxima
-            vidaActual = vidaMaxima; // Rellenar la vida actual al máximo
-            corazonExtra.SetActive(true); // Activar el corazón extra en el HUD
-            backgroundGrande.SetActive(true); // Activar el background grande
+            vidaMaxima = vidaMaximaConExtra;
+            vidaActual = vidaMaxima;  // Rellenamos la vida al activar vida extra
+
+            // Guardar nueva vida máxima
+            PlayerPrefs.SetInt("VidaMaxima", vidaMaxima);
+            PlayerPrefs.SetInt("VidaActual", vidaActual);
+
+            corazonExtra.SetActive(true);
+            backgroundGrande.SetActive(true);
 
             ActualizarCorazones();
 
-            // Reproducir sonido de vida extra
             if (audioSource && sonidoVidaExtra)
                 audioSource.PlayOneShot(sonidoVidaExtra);
 
@@ -73,6 +83,8 @@ public class VidaConCorazones : MonoBehaviour
         if (bloqueoParry.PuedeRecibirDano() && !anim.GetBool("IsDamaged"))
         {
             vidaActual = Mathf.Max(vidaActual - dano, 0);
+            PlayerPrefs.SetInt("VidaActual", vidaActual); // Guardar la vida actual
+
             ActualizarCorazones();
 
             if (anim != null)
@@ -95,6 +107,8 @@ public class VidaConCorazones : MonoBehaviour
     {
         int vidaAnterior = vidaActual;
         vidaActual = Mathf.Min(vidaActual + curacion, vidaMaxima);
+        PlayerPrefs.SetInt("VidaActual", vidaActual); // Guardar la vida actual
+
         ActualizarCorazones();
 
         if (audioSource && sonidoCuracion && vidaActual > vidaAnterior)
@@ -122,26 +136,7 @@ public class VidaConCorazones : MonoBehaviour
                 corazones[i].sprite = corazonVacio;
             }
 
-            // Activar/desactivar corazones según la vida máxima
             corazones[i].enabled = i < (vidaMaxima / 2);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("VidaExtra"))
-        {
-            Debug.Log("En el trigger de Vida Extra. Presiona X para activarlo.");
-            puedeActivarVidaExtra = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("VidaExtra"))
-        {
-            Debug.Log("Saliste del trigger de Vida Extra.");
-            puedeActivarVidaExtra = false;
         }
     }
 
@@ -168,11 +163,39 @@ public class VidaConCorazones : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("GameOver");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("VidaExtra"))
+        {
+            Debug.Log("En el trigger de Vida Extra. Presiona X para activarlo.");
+            puedeActivarVidaExtra = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("VidaExtra"))
+        {
+            Debug.Log("Saliste del trigger de Vida Extra.");
+            puedeActivarVidaExtra = false;
+        }
+    }
+
     public void TerminarAnimacionDanio()
     {
         if (anim != null)
         {
-            anim.SetBool("IsDamaged", false); // Permitimos volver a atacar y moverse
+            anim.SetBool("IsDamaged", false);
         }
+    }
+
+    // Al cambiar de escena o morir, reseteamos la vida
+    private void OnEnable()
+    {
+        // Reseteamos la vida al entrar en la escena
+        vidaActual = vidaMaxima;
+        PlayerPrefs.SetInt("VidaActual", vidaActual);
+        ActualizarCorazones();
     }
 }
