@@ -34,7 +34,6 @@ public class VidaConCorazones : MonoBehaviour
         anim = GetComponent<Animator>();
         bloqueoParry = GetComponent<BloqueoParry>();
 
-        // Cargar la vida del jugador solo si no estamos en el editor
         vidaMaxima = CargarDesdePlayerPrefs("VidaMaxima", 6);
         vidaActual = vidaMaxima;
 
@@ -97,9 +96,18 @@ public class VidaConCorazones : MonoBehaviour
 
             if (vidaActual <= 0)
             {
+                GuardarUltimaEscena();
                 Morir();
             }
         }
+    }
+
+    private void GuardarUltimaEscena()
+    {
+        // Guardar la última escena actual
+        string escenaActual = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("UltimaEscena", escenaActual);
+        Debug.Log("Escena guardada: " + escenaActual);
     }
 
     public void Curar(int curacion)
@@ -116,34 +124,9 @@ public class VidaConCorazones : MonoBehaviour
         }
     }
 
-    private void ActualizarCorazones()
-    {
-        for (int i = 0; i < corazones.Count; i++)
-        {
-            int puntoDeVida = (i + 1) * 2;
-
-            if (vidaActual >= puntoDeVida)
-            {
-                corazones[i].sprite = corazonLleno;
-            }
-            else if (vidaActual == puntoDeVida - 1)
-            {
-                corazones[i].sprite = corazonMitad;
-            }
-            else
-            {
-                corazones[i].sprite = corazonVacio;
-            }
-
-            corazones[i].enabled = i < (vidaMaxima / 2);
-        }
-    }
-
     private void Morir()
     {
         Debug.Log("El jugador ha muerto.");
-        GuardarEnPlayerPrefs("UltimaEscena", SceneManager.GetActiveScene().name);
-
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
 
@@ -189,7 +172,29 @@ public class VidaConCorazones : MonoBehaviour
         }
     }
 
-    // Métodos de Helper para PlayerPrefs
+    private void ActualizarCorazones()
+    {
+        for (int i = 0; i < corazones.Count; i++)
+        {
+            int puntoDeVida = (i + 1) * 2;
+
+            if (vidaActual >= puntoDeVida)
+            {
+                corazones[i].sprite = corazonLleno;
+            }
+            else if (vidaActual == puntoDeVida - 1)
+            {
+                corazones[i].sprite = corazonMitad;
+            }
+            else
+            {
+                corazones[i].sprite = corazonVacio;
+            }
+
+            corazones[i].enabled = i < (vidaMaxima / 2);
+        }
+    }
+
     private int CargarDesdePlayerPrefs(string key, int defaultValue)
     {
         return Application.isEditor ? defaultValue : PlayerPrefs.GetInt(key, defaultValue);
@@ -197,17 +202,9 @@ public class VidaConCorazones : MonoBehaviour
 
     private void GuardarEnPlayerPrefs(string key, int value)
     {
-        if (!Application.isEditor)  // Evita guardar en el editor
+        if (!Application.isEditor)
         {
             PlayerPrefs.SetInt(key, value);
-        }
-    }
-
-    private void GuardarEnPlayerPrefs(string key, string value)
-    {
-        if (!Application.isEditor)  // Evita guardar en el editor
-        {
-            PlayerPrefs.SetString(key, value);
         }
     }
 }

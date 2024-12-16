@@ -14,29 +14,26 @@ public class MenuGameOver : MonoBehaviour
 
     private void Start()
     {
-        // Asignar las funciones a los botones
         botonReintentar.onClick.AddListener(Reintentar);
         botonVolverMenu.onClick.AddListener(VolverMenu);
         botonSalir.onClick.AddListener(Salir);
     }
 
-    // Función para reintentar: carga la última escena antes de GameOver
     private void Reintentar()
     {
-        string ultimaEscena = PlayerPrefs.GetString("UltimaEscena", "EscenaInicial"); // Usamos "EscenaInicial" como valor por defecto
+        // Cargar la escena anterior jugada
+        string ultimaEscena = PlayerPrefs.GetString("UltimaEscena", SceneManager.GetActiveScene().name);
+        Debug.Log("Cargando la última escena jugada: " + ultimaEscena);
         SceneManager.LoadScene(ultimaEscena);
     }
 
-    // Función para volver al menú principal
     private void VolverMenu()
     {
-        SceneManager.LoadScene("MainMenu"); // Asegúrate de que la escena "MainMenu" existe en tu proyecto
+        SceneManager.LoadScene("MainMenu");
     }
 
-    // Función para salir del juego
     private void Salir()
     {
-        // Si estamos en editor de Unity, salir no cierra el juego, pero si estamos en una compilación final, se cierra
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

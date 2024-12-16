@@ -141,13 +141,4 @@ public class MovimientoPersonaje : MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        // Solo en el editor, para limpiar PlayerPrefs
-        if (Application.isEditor)
-        {
-            PlayerPrefs.DeleteKey("VelocidadPlayer");
-            PlayerPrefs.DeleteKey("LuciérnagaActivada");
-        }
-    }
 }
