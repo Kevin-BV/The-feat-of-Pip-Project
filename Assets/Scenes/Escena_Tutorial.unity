@@ -3237,6 +3237,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba17967b9aee6d94488ab5f9665c2208, type: 3}
+--- !u!82 &631686042 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6121475406980282175, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 631686041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &643298469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8981,7 +8987,8 @@ PrefabInstance:
         type: 3}
       propertyPath: rataSfxAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8211884057453397259, guid: 0cb3ad1a0e8e2474ba3a3813bfbef0ea,
+        type: 3}
     - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: bichoSfxAudioSource
@@ -8991,12 +8998,13 @@ PrefabInstance:
         type: 3}
       propertyPath: avispaSfxAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4812283944938287246, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
     - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: playerSfxAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 631686042}
     - target: {fileID: 6650961083961115892, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: m_Name

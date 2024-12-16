@@ -44,8 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7177ef17452e1f44eb27751e79212bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 0}
-  soundIcon: {fileID: 0}
-  soundOnIcon: {fileID: 0}
-  soundOffIcon: {fileID: 0}
-  audioSource: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  musicOnImage: {fileID: 0}
+  musicOffImage: {fileID: 0}
+  sfxOnImage: {fileID: 0}
+  sfxOffImage: {fileID: 0}
+  musicAudioSource: {fileID: 0}
+  sfxAudioSource: {fileID: 0}
+  playerSfxAudioSource: {fileID: 6121475406980282175, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  rataSfxAudioSource: {fileID: 8211884057453397259, guid: 0cb3ad1a0e8e2474ba3a3813bfbef0ea,
+    type: 3}
+  avispaSfxAudioSource: {fileID: 4812283944938287246, guid: c1776e81b754fe541b6106163f51a5c5,
+    type: 3}
+  bichoSfxAudioSource: {fileID: 1208298107016347176, guid: 94bd017e825227f42bfb16d47957aff1,
+    type: 3}
+  aranaSfxAudioSource: {fileID: 0}

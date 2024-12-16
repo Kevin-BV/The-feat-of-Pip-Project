@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class VolumenSlider_Icono : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class VolumenSlider_Icono : MonoBehaviour
     public AudioSource avispaSfxAudioSource;  // AudioSource para los efectos de la avispa
     public AudioSource bichoSfxAudioSource;   // AudioSource para los efectos del bicho
     public AudioSource aranaSfxAudioSource;   // AudioSource para los efectos de la araña
+    public AudioSource aranitaSfxAudioSource;   // AudioSource para los efectos de la arañita
+    public AudioSource HumoParrillasAudioSource;   // AudioSource para los efectos de la parrila
+    public AudioSource cajaDeFosforosAudioSource;   // AudioSource para los efectos de la arañita
+    public AudioSource gusanoPuntajeAudioSource;   // AudioSource para los efectos de la arañita
+
+
+
 
     private void Start()
     {
@@ -59,6 +67,12 @@ public class VolumenSlider_Icono : MonoBehaviour
         if (avispaSfxAudioSource != null) avispaSfxAudioSource.volume = value;
         if (bichoSfxAudioSource != null) bichoSfxAudioSource.volume = value;
         if (aranaSfxAudioSource != null) aranaSfxAudioSource.volume = value;
+        if (aranitaSfxAudioSource != null) aranitaSfxAudioSource.volume = value;
+        if (HumoParrillasAudioSource != null) HumoParrillasAudioSource.volume = value;
+        if (cajaDeFosforosAudioSource != null) cajaDeFosforosAudioSource.volume = value;
+        if (gusanoPuntajeAudioSource != null) gusanoPuntajeAudioSource.volume = value;
+
+
 
         // Actualizar el ícono de SFX
         UpdateSfxIcon(value);
@@ -72,6 +86,11 @@ public class VolumenSlider_Icono : MonoBehaviour
         if (avispaSfxAudioSource != null) avispaSfxAudioSource.volume = sfxSlider.value;
         if (bichoSfxAudioSource != null) bichoSfxAudioSource.volume = sfxSlider.value;
         if (aranaSfxAudioSource != null) aranaSfxAudioSource.volume = sfxSlider.value;
+        if (aranitaSfxAudioSource != null) aranitaSfxAudioSource.volume = sfxSlider.value;
+        if (HumoParrillasAudioSource != null) HumoParrillasAudioSource.volume = sfxSlider.value;
+        if (cajaDeFosforosAudioSource != null) cajaDeFosforosAudioSource.volume = sfxSlider.value;
+        if (gusanoPuntajeAudioSource != null) gusanoPuntajeAudioSource.volume = sfxSlider.value;
+
     }
 
     private void UpdateMusicIcon(float volume)

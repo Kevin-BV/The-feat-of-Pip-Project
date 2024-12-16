@@ -109,6 +109,18 @@ PrefabInstance:
       propertyPath: musicAudioSource
       value: 
       objectReference: {fileID: 1986962684349253661}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: aranaSfxAudioSource
+      value: 
+      objectReference: {fileID: 4956851582293095555, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
+        type: 3}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: aranitaSfxAudioSource
+      value: 
+      objectReference: {fileID: 4770344725294274459, guid: 4a59e76bd3c60654fae806c831c279c9,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
