@@ -10,6 +10,8 @@ public class VidaConCorazones : MonoBehaviour
     [Header("Configuración de Vida")]
     public int vidaMaxima = 6;
     private int vidaActual;
+    private int vidaMaximaConExtra = 8; // Vida máxima cuando se activa la mejora
+    private bool puedeActivarVidaExtra = false;
 
     [Header("Configuración del UI de Corazones")]
     public List<Image> corazones;
@@ -17,38 +19,68 @@ public class VidaConCorazones : MonoBehaviour
     public Sprite corazonMitad;
     public Sprite corazonVacio;
 
+    public GameObject corazonExtra; // Corazón adicional del HUD (desactivado por defecto)
+    public GameObject backgroundGrande; // Nuevo background grande para los corazones
+
     [Header("Sonidos")]
     public AudioSource audioSource; // Componente de AudioSource
     public AudioClip sonidoDanio; // Sonido al recibir daño
     public AudioClip sonidoMuerte; // Sonido al morir
-    public AudioClip sonidoCuracion; // Sonido al recibir HP (por ejemplo, al consumir un ítem)
+    public AudioClip sonidoCuracion; // Sonido al recibir HP
+    public AudioClip sonidoVidaExtra; // Sonido cuando se activa la vida extra
 
-    private Animator anim; // Referencia al Animator
-    private BloqueoParry bloqueoParry; // Referencia al script de bloqueo para verificar invulnerabilidad
+    private Animator anim;
+    private BloqueoParry bloqueoParry;
 
     void Start()
     {
         vidaActual = vidaMaxima;
         ActualizarCorazones();
-        anim = GetComponent<Animator>(); // Obtenemos el Animator
-        bloqueoParry = GetComponent<BloqueoParry>(); // Obtenemos la referencia del script de bloqueo
+        anim = GetComponent<Animator>();
+        bloqueoParry = GetComponent<BloqueoParry>();
+    }
+
+    void Update()
+    {
+        // Si está en el trigger y presiona X
+        if (puedeActivarVidaExtra && Input.GetKeyDown(KeyCode.X))
+        {
+            ActivarVidaExtra();
+        }
+    }
+
+    private void ActivarVidaExtra()
+    {
+        if (vidaMaxima < vidaMaximaConExtra) // Solo si aún no está activada
+        {
+            vidaMaxima = vidaMaximaConExtra; // Aumentar vida máxima
+            vidaActual = vidaMaxima; // Rellenar la vida actual al máximo
+            corazonExtra.SetActive(true); // Activar el corazón extra en el HUD
+            backgroundGrande.SetActive(true); // Activar el background grande
+
+            ActualizarCorazones();
+
+            // Reproducir sonido de vida extra
+            if (audioSource && sonidoVidaExtra)
+                audioSource.PlayOneShot(sonidoVidaExtra);
+
+            Debug.Log("¡Vida Extra activada!");
+        }
     }
 
     public void RecibirDano(int dano)
     {
-        if (bloqueoParry.PuedeRecibirDano() && !anim.GetBool("IsDamaged")) // Solo recibir daño si no está bloqueando ni en animación de daño
+        if (bloqueoParry.PuedeRecibirDano() && !anim.GetBool("IsDamaged"))
         {
             vidaActual = Mathf.Max(vidaActual - dano, 0);
             ActualizarCorazones();
 
-            // Activar la animación de daño
             if (anim != null)
             {
-                anim.SetTrigger("Damage"); // Reproducimos la animación de daño
-                anim.SetBool("IsDamaged", true); // Evitamos acciones durante el daño
+                anim.SetTrigger("Damage");
+                anim.SetBool("IsDamaged", true);
             }
 
-            // Reproducir sonido de daño
             if (audioSource && sonidoDanio)
                 audioSource.PlayOneShot(sonidoDanio);
 
@@ -59,21 +91,12 @@ public class VidaConCorazones : MonoBehaviour
         }
     }
 
-    public void TerminarAnimacionDanio()
-    {
-        if (anim != null)
-        {
-            anim.SetBool("IsDamaged", false); // Permitimos volver a atacar y moverse
-        }
-    }
-
     public void Curar(int curacion)
     {
         int vidaAnterior = vidaActual;
         vidaActual = Mathf.Min(vidaActual + curacion, vidaMaxima);
         ActualizarCorazones();
 
-        // Solo reproducir sonido de curación si la vida aumentó
         if (audioSource && sonidoCuracion && vidaActual > vidaAnterior)
         {
             audioSource.PlayOneShot(sonidoCuracion);
@@ -98,38 +121,58 @@ public class VidaConCorazones : MonoBehaviour
             {
                 corazones[i].sprite = corazonVacio;
             }
+
+            // Activar/desactivar corazones según la vida máxima
+            corazones[i].enabled = i < (vidaMaxima / 2);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("VidaExtra"))
+        {
+            Debug.Log("En el trigger de Vida Extra. Presiona X para activarlo.");
+            puedeActivarVidaExtra = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("VidaExtra"))
+        {
+            Debug.Log("Saliste del trigger de Vida Extra.");
+            puedeActivarVidaExtra = false;
         }
     }
 
     private void Morir()
     {
         Debug.Log("El jugador ha muerto.");
-
         PlayerPrefs.SetString("UltimaEscena", SceneManager.GetActiveScene().name);
 
-        // Reproducir sonido de muerte
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
 
-        // Detener el movimiento del personaje
-        GetComponent<MovimientoPersonaje>().enabled = false;  // Desactiva el script de movimiento para detenerlo
+        GetComponent<MovimientoPersonaje>().enabled = false;
 
-        // Activar la animación de muerte
         if (anim != null)
         {
-            anim.SetBool("IsDead", true); // Activa la animación de muerte
+            anim.SetBool("IsDead", true);
         }
 
-        // Aquí se llama a la coroutine para esperar 2 segundos antes de cargar la escena
         StartCoroutine(CargarEscenaGameOver());
     }
 
     private IEnumerator CargarEscenaGameOver()
     {
-        // Esperar 2 segundos antes de cambiar de escena
         yield return new WaitForSeconds(2f);
-
-        // Cambiar a la escena GameOver
-        SceneManager.LoadScene("GameOver");  // Asegúrate de que la escena GameOver exista en tu proyecto
+        SceneManager.LoadScene("GameOver");
+    }
+    public void TerminarAnimacionDanio()
+    {
+        if (anim != null)
+        {
+            anim.SetBool("IsDamaged", false); // Permitimos volver a atacar y moverse
+        }
     }
 }
