@@ -72,6 +72,10 @@ public class MovimientoPersonaje : MonoBehaviour
 
             // Movemos el personaje
             transform.Translate(movimiento.normalized * velocidad * Time.deltaTime, Space.World);
+
+            // Cambiamos la escala para simular rotación en el eje X
+            float rotacionX = movimientoHorizontal > 0 ? 0.5f : movimientoHorizontal < 0 ? -0.5f : 0.5f;
+            transform.localScale = new Vector3(rotacionX, 0.5f, 0.5f); // Modificamos la escala en el eje X
         }
         else
         {
