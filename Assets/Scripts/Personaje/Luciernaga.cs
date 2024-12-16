@@ -6,6 +6,7 @@ public class Luciernaga : MonoBehaviour
 {
     [Header("Configuración de la Luciérnaga")]
     public Transform jugador; // Referencia al jugador
+    public Transform puntoDeMira; // Punto de mira en el Inspector
     public float velocidad = 2f; // Velocidad con la que la luciérnaga se mueve
 
     [Header("Rangos de Distancia")]
@@ -14,28 +15,48 @@ public class Luciernaga : MonoBehaviour
 
     private void Update()
     {
-        if (jugador == null) return; // Si no hay jugador asignado, no hace nada
+        if (jugador == null || puntoDeMira == null) return; // Si no hay jugador o punto de mira asignados, no hace nada
 
         // Calculamos la distancia entre la luciérnaga y el jugador
         float distancia = Vector3.Distance(transform.position, jugador.position);
 
+        // Determinamos la dirección en la que la luciérnaga debe moverse
+        Vector3 direccion = Vector3.zero;
+
         // Si está demasiado cerca, se aleja
         if (distancia < rangoMinimo)
         {
-            Vector3 direccion = (transform.position - jugador.position).normalized;
-            transform.position += direccion * velocidad * Time.deltaTime;
+            direccion = (transform.position - jugador.position).normalized;
         }
         // Si está demasiado lejos, se acerca
         else if (distancia > rangoMaximo)
         {
-            Vector3 direccion = (jugador.position - transform.position).normalized;
-            transform.position += direccion * velocidad * Time.deltaTime;
+            direccion = (jugador.position - transform.position).normalized;
         }
         // Dentro del rango permitido, se mueve hacia el jugador
         else
         {
-            Vector3 direccion = (jugador.position - transform.position).normalized;
-            transform.position += direccion * velocidad * Time.deltaTime;
+            direccion = (jugador.position - transform.position).normalized;
+        }
+
+        // Actualizamos la posición de la luciérnaga
+        transform.position += direccion * velocidad * Time.deltaTime;
+
+        // Rotar hacia el punto de mira en el eje X
+        RotarHaciaPuntoDeMira();
+    }
+
+    private void RotarHaciaPuntoDeMira()
+    {
+        // Obtener la dirección en el eje X hacia el punto de mira
+        if (puntoDeMira != null)
+        {
+            float direccionX = Mathf.Sign(puntoDeMira.position.x - transform.position.x);
+
+            // Ajustar la escala en el eje X para que la luciérnaga mire hacia el punto de mira
+            Vector3 nuevaEscala = transform.localScale;
+            nuevaEscala.x = direccionX; // Asignar la dirección en X
+            transform.localScale = nuevaEscala;
         }
     }
 
