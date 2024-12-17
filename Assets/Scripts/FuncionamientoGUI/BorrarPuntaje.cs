@@ -16,11 +16,26 @@ public class BorrarPuntaje : MonoBehaviour
         }
     }
 
-    // Método para borrar todos los PlayerPrefs
+    // Método para borrar todos los PlayerPrefs excepto los de sonido
     public void ResetScore()
     {
+        // Guardar las configuraciones de sonido antes de borrar los PlayerPrefs
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+
         // Borra todos los PlayerPrefs
         PlayerPrefs.DeleteAll();
         Debug.Log("Todos los PlayerPrefs han sido reiniciados.");
+
+        // Restaurar las configuraciones de sonido
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+
+        // Asegúrate de que el AudioManager recargue las configuraciones de sonido
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.sfxVolume = sfxVolume;
+            AudioManager.Instance.musicVolume = musicVolume;
+        }
     }
 }
