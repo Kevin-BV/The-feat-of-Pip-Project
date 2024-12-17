@@ -191,19 +191,35 @@ public class VidaConCorazones : MonoBehaviour
         }
     }
 
-    private void Morir()
+    public void Morir()
     {
         Debug.Log("El jugador ha muerto.");
         if (audioSource && sonidoMuerte)
             audioSource.PlayOneShot(sonidoMuerte);
 
+        // Regenerar vida completa al morir, según la cantidad de corazones
+        if (vidaMaxima == 6) // Si la vida máxima es 3 corazones (6 puntos)
+        {
+            vidaActual = vidaMaxima;  // Regenera toda la vida
+        }
+        else if (vidaMaxima == 8) // Si la vida máxima es 4 corazones (8 puntos)
+        {
+            vidaActual = 8; // Regenera 5 puntos (8 vida máxima)
+        }
+
+        GuardarEnPlayerPrefs("VidaActual", vidaActual); // Guardamos la vida restaurada
+        PlayerPrefs.Save(); // Guardamos inmediatamente
+
+        // Desactivar el movimiento del personaje
         GetComponent<MovimientoPersonaje>().enabled = false;
 
+        // Activar la animación de muerte
         if (anim != null)
         {
             anim.SetBool("IsDead", true);
         }
 
+        // Después de un tiempo, cargar la escena de GameOver
         StartCoroutine(CargarEscenaGameOver());
     }
 

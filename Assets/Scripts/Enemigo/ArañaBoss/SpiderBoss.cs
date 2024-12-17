@@ -22,7 +22,8 @@ public class SpiderBoss : MonoBehaviour
     public Image barraVida;
 
     private bool estaMuerta = false;
-    public string escenaCreditos = "Creditos";
+    public string escenaCreditos = "Creditos"; // Nombre de la escena, configurable desde el inspector
+    public float tiempoCambioEscena = 5f; // Tiempo de espera antes de cambiar de escena
 
     public AudioSource audioSource;
     public AudioClip sonidoAraña;
@@ -32,46 +33,29 @@ public class SpiderBoss : MonoBehaviour
 
     private bool estaEnDamage = false; // Nueva variable para controlar el estado de daño
 
-    // Nuevas variables para generar arañas pequeñas
-    public GameObject arañaPequeñaPrefab; // Prefab de las arañas pequeñas
-    public Transform puntoGeneracionArañas; // Punto de generación de las arañas pequeñas
-    public float tiempoGeneracion50 = 15f; // Tiempo para generar arañas cuando tiene menos del 50% de vida
-    public float tiempoGeneracion25 = 10f; // Tiempo para generar arañas cuando tiene menos del 25% de vida
-    private float tiempoUltimaGeneracion = 0f; // Para controlar el tiempo entre generaciones
-    private bool generandoArañas = false; // Para controlar si se están generando las arañas
+    public GameObject arañaPequeñaPrefab;
+    public Transform puntoGeneracionArañas;
+    public float tiempoGeneracion50 = 15f;
+    public float tiempoGeneracion25 = 10f;
+    private float tiempoUltimaGeneracion = 0f;
+    private bool generandoArañas = false;
+
+    // Nueva referencia para el objeto del HUD y para congelar la escena
+    public GameObject hudObjetoMuerte;  // El objeto que se activa cuando la araña muere
+    private bool escenaCongelada = false; // Para evitar congelar más de una vez la escena
 
     void Start()
     {
         animator = GetComponent<Animator>();
         ataqueCollider.isTrigger = true;
         ActualizarBarraVida();
-
-        // Asegurar que el AudioSource se sincronice con el deslizador desde el inicio
-        var volumenController = FindObjectOfType<VolumenSlider_Icono>();
-        if (volumenController != null)
-        {
-            audioSource = volumenController.aranaSfxAudioSource;
-            if (audioSource != null)
-            {
-                audioSource.volume = volumenController.sfxSlider.value;
-            }
-        }
     }
 
     void Update()
     {
-        if (estaMuerta || estaEnDamage) return; // Bloquear movimiento y ataques si está muerta o en daño
+        if (estaMuerta || estaEnDamage) return;
 
-        // Reproduce el sonido de la araña en bucle si no está ya reproduciéndose
-        if (!estaReproduciendoSonidoAraña && sonidoAraña != null)
-        {
-            audioSource.clip = sonidoAraña;
-            audioSource.loop = true;
-            audioSource.Play();
-            estaReproduciendoSonidoAraña = true;
-        }
-
-        // Lógica de movimiento y ataque
+        // Movimiento hacia el jugador
         if (player != null)
         {
             Vector3 directionToPlayer = player.position - transform.position;
@@ -83,13 +67,13 @@ public class SpiderBoss : MonoBehaviour
         }
 
         // Generación de arañas
-        if (vida <= 25 && !generandoArañas) // Empieza a generar arañas al 25%
+        if (vida <= 25 && !generandoArañas)
         {
             generandoArañas = true;
-            tiempoGeneracion50 = tiempoGeneracion25; // Aumenta la velocidad de generación
+            tiempoGeneracion50 = tiempoGeneracion25; // Cambia la velocidad de generación
         }
 
-        if (vida <= 25 || vida <= 10) // Generar arañas a partir de 50% y 25% de vida
+        if (vida <= 25 || vida <= 10)
         {
             if (Time.time - tiempoUltimaGeneracion >= tiempoGeneracion50)
             {
@@ -98,7 +82,7 @@ public class SpiderBoss : MonoBehaviour
             }
         }
 
-        // Lógica de ataque
+        // Ataque
         if (jugadorDentroCollider && Time.time - tiempoUltimoAtaque >= intervaloAtaque)
         {
             animator.SetTrigger(attackCounter < 3 ? "Attack_1" : "Attack_2");
@@ -112,13 +96,16 @@ public class SpiderBoss : MonoBehaviour
     {
         if (estaMuerta) return;
 
-        if (other.CompareTag("Player")) jugadorDentroCollider = true;
+        if (other.CompareTag("Player"))
+        {
+            jugadorDentroCollider = true;
+        }
         else if (other.CompareTag("PlayerAttack"))
         {
-            var jugador = other.GetComponentInParent<AtaquePersonaje>(); // Asegúrate de usar el script correcto
+            var jugador = other.GetComponentInParent<AtaquePersonaje>();
             if (jugador != null)
             {
-                RecibirDano(jugador.dano); // Usa el daño dinámico del jugador
+                RecibirDano(jugador.dano);
             }
         }
     }
@@ -127,49 +114,80 @@ public class SpiderBoss : MonoBehaviour
     {
         if (estaMuerta) return;
 
-        if (other.CompareTag("Player")) jugadorDentroCollider = false;
+        if (other.CompareTag("Player"))
+        {
+            jugadorDentroCollider = false;
+        }
     }
 
     public void RecibirDano(int dano)
     {
-        if (estaMuerta || estaEnDamage) return; // Evitar recibir daño si está muerto o ya está en la animación de daño
+        if (estaMuerta || estaEnDamage) return;
 
         vida -= dano;
+        Debug.Log("Vida de la araña: " + vida);  // Esto mostrará el valor de vida en la consola
         ActualizarBarraVida();
 
-        // Activar la animación de daño
         if (animator != null)
         {
             animator.SetTrigger("Damage");
-            estaEnDamage = true; // Bloquear acciones mientras está en daño
+            estaEnDamage = true;
         }
 
-        if (sonidoHurt != null) audioSource.PlayOneShot(sonidoHurt);
-        if (vida <= 0) Morir();
+        if (sonidoHurt != null)
+        {
+            audioSource.PlayOneShot(sonidoHurt);
+        }
+
+        if (vida <= 0)
+        {
+            Morir();
+        }
     }
 
-    // Método para terminar la animación de daño
     public void TerminarAnimacionDanio()
     {
-        estaEnDamage = false; // Permitir acciones nuevamente
+        estaEnDamage = false;
     }
 
     private void Morir()
     {
         if (estaMuerta) return;
 
+        Debug.Log("La araña ha muerto");  // Esto debería mostrarse en la consola
+
         estaMuerta = true;
         animator.SetTrigger("Death");
         audioSource.Stop();
         ataqueCollider.enabled = false;
 
-        Invoke("CambiarEscenaCreditos", 5f);
+
+        // Iniciar Coroutine para destruir el objeto después de 2 segundos
+        StartCoroutine(DestruirDespuesDeTiempo(4f));
+    }
+
+    private IEnumerator DestruirDespuesDeTiempo(float tiempoEspera)
+    {
+        yield return new WaitForSecondsRealtime(tiempoEspera); // Usamos WaitForSecondsRealtime para evitar el efecto de Time.timeScale
+
+        Debug.Log("Destruyendo el objeto SpiderBoss");  // Esto debería mostrarse en la consola
+        Destroy(gameObject);
     }
 
     private void CambiarEscenaCreditos()
     {
         if (!string.IsNullOrEmpty(escenaCreditos))
-            SceneManager.LoadScene(escenaCreditos);
+        {
+            // Intenta cargar la escena configurada
+            if (SceneUtility.GetBuildIndexByScenePath(escenaCreditos) != -1)
+            {
+                SceneManager.LoadScene(escenaCreditos);
+            }
+            else
+            {
+                Debug.LogError($"La escena '{escenaCreditos}' no está incluida en la lista de escenas del build.");
+            }
+        }
     }
 
     private void ActualizarBarraVida()
