@@ -2231,6 +2231,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 681711975}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &681711977 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6121475406980282175, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 681711975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &694527884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6409,7 +6415,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerSfxAudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 681711977}
     - target: {fileID: 6650961083961115892, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: m_Name
