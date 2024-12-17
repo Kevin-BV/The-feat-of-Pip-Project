@@ -451,11 +451,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.79219687
       objectReference: {fileID: 0}
-    - target: {fileID: 607333820105662564, guid: b8bda8b40191d3043bce87b598224f2a,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 870833505}
     - target: {fileID: 2924803463564550712, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -1521,11 +1516,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jugador
       value: 
-<<<<<<< Updated upstream
       objectReference: {fileID: 1523501702}
-=======
-      objectReference: {fileID: 870833505}
->>>>>>> Stashed changes
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1961,11 +1952,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jugador
       value: 
-<<<<<<< Updated upstream
       objectReference: {fileID: 1523501702}
-=======
-      objectReference: {fileID: 870833505}
->>>>>>> Stashed changes
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2400,11 +2387,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.79219687
       objectReference: {fileID: 0}
-    - target: {fileID: 607333820105662564, guid: b8bda8b40191d3043bce87b598224f2a,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 870833505}
     - target: {fileID: 2924803463564550712, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -4185,12 +4167,6 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 870833503}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &870833505 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1461257243709406326, guid: ba17967b9aee6d94488ab5f9665c2208,
-    type: 3}
-  m_PrefabInstance: {fileID: 870833503}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &880173361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4311888786627685274, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
@@ -4275,11 +4251,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jugador
       value: 
-<<<<<<< Updated upstream
       objectReference: {fileID: 1523501702}
-=======
-      objectReference: {fileID: 870833505}
->>>>>>> Stashed changes
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -9691,11 +9663,7 @@ PrefabInstance:
         type: 3}
       propertyPath: jugador
       value: 
-<<<<<<< Updated upstream
       objectReference: {fileID: 1523501702}
-=======
-      objectReference: {fileID: 870833505}
->>>>>>> Stashed changes
     - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalRotation.w
