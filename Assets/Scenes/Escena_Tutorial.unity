@@ -714,6 +714,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.79219645
       objectReference: {fileID: 0}
+    - target: {fileID: 607333820105662564, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 631686043}
     - target: {fileID: 2924803463564550712, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -3433,6 +3438,12 @@ PrefabInstance:
 --- !u!82 &631686042 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6121475406980282175, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 631686041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &631686043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1461257243709406326, guid: ba17967b9aee6d94488ab5f9665c2208,
     type: 3}
   m_PrefabInstance: {fileID: 631686041}
   m_PrefabAsset: {fileID: 0}
