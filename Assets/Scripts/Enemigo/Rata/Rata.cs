@@ -12,7 +12,6 @@ public class Rata : MonoBehaviour
 
     [Header("Configuración del Gizmo")]
     public float tamanoGizmo = 1f; // Rango de ataque
-    public Transform puntoDeAtaque; // Objeto vacío para definir el rango de ataque (se puede modificar en el Inspector)
 
     [Header("Sistema de Vida")]
     public int vidaMaxima = 4; // Vida máxima
@@ -30,7 +29,7 @@ public class Rata : MonoBehaviour
     [Header("Sistema de Sonido")]
     public AudioClip hiss; // Audio al caminar
     public AudioClip hisshurt; // Audio al recibir daño
-    public AudioSource audioSource;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -44,15 +43,10 @@ public class Rata : MonoBehaviour
 
         posicionAnterior = transform.position; // Inicializar la posición previa
 
-        // Busca el AudioSource en el hijo "AudioSourceContainer"
-        Transform audioContainer = transform.Find("AudioSourceContainer");
-        if (audioContainer != null)
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
         {
-            audioSource = audioContainer.GetComponent<AudioSource>();
-        }
-        else
-        {
-            Debug.LogError("No se encontró un AudioSourceContainer con un AudioSource en el GameObject de la Rata.");
+            Debug.LogError("No se encontró un AudioSource en el GameObject de la Rata.");
         }
     }
 
@@ -83,6 +77,7 @@ public class Rata : MonoBehaviour
 
         VerificarMovimiento();
     }
+
 
     private void SeguirJugador()
     {
@@ -140,6 +135,7 @@ public class Rata : MonoBehaviour
         StartCoroutine(CooldownAtaque());
     }
 
+
     private IEnumerator CooldownAtaque()
     {
         puedeAtacar = false;
@@ -147,11 +143,14 @@ public class Rata : MonoBehaviour
         puedeAtacar = true;
     }
 
+
     private void Girar()
     {
         mirandoDerecha = !mirandoDerecha;
         Vector3 nuevaEscala = visual.localScale;
-        nuevaEscala.x *= -1;
+
+        // Asegura que mirando a la derecha sea negativo
+        nuevaEscala.x = Mathf.Abs(nuevaEscala.x) * (mirandoDerecha ? 1 : -1);
         visual.localScale = nuevaEscala;
     }
 
@@ -160,7 +159,7 @@ public class Rata : MonoBehaviour
         if (vidaActual <= 0 || estaRecibiendoDano) return;
 
         vidaActual -= cantidad;
-        Debug.Log($"Rata recibió {cantidad} de daño. Vida restante: {vidaActual}");
+        Debug.Log($"Arañita recibió {cantidad} de daño. Vida restante: {vidaActual}");
 
         audioSource.PlayOneShot(hisshurt);
         anim.SetTrigger("Damage");
@@ -172,6 +171,7 @@ public class Rata : MonoBehaviour
             Morir();
         }
     }
+
 
     private IEnumerator DesactivarAtaqueDuranteDaño()
     {
@@ -195,18 +195,14 @@ public class Rata : MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
-    // Modificado para usar el objeto Empty para el Gizmo
-    // Modificado para usar el objeto Empty para el Gizmo
+
     private void OnDrawGizmosSelected()
     {
-        if (puntoDeAtaque != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(puntoDeAtaque.position, tamanoGizmo); // Gizmo basado en el Empty y tamaño editable
-        }
-
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), rangoDeDeteccion);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), tamanoGizmo);
     }
 
     private void OnTriggerEnter(Collider other)
