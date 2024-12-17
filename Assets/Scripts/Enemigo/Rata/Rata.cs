@@ -30,7 +30,7 @@ public class Rata : MonoBehaviour
     [Header("Sistema de Sonido")]
     public AudioClip hiss; // Audio al caminar
     public AudioClip hisshurt; // Audio al recibir daño
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -44,10 +44,15 @@ public class Rata : MonoBehaviour
 
         posicionAnterior = transform.position; // Inicializar la posición previa
 
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
+        // Busca el AudioSource en el hijo "AudioSourceContainer"
+        Transform audioContainer = transform.Find("AudioSourceContainer");
+        if (audioContainer != null)
         {
-            Debug.LogError("No se encontró un AudioSource en el GameObject de la Rata.");
+            audioSource = audioContainer.GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.LogError("No se encontró un AudioSourceContainer con un AudioSource en el GameObject de la Rata.");
         }
     }
 
@@ -190,6 +195,7 @@ public class Rata : MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
+    // Modificado para usar el objeto Empty para el Gizmo
     // Modificado para usar el objeto Empty para el Gizmo
     private void OnDrawGizmosSelected()
     {

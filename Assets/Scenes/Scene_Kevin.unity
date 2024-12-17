@@ -431,6 +431,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &263505404 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6707964713862461329, guid: b8bda8b40191d3043bce87b598224f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3391413705223191399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435261105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6232054685984684890, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
@@ -2042,15 +2048,35 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 1520023226}
+    - target: {fileID: 607333820105662564, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 263505404}
+    - target: {fileID: 607333820105662564, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: tamanoGizmo
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674367647528808592, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioSourceContainer
+      objectReference: {fileID: 0}
     - target: {fileID: 4392332575932592352, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
       propertyPath: m_Name
       value: Rata_Enemigo
       objectReference: {fileID: 0}
-    - target: {fileID: 4392332575932592352, guid: b8bda8b40191d3043bce87b598224f2a,
+    - target: {fileID: 6423266839276770830, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_LocalPosition.y
+      value: -0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423266839276770830, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 7001584156529026032, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
@@ -2102,8 +2128,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 7331841645697006140, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828593743173344404, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828593743173344404, guid: b8bda8b40191d3043bce87b598224f2a,
+        type: 3}
+      propertyPath: m_Direction
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8944815847022069562, guid: b8bda8b40191d3043bce87b598224f2a, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 1821958650558554047, guid: b8bda8b40191d3043bce87b598224f2a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8bda8b40191d3043bce87b598224f2a, type: 3}
