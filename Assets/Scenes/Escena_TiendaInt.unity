@@ -5538,7 +5538,7 @@ PrefabInstance:
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: costoVidaExtra
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
@@ -5573,12 +5573,12 @@ PrefabInstance:
     - target: {fileID: 4452768978062918775, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: costoVelocidad
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4452768978062918775, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: costoLuciernaga
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4452768978062918775, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}

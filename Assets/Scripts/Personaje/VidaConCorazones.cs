@@ -12,6 +12,7 @@ public class VidaConCorazones : MonoBehaviour
     private int vidaActual;
     private int vidaMaximaConExtra = 8;
     private bool puedeActivarVidaExtra = false;
+    private bool vidaExtraActivada = false; // Nueva variable para evitar activación múltiple
 
     [Header("Configuración del UI de Corazones")]
     public List<Image> corazones;
@@ -32,13 +33,15 @@ public class VidaConCorazones : MonoBehaviour
     public Puntaje puntajeScript; // Referencia al script de puntaje
     public int costoVidaExtra = 50; // Costo en puntaje para activar vida extra
 
+    private bool vidaGuardada = false; // Nueva variable para manejar la vida guardada en el checkpoint
+
     void Start()
     {
         anim = GetComponent<Animator>();
         bloqueoParry = GetComponent<BloqueoParry>();
 
         vidaMaxima = CargarDesdePlayerPrefs("VidaMaxima", 6);
-        vidaActual = vidaMaxima;
+        vidaActual = CargarDesdePlayerPrefs("VidaActual", vidaMaxima);
 
         if (vidaMaxima == vidaMaximaConExtra)
         {
@@ -51,7 +54,14 @@ public class VidaConCorazones : MonoBehaviour
 
     void Update()
     {
-        if (puedeActivarVidaExtra && Input.GetKeyDown(KeyCode.X))
+        // Desactivamos la mecánica si ya se alcanzó la vida máxima extra
+        if (vidaMaxima >= vidaMaximaConExtra)
+        {
+            puedeActivarVidaExtra = false; // Aseguramos que no se permita seguir activando
+            return; // Salimos del método para no ejecutar nada más
+        }
+
+        if (puedeActivarVidaExtra && Input.GetKeyDown(KeyCode.X) && !vidaExtraActivada)
         {
             if (puntajeScript.ConsumirPuntaje(costoVidaExtra))
             {
@@ -71,13 +81,12 @@ public class VidaConCorazones : MonoBehaviour
 
     private void ActivarVidaExtra()
     {
-        if (vidaMaxima < vidaMaximaConExtra)
+        if (vidaMaxima < vidaMaximaConExtra) // Solo activamos si la vida máxima aún no es 8
         {
             vidaMaxima = vidaMaximaConExtra;
             vidaActual = vidaMaxima;
 
-            // Guardamos los valores de vida máxima y vida actual
-            Debug.Log("Vida Extra activada. Guardando valores...");
+            Debug.Log("¡Vida Extra activada! Guardando valores...");
             GuardarEnPlayerPrefs("VidaMaxima", vidaMaxima);
             GuardarEnPlayerPrefs("VidaActual", vidaActual);
             PlayerPrefs.Save(); // Aseguramos que los datos se guarden inmediatamente
@@ -99,9 +108,37 @@ public class VidaConCorazones : MonoBehaviour
                 Destroy(objetoVidaExtra);
                 Debug.Log("Objeto Vida Extra destruido.");
             }
+
+            // Evitar que pueda activarse nuevamente
+            vidaExtraActivada = true;
+        }
+        else
+        {
+            Debug.Log("La vida máxima ya fue alcanzada. No puedes activar más vida extra.");
         }
     }
 
+    public void GuardarCheckpoint()
+    {
+        Debug.Log("Checkpoint alcanzado. Vida guardada.");
+        GuardarEnPlayerPrefs("VidaActual", vidaActual);
+        PlayerPrefs.Save();
+        vidaGuardada = true;
+    }
+
+    public void RestaurarVidaDesdeCheckpoint()
+    {
+        if (vidaGuardada)
+        {
+            vidaActual = CargarDesdePlayerPrefs("VidaActual", vidaMaxima);
+            ActualizarCorazones();
+            Debug.Log("Vida restaurada desde el checkpoint: " + vidaActual);
+        }
+        else
+        {
+            Debug.Log("No hay vida guardada en el checkpoint.");
+        }
+    }
 
     public void RecibirDano(int dano)
     {
@@ -227,12 +264,12 @@ public class VidaConCorazones : MonoBehaviour
 
     private int CargarDesdePlayerPrefs(string key, int defaultValue)
     {
-        return PlayerPrefs.GetInt(key, defaultValue); // Eliminar Application.isEditor
+        return PlayerPrefs.GetInt(key, defaultValue);
     }
 
     private void GuardarEnPlayerPrefs(string key, int value)
     {
         PlayerPrefs.SetInt(key, value);
-        PlayerPrefs.Save(); // Aseguramos que los datos se guarden inmediatamente
+        PlayerPrefs.Save();
     }
 }
