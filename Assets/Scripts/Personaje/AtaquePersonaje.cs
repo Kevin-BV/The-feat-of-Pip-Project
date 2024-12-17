@@ -116,20 +116,26 @@ public class AtaquePersonaje : MonoBehaviour
 
     private void ActivarPowerUpConLimite()
     {
-        if (contadorUsosPowerUp < maxUsosPowerUp)
+        // Incrementa el contador de usos
+        contadorUsosPowerUp++;
+
+        if (contadorUsosPowerUp <= maxUsosPowerUp)
         {
-            contadorUsosPowerUp++;
+            // Si aún no hemos alcanzado el límite de usos (2 veces), activamos el Power-Up
             Debug.Log($"Power-Up activado. Usos restantes: {maxUsosPowerUp - contadorUsosPowerUp}");
 
+            // Activamos el Power-Up
             StartCoroutine(ActivarPowerUp());
-        }
-        else
-        {
-            // Destruye el objeto de Power-Up después de 2 usos
-            if (objetoPowerUp != null)
+
+            // Si es la segunda vez, destruimos el objeto Power-Up
+            if (contadorUsosPowerUp == 2)
             {
-                Debug.Log("Power-Up agotado y destruido.");
-                Destroy(objetoPowerUp);
+                // Destruir el objeto Power-Up en la segunda activación
+                if (objetoPowerUp != null)
+                {
+                    Debug.Log("Power-Up agotado y destruido.");
+                    Destroy(objetoPowerUp);  // Destruye el objeto
+                }
             }
         }
     }
