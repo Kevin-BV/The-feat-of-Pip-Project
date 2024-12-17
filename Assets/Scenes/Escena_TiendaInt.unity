@@ -5377,6 +5377,21 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1297747629}
+    - target: {fileID: 3099825619520058367, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: puntajeVelocidad
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099825619520058367, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: puntajeVidaExtra
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099825619520058367, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: puntajeLuciernaga
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3269642797284538331, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: m_LocalRotation.w
