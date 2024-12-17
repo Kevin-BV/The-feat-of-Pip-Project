@@ -16,71 +16,69 @@ public class VolumenSlider_Icono : MonoBehaviour
     public AudioSource musicAudioSource;  // AudioSource que controla la música
     public AudioSource sfxAudioSource;    // AudioSource general de efectos de sonido
 
-    public AudioSource playerSfxAudioSource;  // AudioSource para los efectos del jugador
-    public AudioSource rataSfxAudioSource;    // AudioSource para los efectos de la rata
-    public AudioSource avispaSfxAudioSource;  // AudioSource para los efectos de la avispa
-    public AudioSource bichoSfxAudioSource;   // AudioSource para los efectos del bicho
-    public AudioSource aranaSfxAudioSource;   // AudioSource para los efectos de la araña
-    public AudioSource aranitaSfxAudioSource;   // AudioSource para los efectos de la arañita
-    public AudioSource HumoParrillasAudioSource;   // AudioSource para los efectos de la parrila
-    public AudioSource cajaDeFosforosAudioSource;   // AudioSource para los efectos de la arañita
-    public AudioSource gusanoPuntajeAudioSource;   // AudioSource para los efectos de la arañita
-
-
-
+    // Otros AudioSources individuales
+    public AudioSource playerSfxAudioSource;
+    public AudioSource rataSfxAudioSource;
+    public AudioSource avispaSfxAudioSource;
+    public AudioSource bichoSfxAudioSource;
+    public AudioSource aranaSfxAudioSource;
+    public AudioSource aranitaSfxAudioSource;
+    public AudioSource HumoParrillasAudioSource;
+    public AudioSource cajaDeFosforosAudioSource;
+    public AudioSource gusanoPuntajeAudioSource;
 
     private void Start()
     {
-        // Sincronizar los sliders con los valores actuales
-        musicSlider.value = musicAudioSource.volume;
-        sfxSlider.value = sfxAudioSource.volume;
+        // Cargar los valores guardados o usar valores predeterminados
+        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        float savedSfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        // Asignar eventos de cambio de volumen
+        // Sincronizar sliders y AudioSources con los valores guardados
+        musicSlider.value = savedMusicVolume;
+        sfxSlider.value = savedSfxVolume;
+
+        musicAudioSource.volume = savedMusicVolume;
+        sfxAudioSource.volume = savedSfxVolume;
+
+        SincronizarTodosLosSfx();
+
+        // Asignar eventos de cambio
         musicSlider.onValueChanged.AddListener(HandleMusicVolumeChange);
         sfxSlider.onValueChanged.AddListener(HandleSfxVolumeChange);
 
-        // Sincronizar los valores iniciales de los SFX
-        SincronizarTodosLosSfx();
-
         // Actualizar íconos
-        UpdateMusicIcon(musicAudioSource.volume);
-        UpdateSfxIcon(sfxAudioSource.volume);
+        UpdateMusicIcon(savedMusicVolume);
+        UpdateSfxIcon(savedSfxVolume);
     }
 
     public void HandleMusicVolumeChange(float value)
     {
-        // Cambiar el volumen de la música
+        // Cambiar el volumen de la música y guardar en PlayerPrefs
         musicAudioSource.volume = value;
+        PlayerPrefs.SetFloat("MusicVolume", value);
+        PlayerPrefs.Save();
 
-        // Actualizar el ícono
+        // Actualizar ícono
         UpdateMusicIcon(value);
     }
 
     public void HandleSfxVolumeChange(float value)
     {
-        // Cambiar el volumen general de efectos de sonido
+        // Cambiar el volumen general de efectos de sonido y guardar en PlayerPrefs
         sfxAudioSource.volume = value;
+        PlayerPrefs.SetFloat("SFXVolume", value);
+        PlayerPrefs.Save();
 
         // Aplicar el cambio a todos los SFX individuales
-        if (playerSfxAudioSource != null) playerSfxAudioSource.volume = value;
-        if (rataSfxAudioSource != null) rataSfxAudioSource.volume = value;
-        if (avispaSfxAudioSource != null) avispaSfxAudioSource.volume = value;
-        if (bichoSfxAudioSource != null) bichoSfxAudioSource.volume = value;
-        if (aranaSfxAudioSource != null) aranaSfxAudioSource.volume = value;
-        if (aranitaSfxAudioSource != null) aranitaSfxAudioSource.volume = value;
-        if (HumoParrillasAudioSource != null) HumoParrillasAudioSource.volume = value;
-        if (cajaDeFosforosAudioSource != null) cajaDeFosforosAudioSource.volume = value;
-        if (gusanoPuntajeAudioSource != null) gusanoPuntajeAudioSource.volume = value;
+        SincronizarTodosLosSfx();
 
-
-
-        // Actualizar el ícono de SFX
+        // Actualizar ícono
         UpdateSfxIcon(value);
     }
 
     private void SincronizarTodosLosSfx()
     {
-        // Sincronizar los volúmenes iniciales de los SFX con el slider
+        // Sincronizar los volúmenes de los SFX individuales con el slider
         if (playerSfxAudioSource != null) playerSfxAudioSource.volume = sfxSlider.value;
         if (rataSfxAudioSource != null) rataSfxAudioSource.volume = sfxSlider.value;
         if (avispaSfxAudioSource != null) avispaSfxAudioSource.volume = sfxSlider.value;
@@ -90,7 +88,6 @@ public class VolumenSlider_Icono : MonoBehaviour
         if (HumoParrillasAudioSource != null) HumoParrillasAudioSource.volume = sfxSlider.value;
         if (cajaDeFosforosAudioSource != null) cajaDeFosforosAudioSource.volume = sfxSlider.value;
         if (gusanoPuntajeAudioSource != null) gusanoPuntajeAudioSource.volume = sfxSlider.value;
-
     }
 
     private void UpdateMusicIcon(float volume)

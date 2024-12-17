@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;  // Necesario para trabajar con botones
 
+
 public class BorrarPuntaje : MonoBehaviour
 {
     public Button botonBorrar;  // Referencia al botón en el inspector
@@ -30,12 +31,6 @@ public class BorrarPuntaje : MonoBehaviour
         // Restaurar las configuraciones de sonido
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
-
-        // Asegúrate de que el AudioManager recargue las configuraciones de sonido
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.sfxVolume = sfxVolume;
-            AudioManager.Instance.musicVolume = musicVolume;
-        }
+        PlayerPrefs.Save();
     }
 }
