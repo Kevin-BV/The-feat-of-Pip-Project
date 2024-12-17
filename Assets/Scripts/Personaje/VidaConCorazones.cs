@@ -24,7 +24,7 @@ public class VidaConCorazones : MonoBehaviour
 
     [Header("Sonidos")]
     public AudioSource audioSource;
-    public AudioClip sonidoDanio, sonidoMuerte, sonidoCuracion, sonidoVidaExtra;
+    public AudioClip sonidoDanio, sonidoMuerte, sonidoCuracion, sonidoVidaExtra, sonidoFalloPuntaje;
 
     private Animator anim;
     private BloqueoParry bloqueoParry;
@@ -60,6 +60,11 @@ public class VidaConCorazones : MonoBehaviour
             else
             {
                 Debug.Log("No tienes suficiente puntaje para activar la vida extra.");
+                // Reproducir sonido de fallo
+                if (audioSource && sonidoFalloPuntaje)
+                {
+                    audioSource.PlayOneShot(sonidoFalloPuntaje);
+                }
             }
         }
     }
@@ -86,8 +91,17 @@ public class VidaConCorazones : MonoBehaviour
                 audioSource.PlayOneShot(sonidoVidaExtra);
 
             Debug.Log("¡Vida Extra activada!");
+
+            // Destruir el objeto con el tag "VidaExtra"
+            GameObject objetoVidaExtra = GameObject.FindGameObjectWithTag("VidaExtra");
+            if (objetoVidaExtra != null)
+            {
+                Destroy(objetoVidaExtra);
+                Debug.Log("Objeto Vida Extra destruido.");
+            }
         }
     }
+
 
     public void RecibirDano(int dano)
     {
