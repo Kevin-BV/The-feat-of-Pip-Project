@@ -3760,7 +3760,9 @@ MonoBehaviour:
   visual: {fileID: 1302751094361025734}
   anim: {fileID: 7852878576030925193}
   tamanoGizmo: 1.8
+  puntoDeAtaque: {fileID: 0}
   vidaMaxima: 4
+  jugador: {fileID: 0}
   hiss: {fileID: 8300000, guid: 08b7b2597663f924dbcf640723a17dcd, type: 3}
   hisshurt: {fileID: 8300000, guid: 2eb08e58376c6b44ba78832043d8fdc7, type: 3}
 --- !u!54 &1974684291596403897
@@ -3803,7 +3805,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

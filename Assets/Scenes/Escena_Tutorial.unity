@@ -649,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 7001584156529026032, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7001584156529026032, guid: b8bda8b40191d3043bce87b598224f2a,
         type: 3}
@@ -2757,8 +2757,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.975903, y: 18.964684, z: 16.592484}
-  m_Center: {x: -14.955566, y: 29.55109, z: -19.598743}
+  m_Size: {x: 10.166559, y: 18.964684, z: 16.592484}
+  m_Center: {x: -14.862714, y: 29.55109, z: -19.598743}
 --- !u!4 &590264509
 Transform:
   m_ObjectHideFlags: 0
@@ -2932,8 +2932,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.1457405, y: 18.964684, z: 16.592484}
-  m_Center: {x: -17.502611, y: 29.55109, z: -19.598743}
+  m_Size: {x: 10.878502, y: 18.964684, z: 16.592484}
+  m_Center: {x: -17.596542, y: 29.55109, z: -19.598743}
 --- !u!4 &622828385
 Transform:
   m_ObjectHideFlags: 0
@@ -2983,12 +2983,12 @@ PrefabInstance:
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 1.915
       objectReference: {fileID: 0}
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.6607652
+      value: 3.826
       objectReference: {fileID: 0}
     - target: {fileID: 3625638142639973414, guid: c1776e81b754fe541b6106163f51a5c5,
         type: 3}
@@ -3050,6 +3050,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1776e81b754fe541b6106163f51a5c5, type: 3}
+--- !u!82 &626959301 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4812283944938287246, guid: c1776e81b754fe541b6106163f51a5c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 626959300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &631686041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3118,6 +3124,21 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 870319850}
+    - target: {fileID: 3269642797284538331, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.1837094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824285851981073216, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9744837
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824285851981073216, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.22445837
+      objectReference: {fileID: 0}
     - target: {fileID: 4449989712704843358, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: corazonExtra
@@ -3150,6 +3171,16 @@ PrefabInstance:
       objectReference: {fileID: 595144865}
     - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
+      propertyPath: objetoPowerUp
+      value: 
+      objectReference: {fileID: 951315341}
+    - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: sonidoPowerUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 59c7baa7e91a99142afefa1f5f260498, type: 3}
+    - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
       propertyPath: barraPowerUp.Array.data[0]
       value: 
       objectReference: {fileID: 1716819775817417140}
@@ -3173,6 +3204,41 @@ PrefabInstance:
       propertyPath: barraPowerUp.Array.data[4]
       value: 
       objectReference: {fileID: 1716819775817417145}
+    - target: {fileID: 6017872018157558708, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000035976264
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017872018157558708, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000035976257
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017872018157558708, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.42806762
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.889949
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000034869878
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000003701553
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741515501243436363, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.45606002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4108,6 +4174,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915638230}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &951315341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1314559021730004613, guid: 164c67e44f047684a82c19af6c00956e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6202279300659420662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &968258569
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,7 +5229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fdc8886dcdf7a4d9e942e7c7e0cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstDialogText: "\xA1Mata a la rata para continuar tu traves\xEDa!"
+  firstDialogText: "\xA1Usa el f\xF3sforo para matar a la rata!"
   secondDialogText: 
   dialogManager: {fileID: 974842083}
   dialogDuration: 6
@@ -5180,8 +5252,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 17.969398, y: 18.964684, z: 16.592484}
-  m_Center: {x: -16.952314, y: 29.55109, z: -19.598743}
+  m_Size: {x: 13.895401, y: 18.964684, z: 16.592484}
+  m_Center: {x: -19.055237, y: 29.55109, z: -19.598743}
 --- !u!4 &1199976456
 Transform:
   m_ObjectHideFlags: 0
@@ -8814,7 +8886,7 @@ PrefabInstance:
     - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.09
+      value: 45.2
       objectReference: {fileID: 0}
     - target: {fileID: 1886846725908442119, guid: 164c67e44f047684a82c19af6c00956e,
         type: 3}
@@ -8939,8 +9011,7 @@ PrefabInstance:
         type: 3}
       propertyPath: avispaSfxAudioSource
       value: 
-      objectReference: {fileID: 4812283944938287246, guid: c1776e81b754fe541b6106163f51a5c5,
-        type: 3}
+      objectReference: {fileID: 626959301}
     - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: playerSfxAudioSource

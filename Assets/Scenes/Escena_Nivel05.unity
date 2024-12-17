@@ -767,6 +767,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 164c67e44f047684a82c19af6c00956e, type: 3}
+--- !u!1 &276523885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1314559021730004613, guid: 164c67e44f047684a82c19af6c00956e,
+    type: 3}
+  m_PrefabInstance: {fileID: 276523884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &305999413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1124,11 @@ PrefabInstance:
       objectReference: {fileID: 1780202575}
     - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
+      propertyPath: objetoPowerUp
+      value: 
+      objectReference: {fileID: 276523885}
+    - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
+        type: 3}
       propertyPath: barraPowerUp.Array.data[0]
       value: 
       objectReference: {fileID: 2147276236}
@@ -1201,6 +1212,12 @@ Transform:
 --- !u!4 &350193357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6519700479266659605, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 350193354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &350193358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 228301468241131075, guid: ba17967b9aee6d94488ab5f9665c2208,
     type: 3}
   m_PrefabInstance: {fileID: 350193354}
   m_PrefabAsset: {fileID: 0}
@@ -3699,6 +3716,11 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 350193357}
+    - target: {fileID: 2436089487131045698, guid: 10c689d43dd19d94aa03b3ea6f3466c2,
+        type: 3}
+      propertyPath: puntoDeMira
+      value: 
+      objectReference: {fileID: 350193358}
     - target: {fileID: 2436089487131045698, guid: 10c689d43dd19d94aa03b3ea6f3466c2,
         type: 3}
       propertyPath: rangoMinimo
