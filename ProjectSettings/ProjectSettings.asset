@@ -16,7 +16,7 @@ PlayerSettings:
   productName: The Feat of Pip
   defaultCursor: {fileID: 2800000, guid: 1b1bde927d3b8ae49a93c700d6f1dc6d, type: 3}
   cursorHotspot: {x: 0.103426, y: 0.8296961}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.47369877, g: 0.7584905, b: 0.74986047, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
