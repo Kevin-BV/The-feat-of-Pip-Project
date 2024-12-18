@@ -1225,7 +1225,7 @@ PrefabInstance:
     - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
       propertyPath: dano
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5149540186419521326, guid: ba17967b9aee6d94488ab5f9665c2208,
         type: 3}
