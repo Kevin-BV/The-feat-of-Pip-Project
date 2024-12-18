@@ -21,14 +21,25 @@ public class MenuGameOver : MonoBehaviour
 
     private void Reintentar()
     {
-        // Cargar la escena anterior jugada
+        // Recuperar el puntaje antes de la escena de GameOver
+        int puntajeAntesDeEscena = PlayerPrefs.GetInt("PuntajeInicial");
+
+        // Descontar el puntaje ganado en la escena anterior (si fue mayor)
+        int puntajeGanadoEnEscena = PlayerPrefs.GetInt("Puntaje") - puntajeAntesDeEscena;
+
+        if (puntajeGanadoEnEscena > 0)
+        {
+            PlayerPrefs.SetInt("Puntaje", PlayerPrefs.GetInt("Puntaje") - puntajeGanadoEnEscena); // Restar el puntaje ganado
+        }
+
+        // Recargar la última escena jugada
         string ultimaEscena = PlayerPrefs.GetString("UltimaEscena", SceneManager.GetActiveScene().name);
-        Debug.Log("Cargando la última escena jugada: " + ultimaEscena);
         SceneManager.LoadScene(ultimaEscena);
     }
 
     private void VolverMenu()
     {
+        // Cargar el menú principal
         SceneManager.LoadScene("MainMenu");
     }
 

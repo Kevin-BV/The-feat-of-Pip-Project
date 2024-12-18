@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 6035248365789245367}
   - component: {fileID: 7853540659956100308}
   - component: {fileID: 3099825619520058367}
+  - component: {fileID: 6300031015956654851}
   m_Layer: 3
   m_Name: Pip_Player
   m_TagString: Player
@@ -789,6 +790,7 @@ MonoBehaviour:
   puntajeScript: {fileID: 3099825619520058367}
   costoVelocidad: 30
   costoLuciernaga: 40
+  sonidoErrorPuntaje: {fileID: 0}
 --- !u!114 &5149540186419521326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +899,7 @@ MonoBehaviour:
   sonidoMuerte: {fileID: 8300000, guid: e0e2af665e8e0ca419e1666b1fc1070a, type: 3}
   sonidoCuracion: {fileID: 8300000, guid: dc8bc3fcae1eb544abc6021ee0ca738e, type: 3}
   sonidoVidaExtra: {fileID: 0}
+  sonidoFalloPuntaje: {fileID: 0}
   puntajeScript: {fileID: 3099825619520058367}
   costoVidaExtra: 50
 --- !u!114 &9138105806929592627
@@ -1153,6 +1156,18 @@ MonoBehaviour:
   puntajeLuciernaga: 40
   sonidoPuntaje: {fileID: 8300000, guid: 94d8e461aee57684b9d2a1896b0b5903, type: 3}
   sonidoCompra: {fileID: 8300000, guid: 84ad1e0fe3e1afe40bf25d2e9633839b, type: 3}
+--- !u!114 &6300031015956654851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224446435440822425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d02ef16e472694408aaa556962babb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1284332259466086135
 GameObject:
   m_ObjectHideFlags: 0

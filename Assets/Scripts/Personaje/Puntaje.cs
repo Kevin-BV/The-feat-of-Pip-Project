@@ -1,71 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class Puntaje : MonoBehaviour
 {
-    // El puntaje actual
-    private int score = 0;
+    private int score = 0; // Puntaje actual
+    public string targetTag = "Target"; // Tag del objeto con el que se colisiona
+    public Text scoreText; // Referencia al texto del Canvas
+    public int puntajeVidaExtra = 50;
+    public int puntajeVelocidad = 30;
+    public int puntajeLuciernaga = 40;
 
-    // Tag del objeto con el que se debe colisionar (configurable desde el Inspector)
-    public string targetTag = "Target";
-
-    // Referencia al texto del Canvas donde se mostrará el puntaje
-    public Text scoreText;
-
-    // Variables para consumir puntaje
-    public int puntajeVidaExtra = 50; // Puntaje para vida extra
-    public int puntajeVelocidad = 30; // Puntaje para aumentar velocidad
-    public int puntajeLuciernaga = 40; // Puntaje para luciérnaga
-
-    // Sonidos
-    public AudioClip sonidoPuntaje;  // Sonido cuando se suma el puntaje
-    public AudioClip sonidoCompra;   // Sonido cuando se gasta el puntaje
+    public AudioClip sonidoPuntaje;
+    public AudioClip sonidoCompra;
     private AudioSource audioSource;
+
+    private int puntajeAntesDeEscena = 0; // Puntaje antes de entrar en una nueva escena
 
     private void Start()
     {
-        // Obtener el AudioSource en el objeto
+        // Obtener el AudioSource
         audioSource = GetComponent<AudioSource>();
 
-        // Cargar el puntaje guardado
-        score = PlayerPrefs.GetInt("Puntaje", 0);
+        // Guardar la última escena jugada
+        PlayerPrefs.SetString("UltimaEscena", SceneManager.GetActiveScene().name);
+
+        // Cargar el puntaje inicial
+        if (!PlayerPrefs.HasKey("PuntajeInicial"))
+        {
+            PlayerPrefs.SetInt("PuntajeInicial", 0); // Puntaje inicial predeterminado
+        }
+
+        // Cargar el puntaje de la escena actual
+        score = PlayerPrefs.GetInt("PuntajeInicial");
+        puntajeAntesDeEscena = score; // Guardar el puntaje antes de la nueva escena
         UpdateScoreText();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto tiene el tag correcto
         if (other.CompareTag(targetTag))
         {
-            // Incrementa el puntaje
+            // Incrementar el puntaje
             score++;
 
-            // Guarda el puntaje en PlayerPrefs
+            // Guardar el puntaje actualizado
             PlayerPrefs.SetInt("Puntaje", score);
 
             // Reproducir sonido de puntaje
-            if (sonidoPuntaje != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(sonidoPuntaje);
-            }
+            PlaySound(sonidoPuntaje);
 
-            // Actualiza el texto del puntaje
+            // Actualizar el texto en pantalla
             UpdateScoreText();
 
-            // Destruye el objeto con el que se colisionó
+            // Destruir el objeto con el que se colisionó
             Destroy(other.gameObject);
         }
     }
 
-    // Método para actualizar el texto del puntaje
     private void UpdateScoreText()
     {
         if (scoreText != null)
         {
-            scoreText.text = "" + score;
+            scoreText.text = score.ToString(); // Solo mostrar el puntaje
         }
         else
         {
@@ -73,29 +72,55 @@ public class Puntaje : MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        // Limpia el puntaje al cerrar el juego (opcional)
-        PlayerPrefs.DeleteKey("Puntaje");
-    }
-
-    // Método para consumir puntaje cuando se usa una habilidad
     public bool ConsumirPuntaje(int cantidad)
     {
         if (score >= cantidad)
         {
             score -= cantidad;
-            PlayerPrefs.SetInt("Puntaje", score);  // Guardar el puntaje actualizado
+
+            // Guardar el puntaje actualizado
+            PlayerPrefs.SetInt("Puntaje", score);
+
+            // Actualizar el texto
             UpdateScoreText();
 
             // Reproducir sonido de compra
-            if (sonidoCompra != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(sonidoCompra);
-            }
+            PlaySound(sonidoCompra);
 
             return true;
         }
         return false;
+    }
+
+    private void OnDisable()
+    {
+        // Guardar el progreso actual al salir de la escena
+        PlayerPrefs.SetInt("Puntaje", score);
+    }
+
+    public void ReiniciarEscena()
+    {
+        // Restaurar el puntaje al valor antes de entrar en la escena
+        score = puntajeAntesDeEscena; // Puntaje antes de la escena
+
+        // Actualizar texto del puntaje
+        UpdateScoreText();
+
+        // Recargar la escena actual
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GuardarProgresoParaSiguienteNivel()
+    {
+        // Guardar el puntaje actual como punto de partida para la siguiente escena
+        PlayerPrefs.SetInt("PuntajeInicial", score);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }
