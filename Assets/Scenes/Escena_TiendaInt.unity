@@ -17132,6 +17132,11 @@ PrefabInstance:
       objectReference: {fileID: 947945421}
     - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
         type: 3}
+      propertyPath: playerSfxAudioSource
+      value: 
+      objectReference: {fileID: 1167409079}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
       propertyPath: HumoParrillasAudioSource
       value: 
       objectReference: {fileID: 99475353}
@@ -22729,6 +22734,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!82 &1167409079 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6121475406980282175, guid: ba17967b9aee6d94488ab5f9665c2208,
+    type: 3}
+  m_PrefabInstance: {fileID: 361097219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1297747625
 PrefabInstance:
   m_ObjectHideFlags: 0
