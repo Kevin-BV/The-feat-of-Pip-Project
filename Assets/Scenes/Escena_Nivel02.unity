@@ -2655,11 +2655,37 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 1591941666}
+    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97077084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000002889702
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000000073231172
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798170509789741422, guid: c1776e81b754fe541b6106163f51a5c5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.24000838
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1776e81b754fe541b6106163f51a5c5, type: 3}
+--- !u!82 &751255795 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4812283944938287246, guid: c1776e81b754fe541b6106163f51a5c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 751255794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &753888002 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7743232149065347684, guid: 4e0d75656eaca0c4c8763ac7bf1ca85c,
@@ -7440,8 +7466,7 @@ PrefabInstance:
         type: 3}
       propertyPath: avispaSfxAudioSource
       value: 
-      objectReference: {fileID: 4812283944938287246, guid: c1776e81b754fe541b6106163f51a5c5,
-        type: 3}
+      objectReference: {fileID: 751255795}
     - target: {fileID: 6217680279985391566, guid: 87ea45aaceb0c4e4e8078f08d723eed0,
         type: 3}
       propertyPath: playerSfxAudioSource
