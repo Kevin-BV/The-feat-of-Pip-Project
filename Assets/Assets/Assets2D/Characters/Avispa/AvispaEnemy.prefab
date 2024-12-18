@@ -214,7 +214,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -935,7 +935,7 @@ PrefabInstance:
     - target: {fileID: 1087327323956828019, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1087327323956828019, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
@@ -1220,7 +1220,7 @@ PrefabInstance:
     - target: {fileID: 5129835647666688270, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5129835647666688270, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
@@ -1300,22 +1300,22 @@ PrefabInstance:
     - target: {fileID: 6003948519032133941, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97077084
+      value: 0.9707709
       objectReference: {fileID: 0}
     - target: {fileID: 6003948519032133941, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000002889702
+      value: 0.00000001452635
       objectReference: {fileID: 0}
     - target: {fileID: 6003948519032133941, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000073231172
+      value: -0.0000000033210963
       objectReference: {fileID: 0}
     - target: {fileID: 6003948519032133941, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.24000838
+      value: -0.2400083
       objectReference: {fileID: 0}
     - target: {fileID: 6003948519032133941, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
@@ -1455,7 +1455,7 @@ PrefabInstance:
     - target: {fileID: 9094751832590973195, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9094751832590973195, guid: de3a566e1a8408e44a7c3801715ec8ee,
         type: 3}

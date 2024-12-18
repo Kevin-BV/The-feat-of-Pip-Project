@@ -873,6 +873,206 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5546ad60b0dbea4a903d9047f4f15d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1263850471
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509485002505158581, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285763468826128352, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundIcon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: sfxOnImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: sfxOffImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOnIcon
+      value: 
+      objectReference: {fileID: 1365610768, guid: 9fab2831f95f3e44ba41feb437c416c3,
+        type: 3}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: musicOnImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOffIcon
+      value: 
+      objectReference: {fileID: -1959258813, guid: 9fab2831f95f3e44ba41feb437c416c3,
+        type: 3}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOnImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: volumeSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: musicOffImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: sfxIconObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOffImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: sfxAudioSource
+      value: 
+      objectReference: {fileID: 192834575}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: musicIconObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundIconObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOnImageSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: volumeSliderSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: musicAudioSource
+      value: 
+      objectReference: {fileID: 1497042975}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOffImageSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundIconObjectSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOnImageMusica
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: volumeSliderMusica
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundOffImageMusica
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375392303662399821, guid: 439182dd97830074fa351fbf442a6b17,
+        type: 3}
+      propertyPath: soundIconObjectMusica
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 439182dd97830074fa351fbf442a6b17, type: 3}
 --- !u!1 &1497042972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,3 +1319,4 @@ SceneRoots:
   - {fileID: 1209691610}
   - {fileID: 192834574}
   - {fileID: 1012282182}
+  - {fileID: 1263850471}
