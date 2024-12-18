@@ -1437,7 +1437,8 @@ AudioSource:
   m_GameObject: {fileID: 395180045}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 67513650c78bd394ca55411fc464fb8c,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4825,6 +4826,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.6660258
       objectReference: {fileID: 0}
+    - target: {fileID: 4907419591680055136, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
+        type: 3}
+      propertyPath: spawnCount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6699110128400516620, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -4967,9 +4973,19 @@ PrefabInstance:
       objectReference: {fileID: 1612835027}
     - target: {fileID: 8462549727346159935, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
         type: 3}
+      propertyPath: sonidoHurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 67e8c6edc6f42804abb55a55491adae1, type: 3}
+    - target: {fileID: 8462549727346159935, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
+        type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 395180054}
+    - target: {fileID: 8462549727346159935, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
+        type: 3}
+      propertyPath: "sonidoAra\xF1a"
+      value: 
+      objectReference: {fileID: 8300000, guid: 78da273b76be0ac418ef80737c4bf8cf, type: 3}
     - target: {fileID: 8462549727346159935, guid: fb96e6baca65d984cbfb7c0e6de2fbc2,
         type: 3}
       propertyPath: bordeBarraVida
